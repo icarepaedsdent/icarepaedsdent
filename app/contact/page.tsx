@@ -1,30 +1,22 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Calendar } from '@/components/ui/calendar';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { MapPin, Phone, Mail, Clock, Calendar as CalendarIcon } from 'lucide-react';
-import { format } from 'date-fns';
-import { cn } from '@/lib/utils';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
-export default function ContactPage() {
+function ContactForm() {
   const searchParams = useSearchParams();
-  const [date, setDate] = useState<Date>();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    childName: '',
-    childAge: '',
     service: searchParams.get('type') || '',
-    message: '',
-    preferredTime: ''
+    message: ''
   });
 
   useEffect(() => {
@@ -39,7 +31,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', { ...formData, date });
+    console.log('Form submitted:', formData);
     alert('Thank you for your message! We will contact you shortly.');
   };
 
@@ -187,7 +179,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Subject
                       </label>
-                      <Select onValueChange={(value) => handleInputChange('service', value)}>
+                      <Select onValueChange={(value) => handleInputChange('service', value)} value={formData.service}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select subject" />
                         </SelectTrigger>
@@ -204,7 +196,7 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      We&apos;ll get back to you as soon as possible
+                      Message *
                     </label>
                     <Textarea
                       required
@@ -230,15 +222,15 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Visit Our Clinic</CardTitle>
               <p className="text-gray-600">
-                Located in the heart of Melbourne with easy parking and public transport access
+                Conveniently located at Mt Gravatt Plaza with ample parking and easy access
               </p>
             </CardHeader>
             <CardContent>
               <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
                 <div className="text-center text-gray-500">
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
+                  <MapPin className="w-12 h-12 mx-auto mb-2 text-[#98C93C]" />
                   <p>Interactive Map</p>
-                  <p className="text-sm">123 Children&apos;s Way, Melbourne VIC 3000</p>
+                  <p className="text-sm">Shop 113 Mt Gravatt Plaza, 55 Creek Rd, Mount Gravatt QLD 4122</p>
                 </div>
               </div>
             </CardContent>
@@ -246,5 +238,20 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">Loading...</h2>
+          <p className="text-gray-600">Please wait while we load the contact form.</p>
+        </div>
+      </div>
+    }>
+      <ContactForm />
+    </Suspense>
   );
 }
