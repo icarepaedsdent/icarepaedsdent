@@ -1,16 +1,67 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Star, CheckCircle, Calendar, Clock, Shield, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Chalky Teeth | i-Care Paediatric Dentistry',
-  description: 'Early diagnosis and management of hypomineralized or "chalky" teeth in children. Specialized treatment for first permanent molars and incisors.',
-};
+const treatmentApproaches = [
+  {
+    icon: Star,
+    title: 'Early Diagnosis',
+    description: 'Prompt identification of hypomineralization in first permanent molars and incisors.',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100'
+  },
+  {
+    icon: Shield,
+    title: 'Preventive Care',
+    description: 'Specialized treatments to strengthen and protect affected teeth from further damage.',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-100'
+  },
+  {
+    icon: Sparkles,
+    title: 'Restorative Solutions',
+    description: 'Advanced restoration techniques specifically designed for hypomineralized teeth.',
+    color: 'text-green-600',
+    bgColor: 'bg-green-100'
+  }
+];
 
 export default function ChalkyTeethPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">
@@ -61,48 +112,66 @@ export default function ChalkyTeethPage() {
             Our Treatment Approach
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-blue-600" />
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden mb-8">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {treatmentApproaches.map((approach, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardHeader>
+                      <div className={`w-16 h-16 ${approach.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <approach.icon className={`w-8 h-8 ${approach.color}`} />
+                      </div>
+                      <CardTitle className="text-lg">{approach.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">
+                        {approach.description}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <CardTitle className="text-lg">Early Diagnosis</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Prompt identification of hypomineralization in first permanent molars and incisors.
-                </p>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-purple-600" />
-                </div>
-                <CardTitle className="text-lg">Preventive Care</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Specialized treatments to strengthen and protect affected teeth from further damage.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {treatmentApproaches.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Sparkles className="w-8 h-8 text-green-600" />
-                </div>
-                <CardTitle className="text-lg">Restorative Solutions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Advanced restoration techniques specifically designed for hypomineralized teeth.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
+            {treatmentApproaches.map((approach, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className={`w-16 h-16 ${approach.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                    <approach.icon className={`w-8 h-8 ${approach.color}`} />
+                  </div>
+                  <CardTitle className="text-lg">{approach.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    {approach.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
@@ -199,7 +268,7 @@ export default function ChalkyTeethPage() {
                   &quot;The early diagnosis and treatment of my son&apos;s chalky teeth prevented serious 
                   complications. The team&apos;s expertise made all the difference.&quot;
                 </blockquote>
-                <p className="text-sm text-gray-500 mt-2">- Rachel K., Parent</p>
+                <cite className="text-gray-500 text-sm mt-2 block">- Jennifer K., Parent</cite>
               </CardContent>
             </Card>
           </div>
@@ -244,24 +313,23 @@ export default function ChalkyTeethPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-blue-600 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">
-            Get Expert Care for Your Child&apos;s Chalky Teeth
+        <div className="bg-blue-600 rounded-2xl p-8 lg:p-12 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Early Detection Makes All the Difference
           </h2>
-          <p className="text-xl mb-6 text-blue-100">
-            Early intervention is key. Schedule a consultation today.
+          <p className="text-blue-100 text-lg mb-8">
+            If you suspect your child may have chalky teeth, don&apos;t wait. 
+            Early intervention can prevent serious complications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Appointment
+              <Button size="lg" variant="secondary" className="text-blue-600">
+                Schedule Consultation
               </Button>
             </Link>
             <Link href="tel:+1234567890">
-              <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                <Clock className="w-5 h-5 mr-2" />
-                Call: (123) 456-7890
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Call (03) 9123 4567
               </Button>
             </Link>
           </div>

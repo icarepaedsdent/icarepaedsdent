@@ -14,7 +14,7 @@ export function ContactSection() {
   return (
     <section className="py-16 lg:py-24 bg-blue-600">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Content */}
           <div className="text-white space-y-8">
             <div>
@@ -61,18 +61,18 @@ export function ContactSection() {
           </div>
 
           {/* Contact Cards */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <Card className="hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 lg:p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-green-600" />
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 lg:w-6 lg:h-6 text-green-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2 lg:mb-3">
                       Office Hours
                     </h3>
-                    <div className="space-y-2 text-gray-600">
+                    <div className="space-y-1 lg:space-y-2 text-gray-600 text-sm lg:text-base">
                       <div className="flex justify-between">
                         <span>Monday - Friday</span>
                         <span className="font-medium">8:00 AM - 6:00 PM</span>
@@ -92,23 +92,23 @@ export function ContactSection() {
             </Card>
 
             <Card className="hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 lg:p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-red-600" />
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 lg:w-6 lg:h-6 text-red-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2 lg:mb-3">
                       Emergency Care
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 mb-3 lg:mb-4 text-sm lg:text-base">
                       Dental emergencies can happen anytime. We provide 24/7 emergency 
                       care for urgent dental situations.
                     </p>
                     <Link href="tel:+1234567890">
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" className="text-xs lg:text-sm">
                         Emergency Line: (03) 9123 4567
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 ml-2" />
                       </Button>
                     </Link>
                   </div>
@@ -117,23 +117,23 @@ export function ContactSection() {
             </Card>
 
             <Card className="hover:shadow-xl transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 lg:p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Calendar className="w-6 h-6 text-purple-600" />
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-5 h-5 lg:w-6 lg:h-6 text-purple-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2 lg:mb-3">
                       New Patient Special
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 mb-3 lg:mb-4 text-sm lg:text-base">
                       First-time patients receive a comprehensive examination, 
                       cleaning, and consultation at a special rate.
                     </p>
                     <Link href="/contact">
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" className="text-xs lg:text-sm">
                         Schedule Today
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 ml-2" />
                       </Button>
                     </Link>
                   </div>

@@ -1,16 +1,71 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Baby, CheckCircle, Calendar, Clock, Shield, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Infant & Toddler Care | i-Care Paediatric Dentistry',
-  description: 'Specialized dental care for infants and toddlers. Early prevention and gentle treatment approach for your little one&apos;s oral health.',
-};
+
+
+
+const infantCareServices = [
+  {
+    icon: Baby,
+    title: 'First Dental Visit',
+    description: 'Gentle introduction to dental care for babies and toddlers in a comfortable environment.',
+    color: 'text-pink-600',
+    bgColor: 'bg-pink-100'
+  },
+  {
+    icon: Shield,
+    title: 'Early Prevention',
+    description: 'Fluoride treatments and dental education to prevent decay from the very beginning.',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100'
+  },
+  {
+    icon: Baby,
+    title: 'Behavior Management',
+    description: 'Specialized techniques to help very young children feel comfortable during treatment.',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-100'
+  }
+];
 
 export default function InfantToddlerCarePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">
@@ -61,7 +116,51 @@ export default function InfantToddlerCarePage() {
             Our Early Care Services
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden mb-8">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {infantCareServices.map((service, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardHeader>
+                      <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <service.icon className={`w-8 h-8 ${service.color}`} />
+                      </div>
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">
+                        {service.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {infantCareServices.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-teal-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">

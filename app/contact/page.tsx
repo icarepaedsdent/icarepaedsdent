@@ -16,6 +16,7 @@ function ContactForm() {
     email: '',
     phone: '',
     service: searchParams.get('type') || '',
+    appointmentService: '',
     message: ''
   });
 
@@ -194,6 +195,33 @@ function ContactForm() {
                     </div>
                   </div>
 
+                  {/* Conditional Service Selection for Appointments */}
+                  {formData.service === 'appointment' && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Select Service *
+                      </label>
+                      <Select onValueChange={(value) => handleInputChange('appointmentService', value)} value={formData.appointmentService}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Choose the service you need" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="preventive-care">Preventive Care</SelectItem>
+                          <SelectItem value="fillings-crowns">Fillings & Crowns</SelectItem>
+                          <SelectItem value="extractions">Extractions</SelectItem>
+                          <SelectItem value="emergency-care">Emergency Care</SelectItem>
+                          <SelectItem value="infant-toddler">Infant & Toddler Care</SelectItem>
+                          <SelectItem value="special-needs">Special Needs Care</SelectItem>
+                          <SelectItem value="chalky-teeth">Chalky Teeth Treatment</SelectItem>
+                          <SelectItem value="space-maintainers">Space Maintainers</SelectItem>
+                          <SelectItem value="sedation">Sedation Services</SelectItem>
+                          <SelectItem value="general-checkup">General Check-up</SelectItem>
+                          <SelectItem value="consultation">Consultation</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  )}
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Message *
@@ -226,12 +254,27 @@ function ContactForm() {
               </p>
             </CardHeader>
             <CardContent>
-              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <MapPin className="w-12 h-12 mx-auto mb-2 text-[#98C93C]" />
-                  <p>Interactive Map</p>
-                  <p className="text-sm">Shop 113 Mt Gravatt Plaza, 55 Creek Rd, Mount Gravatt QLD 4122</p>
+              <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.5!2d153.064!3d-27.543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a1b2c3d4e5f%3A0x1234567890abcdef!2sMt%20Gravatt%20Plaza%2C%2055%20Creek%20Rd%2C%20Mount%20Gravatt%20QLD%204122%2C%20Australia!5e0!3m2!1sen!2sau!4v1234567890123!5m2!1sen!2sau&markers=color:red%7Clabel:i-Care%7C-27.543,153.064"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="i-Care Paediatric Dentistry Location - Mt Gravatt Plaza with Pin Marker"
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <MapPin className="w-4 h-4 text-[#98C93C]" />
+                  <span className="font-medium">Shop 113 Mt Gravatt Plaza, 55 Creek Rd, Mount Gravatt QLD 4122</span>
                 </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  Click on the map to open in Google Maps for directions
+                </p>
               </div>
             </CardContent>
           </Card>

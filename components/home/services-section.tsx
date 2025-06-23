@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -74,6 +77,37 @@ const services = [
 ];
 
 export function ServicesSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-b from-blue-50/50 to-white">
       <div className="container mx-auto px-4">
@@ -93,8 +127,80 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* Mobile Horizontal Scroll */}
+        <div className="lg:hidden mb-8">
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {services.map((service, index) => (
+              <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 bg-white/80 backdrop-blur-sm h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={400}
+                      height={300}
+                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-4 left-4 transform -translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+                        <service.icon className="w-6 h-6 text-blue-600" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <CardHeader className="pt-4">
+                    <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  
+                  <CardContent className="space-y-4">
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                    <Link 
+                      href={service.href}
+                      className="inline-block w-full group/button"
+                    >
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="w-full bg-transparent hover:bg-blue-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-blue-600"
+                      >
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover/button:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 mt-6">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === index 
+                    ? 'bg-blue-600 scale-125' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <Card 
               key={index} 

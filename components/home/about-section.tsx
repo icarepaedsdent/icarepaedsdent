@@ -60,7 +60,7 @@ export function AboutSection() {
             </div>
 
             {/* Qualifications */}
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-3 gap-4 overflow-x-auto">
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-4">
                   <Award className="w-8 h-8 text-blue-600 mx-auto mb-2" />

@@ -1,16 +1,67 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { AlertCircle, CheckCircle, Calendar, Clock, Shield, Phone } from 'lucide-react';
+import { AlertCircle, CheckCircle, Calendar, Clock, Shield, Phone, Zap, Heart } from 'lucide-react';
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Emergency Care | i-Care Paediatric Dentistry',
-  description: 'Immediate dental care for accidents and emergencies. Our team provides prompt attention when your child needs it most.',
-};
+const emergencyServices = [
+  {
+    icon: AlertCircle,
+    title: 'Dental Trauma',
+    description: 'Immediate care for knocked-out teeth, fractures, and other dental injuries.',
+    color: 'text-red-600',
+    bgColor: 'bg-red-100'
+  },
+  {
+    icon: Shield,
+    title: 'Severe Pain',
+    description: 'Quick relief from toothaches, abscesses, and severe dental discomfort.',
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-100'
+  },
+  {
+    icon: CheckCircle,
+    title: 'Urgent Treatment',
+    description: 'Same-day care for broken fillings, crowns, and other dental emergencies.',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100'
+  }
+];
 
 export default function EmergencyCarePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">
@@ -62,7 +113,51 @@ export default function EmergencyCarePage() {
             Emergency Services We Provide
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden mb-8">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {emergencyServices.map((service, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardHeader>
+                      <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <service.icon className={`w-8 h-8 ${service.color}`} />
+                      </div>
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">
+                        {service.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {emergencyServices.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">

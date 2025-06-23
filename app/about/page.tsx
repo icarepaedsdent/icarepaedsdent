@@ -1,9 +1,70 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Award, Heart, Users, Clock } from 'lucide-react';
 
+const qualifications = [
+  {
+    icon: Award,
+    title: 'Education',
+    description: 'DDS, Pediatric Dentistry Residency, Advanced Orthodontics Certification',
+    color: 'text-blue-600'
+  },
+  {
+    icon: Heart,
+    title: 'Specialization',
+    description: 'Pediatric Dentistry, Behavior Management, Preventive Care',
+    color: 'text-red-500'
+  },
+  {
+    icon: Users,
+    title: 'Memberships',
+    description: 'American Academy of Pediatric Dentistry, Australian Dental Association',
+    color: 'text-green-600'
+  },
+  {
+    icon: Clock,
+    title: 'Experience',
+    description: '15+ years treating children, 5000+ happy patients',
+    color: 'text-purple-600'
+  }
+];
+
 export default function AboutPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">
@@ -22,7 +83,7 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Caring for Your Child's Smile
+                Caring for Your Child&apos;s Smile
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Dr. Sobia is a highly qualified pediatric dentist with over 15 years of experience 
@@ -68,46 +129,59 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
             Qualifications & Expertise
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Education</h3>
-                <p className="text-sm text-gray-600">
-                  DDS, Pediatric Dentistry Residency, Advanced Orthodontics Certification
-                </p>
-              </CardContent>
-            </Card>
+          
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden mb-8">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {qualifications.map((qualification, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardContent className="p-6">
+                      <qualification.icon className={`w-12 h-12 ${qualification.color} mx-auto mb-4`} />
+                      <h3 className="font-semibold text-gray-900 mb-2">{qualification.title}</h3>
+                      <p className="text-sm text-gray-600">
+                        {qualification.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Specialization</h3>
-                <p className="text-sm text-gray-600">
-                  Pediatric Dentistry, Behavior Management, Preventive Care
-                </p>
-              </CardContent>
-            </Card>
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {qualifications.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <Users className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Memberships</h3>
-                <p className="text-sm text-gray-600">
-                  American Academy of Pediatric Dentistry, Australian Dental Association
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <Clock className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">Experience</h3>
-                <p className="text-sm text-gray-600">
-                  15+ years treating children, 5000+ happy patients
-                </p>
-              </CardContent>
-            </Card>
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+            {qualifications.map((qualification, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <qualification.icon className={`w-12 h-12 ${qualification.color} mx-auto mb-4`} />
+                  <h3 className="font-semibold text-gray-900 mb-2">{qualification.title}</h3>
+                  <p className="text-sm text-gray-600">
+                    {qualification.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
@@ -123,7 +197,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Gentle Care</h3>
               <p className="text-gray-600">
-                We use the latest techniques to ensure your child's comfort throughout every procedure.
+                We use the latest techniques to ensure your child&apos;s comfort throughout every procedure.
               </p>
             </div>
 

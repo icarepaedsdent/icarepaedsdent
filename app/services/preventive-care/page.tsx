@@ -1,10 +1,75 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, CheckCircle, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
 
+const preventiveServices = [
+  {
+    icon: CheckCircle,
+    title: 'Regular Checkups',
+    description: 'Comprehensive examinations every six months to monitor your child\'s oral health development.',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100'
+  },
+  {
+    icon: Shield,
+    title: 'Professional Cleanings',
+    description: 'Thorough cleanings to remove plaque and tartar buildup that regular brushing can\'t reach.',
+    color: 'text-green-600',
+    bgColor: 'bg-green-100'
+  },
+  {
+    icon: Shield,
+    title: 'Fluoride Treatments',
+    description: 'Protective fluoride applications to strengthen tooth enamel and prevent cavities.',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-100'
+  },
+  {
+    icon: Shield,
+    title: 'Dental Sealants',
+    description: 'Protective coatings applied to back teeth to prevent decay in hard-to-reach areas.',
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-100'
+  }
+];
+
 export default function PreventiveCare() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4 py-16">
@@ -55,62 +120,66 @@ export default function PreventiveCare() {
             Our Preventive Services
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-blue-600" />
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden mb-8">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {preventiveServices.map((service, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardHeader>
+                      <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <service.icon className={`w-8 h-8 ${service.color}`} />
+                      </div>
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">
+                        {service.description}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <CardTitle className="text-lg">Regular Checkups</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Comprehensive examinations every six months to monitor your child&apos;s oral health development.
-                </p>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-green-600" />
-                </div>
-                <CardTitle className="text-lg">Professional Cleanings</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Thorough cleanings to remove plaque and tartar buildup that regular brushing can&apos;t reach.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {preventiveServices.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-purple-600" />
-                </div>
-                <CardTitle className="text-lg">Fluoride Treatments</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Protective fluoride applications to strengthen tooth enamel and prevent cavities.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-orange-600" />
-                </div>
-                <CardTitle className="text-lg">Dental Sealants</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Protective coatings applied to back teeth to prevent decay in hard-to-reach areas.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+            {preventiveServices.map((service, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                    <service.icon className={`w-8 h-8 ${service.color}`} />
+                  </div>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
@@ -198,11 +267,11 @@ export default function PreventiveCare() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">Ages 4-12</h4>
-                  <p className="text-gray-600 text-sm">Every 6 months with comprehensive care</p>
+                  <p className="text-gray-600 text-sm">Every 6 months for routine care</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Ages 13-18</h4>
-                  <p className="text-gray-600 text-sm">Every 6 months with orthodontic monitoring</p>
+                  <h4 className="font-semibold text-gray-900">High-Risk Patients</h4>
+                  <p className="text-gray-600 text-sm">Every 3-4 months as recommended</p>
                 </div>
               </CardContent>
             </Card>
@@ -216,70 +285,33 @@ export default function PreventiveCare() {
               </CardHeader>
               <CardContent>
                 <blockquote className="text-gray-600 italic">
-                  &quot;Dr. Sobia&apos;s preventive care program has kept my daughter&apos;s teeth healthy for years. 
-                  The cleanings are gentle and the staff makes every visit enjoyable.&quot;
+                  &quot;The preventive care program has kept our daughter&apos;s teeth healthy and cavity-free. 
+                  The team makes every visit enjoyable and educational.&quot;
                 </blockquote>
-                <p className="text-sm text-gray-500 mt-2">- Sarah M., Parent</p>
+                <cite className="text-gray-500 text-sm mt-2 block">- Sarah M., Parent</cite>
               </CardContent>
             </Card>
           </div>
         </div>
 
-        {/* Benefits Section */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-            Benefits of Regular Preventive Care
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Prevents Problems</h3>
-              <p className="text-gray-600">
-                Regular checkups catch issues early, preventing more serious and costly treatments later.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Builds Confidence</h3>
-              <p className="text-gray-600">
-                A healthy smile boosts your child&apos;s confidence and self-esteem in social situations.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Establishes Habits</h3>
-              <p className="text-gray-600">
-                Regular visits help children develop positive attitudes toward dental care for life.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Call to Action */}
-        <div className="bg-blue-600 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">
-            Start Your Child&apos;s Preventive Care Journey
+        <div className="bg-blue-600 rounded-2xl p-8 lg:p-12 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Start Your Child&apos;s Preventive Care Today
           </h2>
-          <p className="text-xl mb-6 text-blue-100">
-            Schedule your child&apos;s next preventive care appointment today
+          <p className="text-blue-100 text-lg mb-8">
+            Early prevention is the key to a lifetime of healthy smiles. 
+            Schedule your child&apos;s first checkup or routine cleaning.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                Book Appointment
+              <Button size="lg" variant="secondary" className="text-blue-600">
+                Schedule Appointment
               </Button>
             </Link>
             <Link href="tel:+1234567890">
-              <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                Call: (123) 456-7890
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Call (03) 9123 4567
               </Button>
             </Link>
           </div>

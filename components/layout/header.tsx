@@ -191,18 +191,18 @@ export function Header() {
                 <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
                   Contact
                 </Link>
-                <Link href="/parental-portal" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
+                {/* <Link href="/parental-portal" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
                   Parental Portal
-                </Link>
+                </Link> */}
                 <div className="pt-6 space-y-3">
                   <Link href="tel:+1234567890">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full mb-2 sm:text-xs">
                       <Phone className="h-4 w-4 mr-2" />
                       Call Now
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button className="w-full">
+                    <Button className="w-full sm:text-xs">
                       <Calendar className="h-4 w-4 mr-2" />
                       Book Appointment
                     </Button>
