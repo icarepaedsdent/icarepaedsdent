@@ -1,11 +1,194 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Moon, Shield, Heart, CheckCircle, AlertTriangle, Clock } from 'lucide-react';
 import Link from 'next/link';
 
+const sedationReasons = [
+  {
+    icon: AlertTriangle,
+    title: 'High Anxiety',
+    description: 'Children with severe dental anxiety or phobias who cannot relax during treatment.',
+    color: 'text-red-600',
+    bgColor: 'bg-red-100'
+  },
+  {
+    icon: Clock,
+    title: 'Complex Procedures',
+    description: 'Lengthy or complex dental procedures that require the child to remain still for extended periods.',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100'
+  },
+  {
+    icon: Heart,
+    title: 'Special Needs',
+    description: 'Children with special healthcare needs who may have difficulty cooperating during treatment.',
+    color: 'text-green-600',
+    bgColor: 'bg-green-100'
+  },
+  {
+    icon: Shield,
+    title: 'Multiple Treatments',
+    description: 'When multiple procedures need to be completed in a single visit for efficiency and comfort.',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-100'
+  }
+];
+
+const sedationOptions = [
+  {
+    id: 'nitrous',
+    title: 'Nitrous Oxide (Laughing Gas)',
+    subtitle: 'Nitrous Oxide',
+    howItWorks: 'Nitrous oxide is a safe, colorless gas that helps children relax during dental procedures. It\'s inhaled through a small mask placed over the nose.',
+    benefits: [
+      'Quick onset and recovery',
+      'Child remains conscious and responsive',
+      'No needles or injections required'
+    ],
+    bestFor: [
+      'Mild to moderate anxiety',
+      'Routine dental procedures',
+      'Children who can follow instructions',
+      'First-time dental patients'
+    ],
+    additionalInfo: {
+      title: 'Safety',
+      content: 'Nitrous oxide has been used safely in dentistry for over 150 years. Your child will be monitored throughout the procedure.'
+    }
+  },
+  {
+    id: 'oral',
+    title: 'Oral Sedation',
+    subtitle: 'Oral Sedation',
+    howItWorks: 'Oral sedation involves taking a prescribed medication before the appointment. The child becomes very relaxed but remains conscious.',
+    benefits: [
+      'Easy to administer',
+      'Deeper relaxation than nitrous oxide',
+      'Child may have little memory of procedure'
+    ],
+    bestFor: [
+      'Moderate to high anxiety',
+      'Longer procedures',
+      'Children who won\'t tolerate nitrous oxide',
+      'Multiple procedures in one visit'
+    ],
+    additionalInfo: {
+      title: 'Preparation',
+      content: 'Your child will need to fast before the appointment and will need supervision for the rest of the day as the effects wear off.'
+    }
+  },
+  {
+    id: 'iv',
+    title: 'IV Sedation',
+    subtitle: 'IV Sedation',
+    howItWorks: 'Intravenous sedation delivers medication directly into the bloodstream, providing deeper sedation while maintaining consciousness.',
+    benefits: [
+      'Precise control over sedation level',
+      'Rapid onset and adjustment',
+      'Continuous monitoring'
+    ],
+    bestFor: [
+      'Severe dental anxiety',
+      'Complex or lengthy procedures',
+      'Children who haven\'t responded to other sedation',
+      'Special needs patients'
+    ],
+    additionalInfo: {
+      title: 'Monitoring',
+      content: 'Continuous monitoring of vital signs ensures your child\'s safety throughout the procedure with a trained anesthesiologist present.'
+    }
+  },
+  {
+    id: 'general',
+    title: 'General Anesthesia',
+    subtitle: 'General Anesthesia',
+    howItWorks: 'General anesthesia puts your child in a controlled state of unconsciousness, allowing for extensive dental work without any awareness or discomfort.',
+    benefits: [
+      'Complete unawareness of procedure',
+      'Allows for extensive treatment',
+      'Performed in hospital setting'
+    ],
+    bestFor: [
+      'Extensive dental treatment needed',
+      'Severe behavioral issues',
+      'Children with significant special needs',
+      'Very young children requiring multiple procedures'
+    ],
+    additionalInfo: {
+      title: 'Safety',
+      content: 'Performed by a board-certified anesthesiologist in a hospital setting with full monitoring and emergency capabilities.'
+    }
+  }
+];
+
 export default function SedationPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSedationSlide, setCurrentSedationSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const sedationScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSlide = (index: number) => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSlide(index);
+    }
+  };
+
+  const scrollToSedationSlide = (index: number) => {
+    if (sedationScrollRef.current) {
+      const cardWidth = sedationScrollRef.current.clientWidth;
+      sedationScrollRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentSedationSlide(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const cardWidth = scrollContainerRef.current.clientWidth;
+      const scrollLeft = scrollContainerRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  const handleSedationScroll = () => {
+    if (sedationScrollRef.current) {
+      const cardWidth = sedationScrollRef.current.clientWidth;
+      const scrollLeft = sedationScrollRef.current.scrollLeft;
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      setCurrentSedationSlide(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    const sedationContainer = sedationScrollRef.current;
+    
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+    }
+    if (sedationContainer) {
+      sedationContainer.addEventListener('scroll', handleSedationScroll);
+    }
+    
+    return () => {
+      if (container) container.removeEventListener('scroll', handleScroll);
+      if (sedationContainer) sedationContainer.removeEventListener('scroll', handleSedationScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       <div className="container mx-auto px-4 py-16">
@@ -56,62 +239,66 @@ export default function SedationPage() {
             When Sedation May Be Recommended
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <AlertTriangle className="w-8 h-8 text-red-600" />
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden mb-8">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {sedationReasons.map((reason, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
+                    <CardHeader>
+                      <div className={`w-16 h-16 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <reason.icon className={`w-8 h-8 ${reason.color}`} />
+                      </div>
+                      <CardTitle className="text-lg">{reason.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">
+                        {reason.description}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </div>
-                <CardTitle className="text-lg">High Anxiety</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Children with severe dental anxiety or phobias who cannot relax during treatment.
-                </p>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-blue-600" />
-                </div>
-                <CardTitle className="text-lg">Complex Procedures</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Lengthy or complex dental procedures that require the child to remain still for extended periods.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {sedationReasons.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-purple-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-green-600" />
-                </div>
-                <CardTitle className="text-lg">Special Needs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Children with special healthcare needs who may have difficulty cooperating during treatment.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-purple-600" />
-                </div>
-                <CardTitle className="text-lg">Multiple Treatments</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  When multiple procedures need to be completed in a single visit for efficiency and comfort.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+            {sedationReasons.map((reason, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className={`w-16 h-16 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                    <reason.icon className={`w-8 h-8 ${reason.color}`} />
+                  </div>
+                  <CardTitle className="text-lg">{reason.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm">
+                    {reason.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
@@ -121,206 +308,123 @@ export default function SedationPage() {
             Our Sedation Options
           </h2>
           
-          <Tabs defaultValue="nitrous" className="max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-4">
-              <TabsTrigger value="nitrous">Nitrous Oxide</TabsTrigger>
-              <TabsTrigger value="oral">Oral Sedation</TabsTrigger>
-              <TabsTrigger value="iv">IV Sedation</TabsTrigger>
-              <TabsTrigger value="general">General Anesthesia</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="nitrous" className="mt-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-center">Nitrous Oxide (Laughing Gas)</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
-                      <p className="text-gray-600 mb-4">
-                        Nitrous oxide is a safe, colorless gas that helps children relax during dental procedures. 
-                        It's inhaled through a small mask placed over the nose.
-                      </p>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Quick onset and recovery</span>
+          {/* Desktop Tabs */}
+          <div className="hidden lg:block">
+            <Tabs defaultValue="nitrous" className="max-w-4xl mx-auto">
+              <TabsList className="grid w-full grid-cols-4">
+                <TabsTrigger value="nitrous">Nitrous Oxide</TabsTrigger>
+                <TabsTrigger value="oral">Oral Sedation</TabsTrigger>
+                <TabsTrigger value="iv">IV Sedation</TabsTrigger>
+                <TabsTrigger value="general">General Anesthesia</TabsTrigger>
+              </TabsList>
+              
+              {sedationOptions.map((option) => (
+                <TabsContent key={option.id} value={option.id} className="mt-8">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-2xl text-center">{option.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
+                          <p className="text-gray-600 mb-4">
+                            {option.howItWorks}
+                          </p>
+                          <div className="space-y-2">
+                            {option.benefits.map((benefit, index) => (
+                              <div key={index} className="flex items-center gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-600" />
+                                <span className="text-sm text-gray-600">{benefit}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Child remains conscious and responsive</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">No needles or injections required</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Best For</h3>
-                      <ul className="space-y-2 text-gray-600">
-                        <li>• Mild to moderate anxiety</li>
-                        <li>• Routine dental procedures</li>
-                        <li>• Children who can follow instructions</li>
-                        <li>• First-time dental patients</li>
-                      </ul>
-                      
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Safety</h3>
-                      <p className="text-gray-600">
-                        Nitrous oxide has been used safely in dentistry for over 150 years. 
-                        Your child will be monitored throughout the procedure.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="oral" className="mt-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-center">Oral Sedation</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
-                      <p className="text-gray-600 mb-4">
-                        Oral sedation involves taking a prescribed medication before the appointment. 
-                        The child becomes very relaxed but remains conscious.
-                      </p>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Easy to administer</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Deeper relaxation than nitrous oxide</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Child may have little memory of procedure</span>
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-4">Best For</h3>
+                          <ul className="space-y-2 text-gray-600">
+                            {option.bestFor.map((item, index) => (
+                              <li key={index}>• {item}</li>
+                            ))}
+                          </ul>
+                          
+                          <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">{option.additionalInfo.title}</h3>
+                          <p className="text-gray-600">
+                            {option.additionalInfo.content}
+                          </p>
                         </div>
                       </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Best For</h3>
-                      <ul className="space-y-2 text-gray-600">
-                        <li>• Moderate to high anxiety</li>
-                        <li>• Longer procedures</li>
-                        <li>• Children who won't tolerate nitrous oxide</li>
-                        <li>• Multiple procedures in one visit</li>
-                      </ul>
-                      
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Preparation</h3>
-                      <p className="text-gray-600">
-                        Your child will need to fast before the appointment and will need supervision 
-                        for the rest of the day as the effects wear off.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="iv" className="mt-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-center">IV Sedation</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
-                      <p className="text-gray-600 mb-4">
-                        Intravenous sedation delivers medication directly into the bloodstream, 
-                        providing deeper sedation while maintaining consciousness.
-                      </p>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Precise control over sedation level</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Rapid onset and adjustment</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Continuous monitoring</span>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </div>
+
+          {/* Mobile Scrollable Cards */}
+          <div className="lg:hidden">
+            <div 
+              ref={sedationScrollRef}
+              className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {sedationOptions.map((option, index) => (
+                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-xl text-center">{option.subtitle}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">How It Works</h3>
+                        <p className="text-gray-600 text-sm mb-4">
+                          {option.howItWorks}
+                        </p>
+                        <div className="space-y-2">
+                          {option.benefits.map((benefit, benefitIndex) => (
+                            <div key={benefitIndex} className="flex items-center gap-2">
+                              <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
+                              <span className="text-xs text-gray-600">{benefit}</span>
+                            </div>
+                          ))}
                         </div>
                       </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Best For</h3>
-                      <ul className="space-y-2 text-gray-600">
-                        <li>• Severe dental anxiety</li>
-                        <li>• Complex or lengthy procedures</li>
-                        <li>• Children who haven't responded to other sedation</li>
-                        <li>• Special needs patients</li>
-                      </ul>
-                      
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Monitoring</h3>
-                      <p className="text-gray-600">
-                        Continuous monitoring of vital signs ensures your child's safety throughout 
-                        the procedure with a trained anesthesiologist present.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
-            <TabsContent value="general" className="mt-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-center">General Anesthesia</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
-                      <p className="text-gray-600 mb-4">
-                        General anesthesia puts your child in a controlled state of unconsciousness, 
-                        allowing for extensive dental work without any awareness or discomfort.
-                      </p>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Complete unawareness of procedure</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Allows for extensive treatment</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-600">Performed in hospital setting</span>
-                        </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Best For</h3>
+                        <ul className="space-y-1 text-gray-600">
+                          {option.bestFor.map((item, itemIndex) => (
+                            <li key={itemIndex} className="text-xs">• {item}</li>
+                          ))}
+                        </ul>
                       </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">Best For</h3>
-                      <ul className="space-y-2 text-gray-600">
-                        <li>• Extensive dental treatment needed</li>
-                        <li>• Severe behavioral issues</li>
-                        <li>• Children with significant special needs</li>
-                        <li>• Very young children requiring multiple procedures</li>
-                      </ul>
-                      
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Safety</h3>
-                      <p className="text-gray-600">
-                        Performed by a board-certified anesthesiologist in a hospital setting 
-                        with full monitoring and emergency capabilities.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">{option.additionalInfo.title}</h3>
+                        <p className="text-gray-600 text-xs">
+                          {option.additionalInfo.content}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+
+            {/* Dots Navigation for Sedation Options */}
+            <div className="flex justify-center gap-2 mt-6">
+              {sedationOptions.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToSedationSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSedationSlide === index 
+                      ? 'bg-purple-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to sedation option ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Safety and Preparation */}
@@ -334,7 +438,7 @@ export default function SedationPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-600">
-                Your child's safety is our top priority. We follow strict protocols and guidelines 
+                Your child&apos;s safety is our top priority. We follow strict protocols and guidelines 
                 for all sedation procedures.
               </p>
               <div className="space-y-2">
@@ -397,16 +501,16 @@ export default function SedationPage() {
             Discuss Sedation Options for Your Child
           </h2>
           <p className="text-xl mb-6 text-purple-100">
-            Schedule a consultation to determine the best sedation approach for your child's needs
+            Schedule a consultation to determine the best sedation approach for your child&apos;s needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-purple-600">
+              <Button size="lg" variant="secondary" className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 Schedule Consultation
               </Button>
             </Link>
             <Link href="tel:+1234567890">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600">
+              <Button size="lg" variant="outline" className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 Call: (123) 456-7890
               </Button>
             </Link>

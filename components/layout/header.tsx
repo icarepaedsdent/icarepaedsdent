@@ -115,6 +115,16 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link href="/sedation" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
+                  )}>
+                    Sedation
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(
                     "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
@@ -188,6 +198,9 @@ export function Header() {
                     ))}
                   </div>
                 </div>
+                <Link href="/sedation" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
+                  Sedation
+                </Link>
                 <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
                   Contact
                 </Link>
