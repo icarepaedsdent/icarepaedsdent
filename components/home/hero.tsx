@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Calendar, Phone, Star } from 'lucide-react';
+import { DentalAnimation } from './dental-animation';
 
 export function Hero() {
   return (
@@ -26,8 +26,8 @@ export function Hero() {
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed">
-                Dr. Sobia provides comprehensive pediatric dental care with a gentle, 
-                compassionate approach that helps children feel comfortable and confident 
+                A/Prof Sobia Zafar provides specialist paediatric dental care with a gentle, 
+                child-centred approach that helps children feel comfortable and confident 
                 about their dental health.
               </p>
             </div>
@@ -50,7 +50,7 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-8 pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">15+</div>
+                <div className="text-2xl font-bold text-blue-600">20+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
@@ -68,15 +68,8 @@ export function Hero() {
           <div className="relative">
             <div className="aspect-square relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-20 scale-110"></div>
-              <div className="relative z-10 aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&h=600&fit=crop"
-                  alt="Dr. Sobia with a young patient"
-                  width={600}
-                  height={600}
-                  className="object-cover w-full h-full"
-                  priority
-                />
+              <div className="relative z-10 aspect-square rounded-2xl overflow-hidden">
+                <DentalAnimation />
               </div>
               
               {/* Floating elements */}
