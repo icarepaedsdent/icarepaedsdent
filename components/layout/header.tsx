@@ -148,7 +148,7 @@ export function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="tel:+1234567890">
+            <Link href="tel:36230000">
               <Button variant="outline" size="sm">
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now
@@ -208,7 +208,7 @@ export function Header() {
                   Parental Portal
                 </Link> */}
                 <div className="pt-6 space-y-3">
-                  <Link href="tel:+1234567890">
+                  <Link href="tel:36230000">
                     <Button variant="outline" className="w-full mb-2 sm:text-xs">
                       <Phone className="h-4 w-4 mr-2" />
                       Call Now

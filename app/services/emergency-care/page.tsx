@@ -97,7 +97,7 @@ export default function EmergencyCarePage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=600&fit=crop"
+                src="/sample7.jpg"
                 alt="Emergency Dental Care"
                 width={600}
                 height={600}
@@ -351,7 +351,7 @@ export default function EmergencyCarePage() {
             <Link href="tel:+1234567890">
               <Button size="lg" variant="secondary" className="text-red-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 <Phone className="w-5 h-5 mr-2" />
-                Emergency: (123) 456-7890
+                Emergency: 36230000
               </Button>
             </Link>
             <Link href="/contact">

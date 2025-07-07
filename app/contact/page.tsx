@@ -116,9 +116,8 @@ function ContactForm() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Address</h3>
                     <p className="text-gray-600">
-                      Shop 113 Mt Gravatt Plaza<br />
-                      55 Creek Rd<br />
-                      Mount Gravatt QLD 4122
+                      Shop 4, 2 Centre Place<br />
+                      Rochedale South QLD 4123
                     </p>
                   </div>
                 </div>
@@ -127,7 +126,7 @@ function ContactForm() {
                   <Phone className="w-5 h-5 text-[#98C93C] mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">1300 287 328</p>
+                    <p className="text-gray-600">36230000</p>
                   </div>
                 </div>
 
@@ -135,7 +134,7 @@ function ContactForm() {
                   <Mail className="w-5 h-5 text-[#98C93C] mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">paedsdentga@gmail.com</p>
+                    <p className="text-gray-600">icarepaediatricdentistry@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -170,7 +169,7 @@ function ContactForm() {
                 </p>
                 <Button className="w-full bg-[#98C93C] hover:bg-[#7ea830]">
                   <Phone className="w-4 h-4 mr-2" />
-                  Call: 1300 287 328
+                  Call: 36230000
                 </Button>
               </CardContent>
             </Card>
@@ -322,7 +321,7 @@ function ContactForm() {
             <CardHeader>
               <CardTitle>Visit Our Clinic</CardTitle>
               <p className="text-gray-600">
-                Conveniently located at Mt Gravatt Plaza with ample parking and easy access
+                Conveniently located at Centre Place with ample parking and easy access
               </p>
             </CardHeader>
             <CardContent>
@@ -342,7 +341,7 @@ function ContactForm() {
               <div className="mt-4 p-4 bg-gray-50 rounded-lg">
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <MapPin className="w-4 h-4 text-[#98C93C]" />
-                  <span className="font-medium">Shop 113 Mt Gravatt Plaza, 55 Creek Rd, Mount Gravatt QLD 4122</span>
+                  <span className="font-medium">Shop 4, 2 Centre Place, Rochedale South QLD 4123</span>
                 </div>
                 <p className="text-xs text-gray-500 mt-1">
                   Click on the map to open in Google Maps for directions

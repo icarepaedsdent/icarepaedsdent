@@ -100,7 +100,8 @@ export default function SpecialNeedsPage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=600&h=600&fit=crop"
+                src="/special1.jpg
+                "
                 alt="Special Needs Dental Care"
                 width={600}
                 height={600}
@@ -360,7 +361,7 @@ export default function SpecialNeedsPage() {
             <Link href="tel:+1234567890">
               <Button size="lg" variant="secondary" className="text-pink-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 <Clock className="w-5 h-5 mr-2" />
-                Call: (123) 456-7890
+                Call: 36230000
               </Button>
             </Link>
           </div>

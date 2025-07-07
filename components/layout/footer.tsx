@@ -14,8 +14,8 @@ export function Footer() {
               <span className="font-bold text-xl">i-Care Paediatric Dentistry</span>
             </div>
             <p className="text-gray-300">
-              Shop 113 Mt Gravatt Plaza, 55 Creek Rd,<br />
-              Mount Gravatt QLD 4122
+              Shop 4, 2 Centre Place<br />
+              Rochedale South QLD 4123
             </p>
             <div className="flex space-x-4">
               <Link href="/" className="bg-[#98C93C] p-2 rounded hover:bg-[#7ea830] transition-colors">
@@ -59,9 +59,9 @@ export function Footer() {
             <h4 className="font-semibold text-lg mb-4">Contact Details</h4>
             <div className="space-y-2">
               <p className="text-[#98C93C]">Phone Us:</p>
-              <p className="text-gray-300">1300 287 328</p>
+              <p className="text-gray-300">36230000</p>
               <p className="text-[#98C93C] mt-4">Email Us:</p>
-              <p className="text-gray-300">paedsdentga@gmail.com</p>
+              <p className="text-gray-300">icarepaediatricdentistry@gmail.com</p>
               <p className="text-[#98C93C] mt-4">Availability:</p>
               <p className="text-gray-300">Monday To Friday (9am - 5pm)</p>
             </div>

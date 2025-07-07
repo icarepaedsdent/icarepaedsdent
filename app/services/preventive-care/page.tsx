@@ -4,35 +4,35 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, Calendar, Clock } from 'lucide-react';
+import { Shield, CheckCircle, Calendar, Clock, Camera, HardHat } from 'lucide-react';
 import Link from 'next/link';
 
 const preventiveServices = [
   {
     icon: CheckCircle,
-    title: 'Regular Checkups',
-    description: 'Comprehensive examinations every six months to monitor your child\'s oral health development.',
+    title: 'Regular Dental Check Ups',
+    description: 'Comprehensive examinations every six months to monitor your child\'s oral health development and detect issues early.',
     color: 'text-blue-600',
     bgColor: 'bg-blue-100'
   },
   {
     icon: Shield,
-    title: 'Professional Cleanings',
-    description: 'Thorough cleanings to remove plaque and tartar buildup that regular brushing can\'t reach.',
+    title: 'Fissure Sealants',
+    description: 'Protective coatings applied to the grooves of back teeth to prevent decay in hard-to-reach areas.',
     color: 'text-green-600',
     bgColor: 'bg-green-100'
   },
   {
-    icon: Shield,
-    title: 'Fluoride Treatments',
-    description: 'Protective fluoride applications to strengthen tooth enamel and prevent cavities.',
+    icon: Camera,
+    title: 'Dental X-Rays',
+    description: 'Digital imaging to detect problems not visible during regular examination, ensuring comprehensive diagnosis.',
     color: 'text-purple-600',
     bgColor: 'bg-purple-100'
   },
   {
-    icon: Shield,
-    title: 'Dental Sealants',
-    description: 'Protective coatings applied to back teeth to prevent decay in hard-to-reach areas.',
+    icon: HardHat,
+    title: 'Mouth Guards',
+    description: 'Custom-fitted protective mouth guards for sports and activities to prevent dental injuries.',
     color: 'text-orange-600',
     bgColor: 'bg-orange-100'
   }
@@ -81,11 +81,11 @@ export default function PreventiveCare() {
               <span className="text-blue-600 font-semibold">Preventive Care</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Prevention is the Best Medicine
+            Building Lifelong Smiles: Our Preventive Care Approach
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Our comprehensive preventive care program helps keep your child&apos;s teeth healthy and strong, 
-              preventing future dental problems before they start.
+              A lifetime of good dental health is set up from an early age. That&apos;s why at i-Care Paediatric 
+              Dentistry we focus on prevention and early intervention to keep your child&apos;s teeth healthy and strong.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
@@ -93,7 +93,7 @@ export default function PreventiveCare() {
                   Schedule Checkup
                 </Button>
               </Link>
-              <Link href="tel:+1234567890">
+              <Link href="tel:36230000">
                 <Button size="lg" variant="outline">
                   Call Now
                 </Button>
@@ -311,7 +311,7 @@ export default function PreventiveCare() {
             </Link>
             <Link href="tel:+1234567890">
               <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                Call (03) 9123 4567
+                Call 36230000
               </Button>
             </Link>
           </div>

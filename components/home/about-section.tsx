@@ -41,7 +41,7 @@ export function AboutSection() {
                 warmth, empathy, and unwavering commitment to children&apos;s wellbeing.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Dr Zafar understands that every child is unique, and she goes above and beyond to create a safe, 
+                Dr Sobia understands that every child is unique, and she goes above and beyond to create a safe, 
                 welcoming, and non-judgemental environment where children feel heard, valued, and comfortable. 
                 Her calm and reassuring manner helps even the most anxious children feel at ease.
               </p>

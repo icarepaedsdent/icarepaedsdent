@@ -191,7 +191,7 @@ export default function FillingsAndCrownsPage() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-green-600" />
                 </div>
-                <CardTitle className="text-lg">Back Teeth Crowns</CardTitle>
+                <CardTitle className="text-lg">Crowns</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
@@ -357,7 +357,7 @@ export default function FillingsAndCrownsPage() {
             <Link href="tel:+1234567890">
               <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 <Clock className="w-5 h-5 mr-2" />
-                Call: (123) 456-7890
+                Call: 36230000
               </Button>
             </Link>
           </div>

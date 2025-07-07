@@ -16,15 +16,15 @@ const treatmentApproaches = [
   },
   {
     icon: Shield,
-    title: 'Preventive Care',
-    description: 'Specialized treatments to strengthen and protect affected teeth from further damage.',
+    title: 'Enamel Hypomineralisation Care',
+    description: 'Gentle care for weak enamel in kids molars and incisors.',
     color: 'text-purple-600',
     bgColor: 'bg-purple-100'
   },
   {
     icon: Sparkles,
-    title: 'Restorative Solutions',
-    description: 'Advanced restoration techniques specifically designed for hypomineralized teeth.',
+    title: 'Defending Childrens Smiles',
+    description: 'Early care for baby molars helps protect future permanent teeth.',
     color: 'text-green-600',
     bgColor: 'bg-green-100'
   }
@@ -327,9 +327,9 @@ export default function ChalkyTeethPage() {
                 Schedule Consultation
               </Button>
             </Link>
-            <Link href="tel:+1234567890">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-                Call (03) 9123 4567
+            <Link href="tel:36230000">
+              <Button size="lg" variant="secondary" className="text-blue-600">
+                Call 36230000
               </Button>
             </Link>
           </div>

@@ -35,7 +35,7 @@ export function ContactSection() {
                   Book Appointment
                 </Button>
               </Link>
-              <Link href="tel:+1234567890">
+              <Link href="tel:36230000">
                 <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
@@ -47,15 +47,15 @@ export function ContactSection() {
             <div className="space-y-4 pt-8">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-100">(03) 9123 4567</span>
+                <span className="text-blue-100">36230000</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-100">info@drsobiapaediatricdentist.com.au</span>
+                <span className="text-blue-100">icarepaediatricdentistry@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-100">123 Children&apos;s Way, Melbourne VIC 3000</span>
+                <span className="text-blue-100">Shop 4, 2 Centre Place, Rochedale South QLD 4123</span>
               </div>
             </div>
           </div>
@@ -75,14 +75,10 @@ export function ContactSection() {
                     <div className="space-y-1 lg:space-y-2 text-gray-600 text-sm lg:text-base">
                       <div className="flex justify-between">
                         <span>Monday - Friday</span>
-                        <span className="font-medium">8:00 AM - 6:00 PM</span>
+                        <span className="font-medium">9:00 AM - 5:00 PM</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Saturday</span>
-                        <span className="font-medium">9:00 AM - 2:00 PM</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sunday</span>
+                        <span>Saturday - Sunday</span>
                         <span className="font-medium text-red-600">Closed</span>
                       </div>
                     </div>
@@ -105,9 +101,9 @@ export function ContactSection() {
                       Dental emergencies can happen anytime. We provide 24/7 emergency 
                       care for urgent dental situations.
                     </p>
-                    <Link href="tel:+1234567890">
+                    <Link href="tel:36230000">
                       <Button variant="outline" size="sm" className="text-xs lg:text-sm">
-                        Emergency Line: (03) 9123 4567
+                        Emergency Line: 36230000
                         <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 ml-2" />
                       </Button>
                     </Link>

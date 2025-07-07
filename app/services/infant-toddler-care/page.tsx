@@ -77,7 +77,7 @@ export default function InfantToddlerCarePage() {
               <span className="text-teal-600 font-semibold">Infant & Toddler Care</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Gentle Dental Care for Little Smiles
+            Dental Home: Where Healthy Smiles Begin
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Specialized care for your little one&apos;s oral health, starting from their very first tooth.
@@ -360,7 +360,7 @@ export default function InfantToddlerCarePage() {
             <Link href="tel:+1234567890">
               <Button size="lg" variant="secondary" className="text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 <Clock className="w-5 h-5 mr-2" />
-                Call: (123) 456-7890
+                Call: 36230000
               </Button>
             </Link>
           </div>

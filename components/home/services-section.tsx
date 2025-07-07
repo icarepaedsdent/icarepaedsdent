@@ -71,7 +71,7 @@ const services = [
     icon: Baby,
     title: 'Infant / Toddler Care',
     description: 'Gentle and specialized dental care for the youngest patients.',
-    image: '/sample4.jpg',
+    image: '/sample8.jpg',
     href: '/services/infant-toddler-care'
   }
 ];

@@ -119,7 +119,7 @@ export default function ExtractionsPage() {
             <Link href="tel:+1234567890">
               <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 <Phone className="w-5 h-5 mr-2" />
-                Call: (123) 456-7890
+                Call: 36230000
               </Button>
             </Link>
           </div>
