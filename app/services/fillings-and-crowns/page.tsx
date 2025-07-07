@@ -97,7 +97,7 @@ export default function FillingsAndCrownsPage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=600&fit=crop"
+                src="/sample1.JPG"
                 alt="Dental Fillings and Crowns"
                 width={600}
                 height={600}

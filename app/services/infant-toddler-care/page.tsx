@@ -100,7 +100,7 @@ export default function InfantToddlerCarePage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=600&h=600&fit=crop"
+                src="/sample4.jpg"
                 alt="Infant Dental Care"
                 width={600}
                 height={600}

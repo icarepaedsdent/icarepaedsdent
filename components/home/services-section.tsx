@@ -22,22 +22,22 @@ const services = [
     icon: Shield,
     title: 'Preventive Care',
     description: 'Regular checkups, cleanings, and preventive treatments to keep your child\'s teeth healthy.',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=300&h=200&fit=crop',
+    image: '/sample5.JPG',
     href: '/services/preventive-care'
   },
   {
     icon: CircleDot,
     title: 'Fillings & Crowns',
     description: 'Restorative treatments to repair damaged teeth and maintain oral health.',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop',
+    image: '/sample6.jpg',
     href: '/services/fillings-and-crowns'
   },
   {
-    icon: Scissors,
-    title: 'Extractions',
-    description: 'Safe and gentle tooth removal procedures when necessary.',
-    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=300&h=200&fit=crop',
-    href: '/services/extractions'
+    icon: AlertCircle,
+    title: 'Emergency Care',
+    description: 'Immediate dental care for accidents and emergencies.',
+    image: 'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=300&h=200&fit=crop',
+    href: '/services/emergency-care'
   },
   {
     icon: Ruler,
@@ -54,11 +54,11 @@ const services = [
     href: '/services/chalky-teeth'
   },
   {
-    icon: AlertCircle,
-    title: 'Emergency Care',
-    description: 'Immediate dental care for accidents and emergencies.',
-    image: 'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=300&h=200&fit=crop',
-    href: '/services/emergency-care'
+    icon: Scissors,
+    title: 'Extractions',
+    description: 'Safe and gentle tooth removal procedures when necessary.',
+    image: '/sample3.JPG',
+    href: '/services/extractions'
   },
   {
     icon: Heart,
@@ -71,7 +71,7 @@ const services = [
     icon: Baby,
     title: 'Infant / Toddler Care',
     description: 'Gentle and specialized dental care for the youngest patients.',
-    image: 'https://images.unsplash.com/photo-1554684765-8f7175aeaf81?w=300&h=200&fit=crop',
+    image: '/sample4.jpg',
     href: '/services/infant-toddler-care'
   }
 ];

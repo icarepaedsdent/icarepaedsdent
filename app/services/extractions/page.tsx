@@ -66,7 +66,7 @@ export default function ExtractionsPage() {
           <Card className="p-6">
             <div className="relative h-[300px] mb-6 rounded-lg overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=600&fit=crop"
+                src="/sample3.JPG"
                 alt="Pediatric Dental Care"
                 fill
                 className="object-cover"

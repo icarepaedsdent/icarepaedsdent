@@ -104,7 +104,7 @@ export default function PreventiveCare() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=600&fit=crop"
+                src="/sample5.JPG"
                 alt="Child receiving preventive dental care"
                 width={600}
                 height={600}
