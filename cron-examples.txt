@@ -1,0 +1,17 @@
+# i-Care Supabase Keep-Alive - Cron Job Examples
+# Copy any of these lines and use: echo "LINE" | crontab -
+
+# Every 5 minutes (current setting - recommended)
+*/5 * * * * /home/ibrahim/Documents/Personal/project-bolt-sb1-vedhhmvc/i-Care\ Paediatric\ Dentistry/keep-supabase-alive.sh >/dev/null 2>&1
+
+# Every 10 minutes (good balance)
+*/10 * * * * /home/ibrahim/Documents/Personal/project-bolt-sb1-vedhhmvc/i-Care\ Paediatric\ Dentistry/keep-supabase-alive.sh >/dev/null 2>&1
+
+# Every 15 minutes (conservative)
+*/15 * * * * /home/ibrahim/Documents/Personal/project-bolt-sb1-vedhhmvc/i-Care\ Paediatric\ Dentistry/keep-supabase-alive.sh >/dev/null 2>&1
+
+# Every hour (minimal - not recommended for Supabase)
+0 * * * * /home/ibrahim/Documents/Personal/project-bolt-sb1-vedhhmvc/i-Care\ Paediatric\ Dentistry/keep-supabase-alive.sh >/dev/null 2>&1
+
+# Business hours only (9 AM to 6 PM, Monday to Friday)
+*/5 9-18 * * 1-5 /home/ibrahim/Documents/Personal/project-bolt-sb1-vedhhmvc/i-Care\ Paediatric\ Dentistry/keep-supabase-alive.sh >/dev/null 2>&1 
