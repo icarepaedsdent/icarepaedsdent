@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { Resend } from 'resend';
+import {
+  createContactNotificationEmail,
+  ContactFormData,
+} from '@/lib/email-templates';
+
+// Initialize Resend with API key from environment variables
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,54 +22,61 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get client IP and user agent for audit trail
-    const ip = request.headers.get('x-forwarded-for') || 
-               request.headers.get('x-real-ip') || 
-               'unknown';
-    const userAgent = request.headers.get('user-agent') || 'unknown';
-
-    // Prepare data for insertion
-    const submissionData = {
-      name: name.trim(),
-      email: email.trim().toLowerCase(),
-      phone: phone.trim(),
-      message: message.trim(),
-      service: service || null,
-      appointment_service: appointmentService || null,
-      status: 'new',
-      is_read: false,
-      priority: 'normal',
-      ip_address: ip,
-      user_agent: userAgent
-    };
-
-    // Insert into database
-    const { data, error } = await supabase
-      .from('contact_submissions')
-      .insert([submissionData])
-      .select();
-
-    if (error) {
-      console.error('Database error:', error);
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: 'Failed to save submission' },
-        { status: 500 }
+        { error: 'Invalid email address' },
+        { status: 400 }
       );
     }
 
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Your message has been sent successfully!',
-        id: data[0]?.id 
-      },
-      { status: 201 }
-    );
+    // Send email notification via Resend
+    try {
+      const contactFormData: ContactFormData = {
+        name: name.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone.trim(),
+        service: service || undefined,
+        appointmentService: appointmentService || undefined,
+        message: message.trim(),
+      };
 
+      const emailTemplate = createContactNotificationEmail(contactFormData);
+
+      const emailResult = await resend.emails.send({
+        from: 'iCare Pediatric Dentistry <onboarding@resend.dev>',
+        to: ['icarepaedsdent@gmail.com'],
+        subject: emailTemplate.subject,
+        html: emailTemplate.html,
+        text: emailTemplate.text,
+      });
+
+      console.log('✅ Email notification sent successfully:', emailResult);
+
+      return NextResponse.json(
+        {
+          success: true,
+          message:
+            'Your message has been sent successfully! We will get back to you soon.',
+          emailId: emailResult.data?.id,
+        },
+        { status: 200 }
+      );
+    } catch (emailError) {
+      console.error('❌ Failed to send email notification:', emailError);
+      return NextResponse.json(
+        {
+          error:
+            'Failed to send your message. Please try again or call us directly.',
+        },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error('API error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error. Please try again later.' },
       { status: 500 }
     );
   }
@@ -71,7 +85,10 @@ export async function POST(request: NextRequest) {
 // Handle GET requests (optional - for testing)
 export async function GET() {
   return NextResponse.json(
-    { message: 'Contact API endpoint is working' },
+    {
+      message: 'Contact API endpoint is working',
+      service: 'Resend Email Only',
+    },
     { status: 200 }
   );
-} 
+}
