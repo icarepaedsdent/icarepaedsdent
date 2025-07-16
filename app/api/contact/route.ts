@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import {
-  createContactNotificationEmail,
-  ContactFormData,
-} from '@/lib/email-templates';
 
 // Initialize Resend with API key from environment variables
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -33,23 +29,27 @@ export async function POST(request: NextRequest) {
 
     // Send email notification via Resend
     try {
-      const contactFormData: ContactFormData = {
-        name: name.trim(),
-        email: email.trim().toLowerCase(),
-        phone: phone.trim(),
-        service: service || undefined,
-        appointmentService: appointmentService || undefined,
-        message: message.trim(),
-      };
+      // Simple email template inline
+      const emailSubject = `New Contact Form Submission from ${name}`;
+      const emailHtml = `
+        <h2>🦷 New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        ${service ? `<p><strong>Service:</strong> ${service}</p>` : ''}
+        ${appointmentService ? `<p><strong>Appointment Service:</strong> ${appointmentService}</p>` : ''}
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
+        <hr>
+        <p><small>Received: ${new Date().toLocaleString()}</small></p>
+      `;
 
-      const emailTemplate = createContactNotificationEmail(contactFormData);
-
+      console.log('📧 Attempting to send email via Resend...');
       const emailResult = await resend.emails.send({
         from: 'iCare Pediatric Dentistry <onboarding@resend.dev>',
         to: ['icarepaedsdent@gmail.com'],
-        subject: emailTemplate.subject,
-        html: emailTemplate.html,
-        text: emailTemplate.text,
+        subject: emailSubject,
+        html: emailHtml,
       });
 
       console.log('✅ Email notification sent successfully:', emailResult);
