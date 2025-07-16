@@ -48,9 +48,8 @@ function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-
       if (response.ok) {
+        const result = await response.json();
         setSubmitStatus({
           type: 'success',
           message: result.message || 'Your message has been sent successfully!'
@@ -66,9 +65,27 @@ function ContactForm() {
           message: ''
         });
       } else {
+        // Handle error responses
+        let errorMessage = 'Failed to send message. Please try again.';
+        
+        // Try to parse JSON error response
+        try {
+          const result = await response.json();
+          errorMessage = result.error || errorMessage;
+        } catch {
+          // If not JSON, create error message based on status
+          if (response.status === 405) {
+            errorMessage = 'API endpoint not available. Please contact support.';
+          } else if (response.status === 500) {
+            errorMessage = 'Server error. Please try again later.';
+          } else {
+            errorMessage = `Error ${response.status}: ${response.statusText}`;
+          }
+        }
+        
         setSubmitStatus({
           type: 'error',
-          message: result.error || 'Failed to send message. Please try again.'
+          message: errorMessage
         });
       }
     } catch (error) {
