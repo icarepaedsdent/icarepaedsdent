@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Shield, 
+import {
+  Shield,
   CircleDot,
   Scissors,
   Ruler,
@@ -14,66 +14,72 @@ import {
   AlertCircle,
   Heart,
   Baby,
-  ArrowRight 
+  ArrowRight,
 } from 'lucide-react';
 
 const services = [
   {
     icon: Shield,
     title: 'Preventive Care',
-    description: 'Regular checkups, cleanings, and preventive treatments to keep your child\'s teeth healthy.',
-    image: '/sample5.JPG',
-    href: '/services/preventive-care'
+    description:
+      "Regular checkups, cleanings, and preventive treatments to keep your child's teeth healthy.",
+    image: '/preventive-care-card.JPG',
+    href: '/services/preventive-care',
   },
   {
     icon: CircleDot,
     title: 'Fillings & Crowns',
-    description: 'Restorative treatments to repair damaged teeth and maintain oral health.',
-    image: '/sample6.jpg',
-    href: '/services/fillings-and-crowns'
+    description:
+      'Restorative treatments to repair damaged teeth and maintain oral health.',
+    image: '/filling-crown-card.JPG',
+    href: '/services/fillings-and-crowns',
   },
   {
     icon: AlertCircle,
     title: 'Emergency Care',
     description: 'Immediate dental care for accidents and emergencies.',
-    image: 'https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=300&h=200&fit=crop',
-    href: '/services/emergency-care'
+    image: '/emergency-care-card.JPG',
+    href: '/services/emergency-care',
   },
   {
     icon: Ruler,
     title: 'Space Maintainers',
-    description: 'Custom devices to maintain proper spacing for developing teeth.',
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=200&fit=crop',
-    href: '/services/space-maintainers'
+    description:
+      'Custom devices to maintain proper spacing for developing teeth.',
+    image: '/space-maintainer-card.JPG',
+    href: '/services/space-maintainers',
   },
   {
     icon: Star,
     title: 'Chalky Teeth',
-    description: 'Specialized treatment for hypomineralized or chalky teeth conditions.',
-    image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=300&h=200&fit=crop',
-    href: '/services/chalky-teeth'
+    description:
+      'Specialized treatment for hypomineralized or chalky teeth conditions.',
+    image: '/chalky-teeth-card.JPG',
+    href: '/services/chalky-teeth',
   },
   {
     icon: Scissors,
     title: 'Extractions',
     description: 'Safe and gentle tooth removal procedures when necessary.',
-    image: '/sample3.JPG',
-    href: '/services/extractions'
+    image: '/extraction-card.JPG',
+    href: '/services/extractions',
   },
   {
     icon: Heart,
     title: 'Children with Special Needs',
-    description: 'Compassionate dental care adapted for children with special needs.',
-    image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=300&h=200&fit=crop',
-    href: '/services/special-needs'
+    description:
+      'Compassionate dental care adapted for children with special needs.',
+    image: '/sepcial-needs-card.JPG',
+    href: '/services/special-needs',
   },
   {
     icon: Baby,
     title: 'Infant / Toddler Care',
-    description: 'Gentle and specialized dental care for the youngest patients.',
+    description:
+      'Gentle and specialized dental care for the youngest patients.',
     image: '/sample8.jpg',
-    href: '/services/infant-toddler-care'
-  }
+    href: '/services/infant-toddler-care',
+  },
 ];
 
 export function ServicesSection() {
@@ -85,7 +91,7 @@ export function ServicesSection() {
       const cardWidth = scrollContainerRef.current.clientWidth;
       scrollContainerRef.current.scrollTo({
         left: index * cardWidth,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       setCurrentSlide(index);
     }
@@ -122,20 +128,23 @@ export function ServicesSection() {
             Comprehensive Pediatric Dental Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From routine checkups to specialized treatments, we provide complete dental care 
-            tailored specifically for children of all ages.
+            From routine checkups to specialized treatments, we provide complete
+            dental care tailored specifically for children of all ages.
           </p>
         </div>
 
         {/* Mobile Horizontal Scroll */}
         <div className="lg:hidden mb-8">
-          <div 
+          <div
             ref={scrollContainerRef}
             className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {services.map((service, index) => (
-              <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+              <div
+                key={index}
+                className="flex-shrink-0 w-full snap-center px-2"
+              >
                 <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 bg-white/80 backdrop-blur-sm h-full">
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -152,23 +161,23 @@ export function ServicesSection() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <CardHeader className="pt-4">
                     <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
-                  
+
                   <CardContent className="space-y-4">
                     <p className="text-gray-600 leading-relaxed text-sm">
                       {service.description}
                     </p>
-                    <Link 
+                    <Link
                       href={service.href}
                       className="inline-block w-full group/button"
                     >
-                      <Button 
-                        variant="outline" 
+                      <Button
+                        variant="outline"
                         size="sm"
                         className="w-full bg-transparent hover:bg-blue-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-blue-600"
                       >
@@ -189,8 +198,8 @@ export function ServicesSection() {
                 key={index}
                 onClick={() => scrollToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index 
-                    ? 'bg-blue-600 scale-125' 
+                  currentSlide === index
+                    ? 'bg-blue-600 scale-125'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -202,8 +211,8 @@ export function ServicesSection() {
         {/* Desktop Grid */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 bg-white/80 backdrop-blur-sm"
             >
               <div className="relative h-56 overflow-hidden">
@@ -221,23 +230,23 @@ export function ServicesSection() {
                   </div>
                 </div>
               </div>
-              
+
               <CardHeader className="pt-6">
                 <CardTitle className="text-2xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
-              
+
               <CardContent className="space-y-6">
                 <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
-                <Link 
+                <Link
                   href={service.href}
                   className="inline-block w-full group/button"
                 >
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="w-full bg-transparent hover:bg-blue-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-blue-600"
                   >
                     Learn More
@@ -252,8 +261,8 @@ export function ServicesSection() {
         {/* CTA */}
         <div className="text-center">
           <Link href="/services">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               View All Services
