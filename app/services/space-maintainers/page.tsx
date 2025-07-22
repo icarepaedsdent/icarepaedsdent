@@ -4,35 +4,44 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CircleDot, CheckCircle, Calendar, Clock, Shield, Sparkles, Ruler, Settings } from 'lucide-react';
+import {
+  CircleDot,
+  CheckCircle,
+  Calendar,
+  Clock,
+  Shield,
+  Sparkles,
+  Ruler,
+  Settings,
+} from 'lucide-react';
 import Link from 'next/link';
-
 
 const spaceMaintainerTypes = [
   {
     icon: Ruler,
     title: 'Fixed Space Maintainers',
-    description: 'Permanent devices that stay in place to maintain space for incoming permanent teeth.',
+    description:
+      'Permanent devices that stay in place to maintain space for incoming permanent teeth.',
     color: 'text-blue-600',
-    bgColor: 'bg-blue-100'
+    bgColor: 'bg-blue-100',
   },
   {
     icon: Settings,
     title: 'Removable Space Maintainers',
-    description: 'Custom appliances that can be removed for cleaning while maintaining proper spacing.',
+    description:
+      'Custom appliances that can be removed for cleaning while maintaining proper spacing.',
     color: 'text-purple-600',
-    bgColor: 'bg-purple-100'
+    bgColor: 'bg-purple-100',
   },
   {
     icon: Shield,
     title: 'Band & Loop Maintainers',
-    description: 'The most common type, ideal for maintaining space after losing a single back tooth.',
+    description:
+      'The most common type, ideal for maintaining space after losing a single back tooth.',
     color: 'text-green-600',
-    bgColor: 'bg-green-100'
-  }
+    bgColor: 'bg-green-100',
+  },
 ];
-
-
 
 export default function SpaceMaintainersPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -43,7 +52,7 @@ export default function SpaceMaintainersPage() {
       const cardWidth = scrollContainerRef.current.clientWidth;
       scrollContainerRef.current.scrollTo({
         left: index * cardWidth,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       setCurrentSlide(index);
     }
@@ -74,20 +83,21 @@ export default function SpaceMaintainersPage() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <CircleDot className="w-8 h-8 text-purple-600" />
-              <span className="text-purple-600 font-semibold">Space Maintainers</span>
+              <span className="text-purple-600 font-semibold">
+                Space Maintainers
+              </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Preserving Space for Healthy Smiles
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Custom-fitted space maintainers to ensure proper tooth development after early
-              loss of baby teeth, preventing future orthodontic complications.
+              Custom-fitted space maintainers to ensure proper tooth development
+              after early loss of baby teeth, preventing future orthodontic
+              complications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg">
-                  Book Consultation
-                </Button>
+                <Button size="lg">Book Consultation</Button>
               </Link>
               <Link href="tel:+1234567890">
                 <Button size="lg" variant="outline">
@@ -96,11 +106,11 @@ export default function SpaceMaintainersPage() {
               </Link>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=600&fit=crop"
+                src="/space-maintainer.JPG"
                 alt="Space Maintainers for Children"
                 width={600}
                 height={600}
@@ -115,19 +125,24 @@ export default function SpaceMaintainersPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Our Space Maintainer Solutions
           </h2>
-          
+
           {/* Mobile Horizontal Scroll */}
           <div className="lg:hidden mb-8">
-            <div 
+            <div
               ref={scrollContainerRef}
               className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {spaceMaintainerTypes.map((type, index) => (
-                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-full snap-center px-2"
+                >
                   <Card className="text-center hover:shadow-lg transition-shadow h-full">
                     <CardHeader>
-                      <div className={`w-16 h-16 ${type.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <div
+                        className={`w-16 h-16 ${type.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
+                      >
                         <type.icon className={`w-8 h-8 ${type.color}`} />
                       </div>
                       <CardTitle className="text-lg">{type.title}</CardTitle>
@@ -149,8 +164,8 @@ export default function SpaceMaintainersPage() {
                   key={index}
                   onClick={() => scrollToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index 
-                      ? 'bg-purple-600 scale-125' 
+                    currentSlide === index
+                      ? 'bg-purple-600 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -170,7 +185,8 @@ export default function SpaceMaintainersPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Precisely fitted appliances made from hypoallergenic stainless steel for comfort.
+                  Precisely fitted appliances made from hypoallergenic stainless
+                  steel for comfort.
                 </p>
               </CardContent>
             </Card>
@@ -184,7 +200,8 @@ export default function SpaceMaintainersPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Preventing orthodontic issues by maintaining proper spacing for adult teeth.
+                  Preventing orthodontic issues by maintaining proper spacing
+                  for adult teeth.
                 </p>
               </CardContent>
             </Card>
@@ -217,9 +234,12 @@ export default function SpaceMaintainersPage() {
                   <span className="text-purple-600 font-bold text-sm">1</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">What They Are</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    What They Are
+                  </h3>
                   <p className="text-gray-600">
-                    Custom orthodontic appliances that hold space for unerupted adult teeth.
+                    Custom orthodontic appliances that hold space for unerupted
+                    adult teeth.
                   </p>
                 </div>
               </div>
@@ -229,9 +249,12 @@ export default function SpaceMaintainersPage() {
                   <span className="text-purple-600 font-bold text-sm">2</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">When They&apos;re Needed</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    When They&apos;re Needed
+                  </h3>
                   <p className="text-gray-600">
-                    After early loss of baby teeth due to decay, infection, or trauma.
+                    After early loss of baby teeth due to decay, infection, or
+                    trauma.
                   </p>
                 </div>
               </div>
@@ -241,9 +264,12 @@ export default function SpaceMaintainersPage() {
                   <span className="text-purple-600 font-bold text-sm">3</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">How They Work</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    How They Work
+                  </h3>
                   <p className="text-gray-600">
-                    Prevent adjacent teeth from tilting or drifting into the empty space.
+                    Prevent adjacent teeth from tilting or drifting into the
+                    empty space.
                   </p>
                 </div>
               </div>
@@ -273,15 +299,25 @@ export default function SpaceMaintainersPage() {
               <CardContent className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-gray-900">Daily Care</h4>
-                  <p className="text-gray-600 text-sm">Maintain good oral hygiene with regular brushing</p>
+                  <p className="text-gray-600 text-sm">
+                    Maintain good oral hygiene with regular brushing
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Food Restrictions</h4>
-                  <p className="text-gray-600 text-sm">Avoid sticky foods and hard candies</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Food Restrictions
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Avoid sticky foods and hard candies
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Regular Check-ups</h4>
-                  <p className="text-gray-600 text-sm">Visit us for monitoring and adjustments</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Regular Check-ups
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Visit us for monitoring and adjustments
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -295,10 +331,13 @@ export default function SpaceMaintainersPage() {
               </CardHeader>
               <CardContent>
                 <blockquote className="text-gray-600 italic">
-                  &quot;The space maintainer has been a great solution for my daughter after 
-                  losing her baby tooth early. The team made the process easy and comfortable.&quot;
+                  &quot;The space maintainer has been a great solution for my
+                  daughter after losing her baby tooth early. The team made the
+                  process easy and comfortable.&quot;
                 </blockquote>
-                <p className="text-sm text-gray-500 mt-2">- Michelle R., Parent</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  - Michelle R., Parent
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -314,7 +353,9 @@ export default function SpaceMaintainersPage() {
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CircleDot className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Prevent Crowding</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Prevent Crowding
+              </h3>
               <p className="text-gray-600">
                 Maintains proper spacing for adult teeth.
               </p>
@@ -324,7 +365,9 @@ export default function SpaceMaintainersPage() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Reduce Treatment</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Reduce Treatment
+              </h3>
               <p className="text-gray-600">
                 Minimizes future orthodontic needs.
               </p>
@@ -334,7 +377,9 @@ export default function SpaceMaintainersPage() {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Easy Maintenance</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Easy Maintenance
+              </h3>
               <p className="text-gray-600">
                 Simple care routine for long-term success.
               </p>
@@ -348,17 +393,26 @@ export default function SpaceMaintainersPage() {
             Protect Your Child&apos;s Smile
           </h2>
           <p className="text-xl mb-6 text-purple-100">
-            Schedule a consultation to learn if space maintainers are right for your child
+            Schedule a consultation to learn if space maintainers are right for
+            your child
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Consultation
               </Button>
             </Link>
             <Link href="tel:+1234567890">
-              <Button size="lg" variant="secondary" className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Clock className="w-5 h-5 mr-2" />
                 Call: 36230000
               </Button>
@@ -368,4 +422,4 @@ export default function SpaceMaintainersPage() {
       </div>
     </div>
   );
-} 
+}
