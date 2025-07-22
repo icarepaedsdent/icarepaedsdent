@@ -4,30 +4,42 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { AlertCircle, CheckCircle, Calendar, Clock, Shield, Phone, Zap, Heart } from 'lucide-react';
+import {
+  AlertCircle,
+  CheckCircle,
+  Calendar,
+  Clock,
+  Shield,
+  Phone,
+  Zap,
+  Heart,
+} from 'lucide-react';
 import Link from 'next/link';
 const emergencyServices = [
   {
     icon: AlertCircle,
     title: 'Dental Trauma',
-    description: 'Immediate care for knocked-out teeth, fractures, and other dental injuries.',
+    description:
+      'Immediate care for knocked-out teeth, fractures, and other dental injuries.',
     color: 'text-red-600',
-    bgColor: 'bg-red-100'
+    bgColor: 'bg-red-100',
   },
   {
     icon: Shield,
     title: 'Severe Pain',
-    description: 'Quick relief from toothaches, abscesses, and severe dental discomfort.',
+    description:
+      'Quick relief from toothaches, abscesses, and severe dental discomfort.',
     color: 'text-orange-600',
-    bgColor: 'bg-orange-100'
+    bgColor: 'bg-orange-100',
   },
   {
     icon: CheckCircle,
     title: 'Urgent Treatment',
-    description: 'Same-day care for broken fillings, crowns, and other dental emergencies.',
+    description:
+      'Same-day care for broken fillings, crowns, and other dental emergencies.',
     color: 'text-blue-600',
-    bgColor: 'bg-blue-100'
-  }
+    bgColor: 'bg-blue-100',
+  },
 ];
 
 export default function EmergencyCarePage() {
@@ -39,7 +51,7 @@ export default function EmergencyCarePage() {
       const cardWidth = scrollContainerRef.current.clientWidth;
       scrollContainerRef.current.scrollTo({
         left: index * cardWidth,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       setCurrentSlide(index);
     }
@@ -76,8 +88,9 @@ export default function EmergencyCarePage() {
               Immediate Care When You Need It Most
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Quick response and expert care for dental emergencies. We&apos;re here to help
-              your child get relief from pain and prevent further complications.
+              Quick response and expert care for dental emergencies. We&apos;re
+              here to help your child get relief from pain and prevent further
+              complications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="tel:+1234567890">
@@ -93,11 +106,11 @@ export default function EmergencyCarePage() {
               </Link>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/sample7.jpg"
+                src="/emergency-service.jpg"
                 alt="Emergency Dental Care"
                 width={600}
                 height={600}
@@ -112,19 +125,24 @@ export default function EmergencyCarePage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Emergency Services We Provide
           </h2>
-          
+
           {/* Mobile Horizontal Scroll */}
           <div className="lg:hidden mb-8">
-            <div 
+            <div
               ref={scrollContainerRef}
               className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {emergencyServices.map((service, index) => (
-                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-full snap-center px-2"
+                >
                   <Card className="text-center hover:shadow-lg transition-shadow h-full">
                     <CardHeader>
-                      <div className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <div
+                        className={`w-16 h-16 ${service.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
+                      >
                         <service.icon className={`w-8 h-8 ${service.color}`} />
                       </div>
                       <CardTitle className="text-lg">{service.title}</CardTitle>
@@ -146,8 +164,8 @@ export default function EmergencyCarePage() {
                   key={index}
                   onClick={() => scrollToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index 
-                      ? 'bg-blue-600 scale-125' 
+                    currentSlide === index
+                      ? 'bg-blue-600 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -167,7 +185,8 @@ export default function EmergencyCarePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Immediate care for knocked-out teeth, fractures, and other dental injuries.
+                  Immediate care for knocked-out teeth, fractures, and other
+                  dental injuries.
                 </p>
               </CardContent>
             </Card>
@@ -181,7 +200,8 @@ export default function EmergencyCarePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Quick relief from toothaches, abscesses, and severe dental discomfort.
+                  Quick relief from toothaches, abscesses, and severe dental
+                  discomfort.
                 </p>
               </CardContent>
             </Card>
@@ -195,7 +215,8 @@ export default function EmergencyCarePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Same-day care for broken fillings, crowns, and other dental emergencies.
+                  Same-day care for broken fillings, crowns, and other dental
+                  emergencies.
                 </p>
               </CardContent>
             </Card>
@@ -214,7 +235,9 @@ export default function EmergencyCarePage() {
                   <span className="text-red-600 font-bold text-sm">1</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Stay Calm</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Stay Calm
+                  </h3>
                   <p className="text-gray-600">
                     Keep your child calm and assess the situation carefully.
                   </p>
@@ -226,9 +249,12 @@ export default function EmergencyCarePage() {
                   <span className="text-red-600 font-bold text-sm">2</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Contact Us</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Contact Us
+                  </h3>
                   <p className="text-gray-600">
-                    Call our emergency number immediately for guidance and support.
+                    Call our emergency number immediately for guidance and
+                    support.
                   </p>
                 </div>
               </div>
@@ -238,9 +264,12 @@ export default function EmergencyCarePage() {
                   <span className="text-red-600 font-bold text-sm">3</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">First Aid</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    First Aid
+                  </h3>
                   <p className="text-gray-600">
-                    Follow our instructions for immediate care until you reach our office.
+                    Follow our instructions for immediate care until you reach
+                    our office.
                   </p>
                 </div>
               </div>
@@ -250,7 +279,9 @@ export default function EmergencyCarePage() {
                   <span className="text-red-600 font-bold text-sm">4</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Treatment</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Treatment
+                  </h3>
                   <p className="text-gray-600">
                     Receive prompt, professional care from our experienced team.
                   </p>
@@ -269,16 +300,29 @@ export default function EmergencyCarePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-900">Knocked-Out Tooth</h4>
-                  <p className="text-gray-600 text-sm">Keep the tooth moist and seek immediate care</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Knocked-Out Tooth
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Keep the tooth moist and seek immediate care
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Severe Toothache</h4>
-                  <p className="text-gray-600 text-sm">Could indicate infection or damage requiring urgent attention</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Severe Toothache
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Could indicate infection or damage requiring urgent
+                    attention
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Broken/Chipped Tooth</h4>
-                  <p className="text-gray-600 text-sm">Save any pieces and contact us right away</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Broken/Chipped Tooth
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    Save any pieces and contact us right away
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -292,8 +336,9 @@ export default function EmergencyCarePage() {
               </CardHeader>
               <CardContent>
                 <blockquote className="text-gray-600 italic">
-                  &quot;When my daughter knocked out her tooth during sports, the team was incredibly 
-                  responsive. They saw us immediately and saved her tooth!&quot;
+                  &quot;When my daughter knocked out her tooth during sports,
+                  the team was incredibly responsive. They saw us immediately
+                  and saved her tooth!&quot;
                 </blockquote>
                 <p className="text-sm text-gray-500 mt-2">- David P., Parent</p>
               </CardContent>
@@ -311,7 +356,9 @@ export default function EmergencyCarePage() {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">24/7 Availability</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                24/7 Availability
+              </h3>
               <p className="text-gray-600">
                 Emergency support whenever you need it.
               </p>
@@ -321,7 +368,9 @@ export default function EmergencyCarePage() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Expert Care</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Expert Care
+              </h3>
               <p className="text-gray-600">
                 Experienced team specialized in pediatric emergencies.
               </p>
@@ -331,7 +380,9 @@ export default function EmergencyCarePage() {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Quick Response</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Quick Response
+              </h3>
               <p className="text-gray-600">
                 Immediate attention to minimize pain and complications.
               </p>
@@ -349,13 +400,21 @@ export default function EmergencyCarePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="tel:+1234567890">
-              <Button size="lg" variant="secondary" className="text-red-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-red-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Phone className="w-5 h-5 mr-2" />
                 Emergency: 36230000
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-red-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-red-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Follow-up
               </Button>
@@ -365,4 +424,4 @@ export default function EmergencyCarePage() {
       </div>
     </div>
   );
-} 
+}

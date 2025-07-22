@@ -223,7 +223,7 @@ export default function SedationPage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=600&fit=crop"
+                src="/sedation-page.JPG"
                 alt="Comfortable sedation dentistry for children"
                 width={600}
                 height={600}

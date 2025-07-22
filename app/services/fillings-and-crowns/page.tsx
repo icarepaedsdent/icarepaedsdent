@@ -4,31 +4,41 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CircleDot, CheckCircle, Calendar, Clock, Sparkles, Shield } from 'lucide-react';
+import {
+  CircleDot,
+  CheckCircle,
+  Calendar,
+  Clock,
+  Sparkles,
+  Shield,
+} from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 const treatmentOptions = [
   {
     icon: CircleDot,
     title: 'Composite Fillings',
-    description: 'Tooth-colored fillings that blend naturally with your child\'s teeth for a beautiful smile.',
+    description:
+      "Tooth-colored fillings that blend naturally with your child's teeth for a beautiful smile.",
     color: 'text-blue-600',
-    bgColor: 'bg-blue-100'
+    bgColor: 'bg-blue-100',
   },
   {
     icon: Shield,
     title: 'Stainless Steel Crowns',
-    description: 'Durable crowns for heavily damaged teeth, providing long-lasting protection and function.',
+    description:
+      'Durable crowns for heavily damaged teeth, providing long-lasting protection and function.',
     color: 'text-purple-600',
-    bgColor: 'bg-purple-100'
+    bgColor: 'bg-purple-100',
   },
   {
     icon: Sparkles,
     title: 'Ceramic Crowns',
-    description: 'Natural-looking crowns for front teeth that match the color and appearance of surrounding teeth.',
+    description:
+      'Natural-looking crowns for front teeth that match the color and appearance of surrounding teeth.',
     color: 'text-green-600',
-    bgColor: 'bg-green-100'
-  }
+    bgColor: 'bg-green-100',
+  },
 ];
 
 export default function FillingsAndCrownsPage() {
@@ -40,7 +50,7 @@ export default function FillingsAndCrownsPage() {
       const cardWidth = scrollContainerRef.current.clientWidth;
       scrollContainerRef.current.scrollTo({
         left: index * cardWidth,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       setCurrentSlide(index);
     }
@@ -71,20 +81,21 @@ export default function FillingsAndCrownsPage() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <CircleDot className="w-8 h-8 text-blue-600" />
-              <span className="text-blue-600 font-semibold">Fillings & Crowns</span>
+              <span className="text-blue-600 font-semibold">
+                Fillings & Crowns
+              </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Restore Your Child&apos;s Smile
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Professional dental restoration services designed specifically for children,
-              using the latest techniques and child-friendly materials.
+              Professional dental restoration services designed specifically for
+              children, using the latest techniques and child-friendly
+              materials.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg">
-                  Book Appointment
-                </Button>
+                <Button size="lg">Book Appointment</Button>
               </Link>
               <Link href="tel:+1234567890">
                 <Button size="lg" variant="outline">
@@ -93,11 +104,11 @@ export default function FillingsAndCrownsPage() {
               </Link>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/sample1.JPG"
+                src="/f-c-service.JPG"
                 alt="Dental Fillings and Crowns"
                 width={600}
                 height={600}
@@ -112,19 +123,24 @@ export default function FillingsAndCrownsPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
             Our Restoration Services
           </h2>
-          
+
           {/* Mobile Horizontal Scroll */}
           <div className="lg:hidden mb-8">
-            <div 
+            <div
               ref={scrollContainerRef}
               className="flex overflow-x-auto gap-0 pb-4 snap-x snap-mandatory scrollbar-hide px-4"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {treatmentOptions.map((option, index) => (
-                <div key={index} className="flex-shrink-0 w-full snap-center px-2">
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-full snap-center px-2"
+                >
                   <Card className="text-center hover:shadow-lg transition-shadow h-full">
                     <CardHeader>
-                      <div className={`w-16 h-16 ${option.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <div
+                        className={`w-16 h-16 ${option.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
+                      >
                         <option.icon className={`w-8 h-8 ${option.color}`} />
                       </div>
                       <CardTitle className="text-lg">{option.title}</CardTitle>
@@ -146,8 +162,8 @@ export default function FillingsAndCrownsPage() {
                   key={index}
                   onClick={() => scrollToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index 
-                      ? 'bg-blue-600 scale-125' 
+                    currentSlide === index
+                      ? 'bg-blue-600 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -167,7 +183,8 @@ export default function FillingsAndCrownsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Tooth-colored fillings that restore and protect damaged teeth while maintaining a natural appearance.
+                  Tooth-colored fillings that restore and protect damaged teeth
+                  while maintaining a natural appearance.
                 </p>
               </CardContent>
             </Card>
@@ -181,7 +198,8 @@ export default function FillingsAndCrownsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Aesthetic composite crowns for front teeth, perfect for repairing visible damage or discoloration.
+                  Aesthetic composite crowns for front teeth, perfect for
+                  repairing visible damage or discoloration.
                 </p>
               </CardContent>
             </Card>
@@ -195,7 +213,8 @@ export default function FillingsAndCrownsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Durable stainless steel or white zirconia crowns for maximum protection of back teeth.
+                  Durable stainless steel or white zirconia crowns for maximum
+                  protection of back teeth.
                 </p>
               </CardContent>
             </Card>
@@ -214,9 +233,12 @@ export default function FillingsAndCrownsPage() {
                   <span className="text-blue-600 font-bold text-sm">1</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Examination</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Examination
+                  </h3>
                   <p className="text-gray-600">
-                    Thorough assessment of the affected tooth to determine the best treatment approach.
+                    Thorough assessment of the affected tooth to determine the
+                    best treatment approach.
                   </p>
                 </div>
               </div>
@@ -226,9 +248,12 @@ export default function FillingsAndCrownsPage() {
                   <span className="text-blue-600 font-bold text-sm">2</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Preparation</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Preparation
+                  </h3>
                   <p className="text-gray-600">
-                    Gentle removal of decay and preparation of the tooth for restoration.
+                    Gentle removal of decay and preparation of the tooth for
+                    restoration.
                   </p>
                 </div>
               </div>
@@ -238,9 +263,12 @@ export default function FillingsAndCrownsPage() {
                   <span className="text-blue-600 font-bold text-sm">3</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Restoration</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Restoration
+                  </h3>
                   <p className="text-gray-600">
-                    Application of the filling or placement of the crown using child-friendly techniques.
+                    Application of the filling or placement of the crown using
+                    child-friendly techniques.
                   </p>
                 </div>
               </div>
@@ -250,9 +278,12 @@ export default function FillingsAndCrownsPage() {
                   <span className="text-blue-600 font-bold text-sm">4</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Final Check</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    Final Check
+                  </h3>
                   <p className="text-gray-600">
-                    Ensuring proper fit, bite alignment, and comfort for your child.
+                    Ensuring proper fit, bite alignment, and comfort for your
+                    child.
                   </p>
                 </div>
               </div>
@@ -269,16 +300,28 @@ export default function FillingsAndCrownsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-900">Extensive Decay</h4>
-                  <p className="text-gray-600 text-sm">When a tooth has significant damage or decay</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Extensive Decay
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    When a tooth has significant damage or decay
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">After Nerve Treatment</h4>
-                  <p className="text-gray-600 text-sm">To protect teeth that have had pulp therapy</p>
+                  <h4 className="font-semibold text-gray-900">
+                    After Nerve Treatment
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    To protect teeth that have had pulp therapy
+                  </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Developmental Issues</h4>
-                  <p className="text-gray-600 text-sm">For teeth that haven&apos;t formed properly</p>
+                  <h4 className="font-semibold text-gray-900">
+                    Developmental Issues
+                  </h4>
+                  <p className="text-gray-600 text-sm">
+                    For teeth that haven&apos;t formed properly
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -292,10 +335,13 @@ export default function FillingsAndCrownsPage() {
               </CardHeader>
               <CardContent>
                 <blockquote className="text-gray-600 italic">
-                  &quot;The team made my child feel completely at ease during their crown procedure. 
-                  The result looks natural and has been very durable.&quot;
+                  &quot;The team made my child feel completely at ease during
+                  their crown procedure. The result looks natural and has been
+                  very durable.&quot;
                 </blockquote>
-                <p className="text-sm text-gray-500 mt-2">- Michael R., Parent</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  - Michael R., Parent
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -311,9 +357,12 @@ export default function FillingsAndCrownsPage() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Child-Friendly Materials</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Child-Friendly Materials
+              </h3>
               <p className="text-gray-600">
-                Safe, durable materials specifically chosen for children&apos;s teeth.
+                Safe, durable materials specifically chosen for children&apos;s
+                teeth.
               </p>
             </div>
 
@@ -321,7 +370,9 @@ export default function FillingsAndCrownsPage() {
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Natural Appearance</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Natural Appearance
+              </h3>
               <p className="text-gray-600">
                 Restorations that blend seamlessly with natural teeth.
               </p>
@@ -331,7 +382,9 @@ export default function FillingsAndCrownsPage() {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Long-Lasting Results</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Long-Lasting Results
+              </h3>
               <p className="text-gray-600">
                 Durable restorations that protect teeth through childhood.
               </p>
@@ -345,17 +398,26 @@ export default function FillingsAndCrownsPage() {
             Start Your Child&apos;s Smile Restoration
           </h2>
           <p className="text-xl mb-6 text-blue-100">
-            Schedule a consultation to discuss the best restoration options for your child
+            Schedule a consultation to discuss the best restoration options for
+            your child
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Appointment
               </Button>
             </Link>
             <Link href="tel:+1234567890">
-              <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              >
                 <Clock className="w-5 h-5 mr-2" />
                 Call: 36230000
               </Button>
@@ -365,4 +427,4 @@ export default function FillingsAndCrownsPage() {
       </div>
     </div>
   );
-} 
+}
