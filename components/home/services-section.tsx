@@ -38,7 +38,7 @@ const services = [
     icon: AlertCircle,
     title: 'Emergency Care',
     description: 'Immediate dental care for accidents and emergencies.',
-    image: '/emergency-care-card.JPG',
+    image: '/emergency-care-card.jpg',
     href: '/services/emergency-care',
   },
   {
