@@ -369,7 +369,7 @@ export default function SpaceMaintainersPage() {
                 Reduce Treatment
               </h3>
               <p className="text-gray-600">
-                Minimizes future orthodontic needs.
+                Minimises future orthodontic needs.
               </p>
             </div>
 

@@ -53,7 +53,7 @@ export function Header() {
     {
       title: 'Children with Special Needs',
       href: '/services/special-needs',
-      description: 'Specialized care for children with special needs'
+      description: 'Specailised care for children with special needs'
     },
     {
       title: 'Infant / Toddler Care',
@@ -127,6 +127,16 @@ export function Header() {
                     "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
                     Sedation
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/referrals" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
+                  )}>
+                    Referrals
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -212,6 +222,9 @@ export function Header() {
                 </div>
                 <Link href="/sedation" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   Sedation
+                </Link>
+                <Link href="/referrals" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
+                  Referrals
                 </Link>
                 <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   Contact

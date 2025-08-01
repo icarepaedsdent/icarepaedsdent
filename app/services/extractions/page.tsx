@@ -67,7 +67,7 @@ export default function ExtractionsPage() {
             <div className="relative h-[300px] mb-6 rounded-lg overflow-hidden">
               <Image
                 src="/sample3.JPG"
-                alt="Pediatric Dental Care"
+                alt="Paediatric Dental Care"
                 fill
                 className="object-cover"
               />
@@ -96,7 +96,7 @@ export default function ExtractionsPage() {
               <li>Nitrous oxide (laughing gas)</li>
               <li>Oral sedation</li>
               <li>General anesthesia when necessary</li>
-              <li>Customized approach based on your child&apos;s needs</li>
+              <li>Customised approach based on your child&apos;s needs</li>
             </ul>
           </Card>
         </div>

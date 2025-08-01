@@ -80,7 +80,7 @@ export default function SpecialNeedsPage() {
               Inclusive Dental Care for Every Child
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Specialized care tailored to meet the unique needs of children with physical,
+              Specailised care tailored to meet the unique needs of children with physical,
               developmental, or sensory challenges.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -114,7 +114,7 @@ export default function SpecialNeedsPage() {
         {/* Services Overview */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Our Specialized Approach
+            Our Specailised Approach
           </h2>
           
           {/* Mobile Horizontal Scroll */}
@@ -171,7 +171,7 @@ export default function SpecialNeedsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Customized treatment plans that consider each child&apos;s unique needs and challenges.
+                  Customised treatment plans that consider each child&apos;s unique needs and challenges.
                 </p>
               </CardContent>
             </Card>
@@ -327,7 +327,7 @@ export default function SpecialNeedsPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Adapted Care</h3>
               <p className="text-gray-600">
-                Customized treatment approaches for each child.
+                Customised treatment approaches for each child.
               </p>
             </div>
 
@@ -346,7 +346,7 @@ export default function SpecialNeedsPage() {
         {/* Call to Action */}
         <div className="bg-pink-600 rounded-2xl p-8 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">
-            Specialized Care for Your Child
+            Specailised Care for Your Child
           </h2>
           <p className="text-xl mb-6 text-pink-100">
             Let us create a personalized care plan for your child&apos;s needs.

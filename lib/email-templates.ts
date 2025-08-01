@@ -31,7 +31,7 @@ export function createContactNotificationEmail(data: ContactFormData) {
         <body>
           <div class="header">
             <h1>🦷 New Contact Form Submission</h1>
-            <p>iCare Pediatric Dentistry</p>
+            <p>iCare Paediatric Dentistry</p>
           </div>
           
           <div class="content">
@@ -89,7 +89,7 @@ export function createContactNotificationEmail(data: ContactFormData) {
           </div>
           
           <div class="footer">
-            <p>This email was automatically generated from the iCare Pediatric Dentistry website contact form.</p>
+            <p>This email was automatically generated from the iCare Paediatric Dentistry website contact form.</p>
             <p>Received at: ${new Date().toLocaleString('en-US', {
               timeZone: 'America/New_York',
               year: 'numeric',
@@ -103,7 +103,7 @@ export function createContactNotificationEmail(data: ContactFormData) {
       </html>
     `,
     text: `
-New Contact Form Submission - iCare Pediatric Dentistry
+New Contact Form Submission - iCare Paediatric Dentistry
 
 Patient/Parent Name: ${name}
 Email: ${email}

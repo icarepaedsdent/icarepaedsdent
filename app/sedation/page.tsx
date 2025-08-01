@@ -13,29 +13,29 @@ const sedationReasons = [
     icon: AlertTriangle,
     title: 'High Anxiety',
     description: 'Children with severe dental anxiety or phobias who cannot relax during treatment.',
-    color: 'text-red-600',
-    bgColor: 'bg-red-100'
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-100'
   },
   {
     icon: Clock,
     title: 'Complex Procedures',
     description: 'Lengthy or complex dental procedures that require the child to remain still for extended periods.',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100'
+    color: 'text-emerald-600',
+    bgColor: 'bg-emerald-100'
   },
   {
     icon: Heart,
     title: 'Special Needs',
     description: 'Children with special healthcare needs who may have difficulty cooperating during treatment.',
-    color: 'text-green-600',
-    bgColor: 'bg-green-100'
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-100'
   },
   {
     icon: Shield,
     title: 'Multiple Treatments',
     description: 'When multiple procedures need to be completed in a single visit for efficiency and comfort.',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-100'
+    color: 'text-emerald-600',
+    bgColor: 'bg-emerald-100'
   }
 ];
 
@@ -190,14 +190,32 @@ export default function SedationPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white relative overflow-hidden">
+      {/* Animated Background Blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-16 left-8 w-32 h-32 bg-teal-200/30 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+        <div className="absolute top-32 right-16 w-24 h-24 bg-emerald-300/20 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+        <div className="absolute top-96 left-1/4 w-20 h-20 bg-teal-300/25 rounded-full animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute bottom-40 right-12 w-28 h-28 bg-emerald-200/30 rounded-full animate-bounce" style={{ animationDuration: '6s' }}></div>
+        <div className="absolute bottom-20 left-16 w-16 h-16 bg-teal-400/20 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-14 h-14 bg-emerald-300/25 rounded-full animate-bounce" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute top-64 left-1/2 w-10 h-10 bg-teal-500/30 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+        <div className="absolute bottom-60 left-1/3 w-8 h-8 bg-emerald-400/40 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+        
+        {/* Plus sign elements */}
+        <div className="absolute top-20 right-1/4 text-teal-300/30 text-2xl animate-spin" style={{ animationDuration: '20s' }}>+</div>
+        <div className="absolute bottom-32 right-1/2 text-emerald-400/25 text-lg animate-spin" style={{ animationDuration: '25s' }}>+</div>
+        <div className="absolute top-2/3 left-12 text-teal-400/20 text-xl animate-spin" style={{ animationDuration: '30s' }}>+</div>
+        <div className="absolute top-80 right-8 text-emerald-300/30 text-sm animate-spin" style={{ animationDuration: '15s' }}>+</div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Moon className="w-8 h-8 text-purple-600" />
-              <span className="text-purple-600 font-semibold">Sedation Dentistry</span>
+              <Moon className="w-8 h-8 text-teal-600" />
+              <span className="text-teal-600 font-semibold">Sedation Dentistry</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Comfortable, Anxiety-Free Dental Care
@@ -208,12 +226,12 @@ export default function SedationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg">
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
                   Discuss Sedation Options
                 </Button>
               </Link>
-              <Link href="tel:+1234567890">
-                <Button size="lg" variant="outline">
+              <Link href="tel:36230000">
+                <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
                   Call for Consultation
                 </Button>
               </Link>
@@ -248,14 +266,20 @@ export default function SedationPage() {
             >
               {sedationReasons.map((reason, index) => (
                 <div key={index} className="flex-shrink-0 w-full snap-center px-2">
-                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
-                    <CardHeader>
-                      <div className={`w-16 h-16 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <Card className="text-center hover:shadow-xl transition-all duration-300 h-full bg-gradient-to-br from-white to-teal-50/30 border-teal-200 relative overflow-hidden">
+                    {/* Internal animated blobs */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <div className="absolute -top-2 -right-2 w-12 h-12 bg-teal-100/40 rounded-full animate-pulse" style={{ animationDuration: `${5 + index}s` }}></div>
+                      <div className="absolute -bottom-1 -left-1 w-8 h-8 bg-emerald-200/30 rounded-full animate-bounce" style={{ animationDuration: `${4 + index * 0.5}s` }}></div>
+                      <div className="absolute top-4 right-8 w-2 h-2 bg-teal-400/60 rounded-full animate-ping" style={{ animationDuration: `${3 + index * 0.3}s` }}></div>
+                    </div>
+                    <CardHeader className="relative z-10">
+                      <div className={`w-16 h-16 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 shadow-md`}>
                         <reason.icon className={`w-8 h-8 ${reason.color}`} />
                       </div>
-                      <CardTitle className="text-lg">{reason.title}</CardTitle>
+                      <CardTitle className="text-lg text-gray-900">{reason.title}</CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="relative z-10">
                       <p className="text-gray-600 text-sm">
                         {reason.description}
                       </p>
@@ -273,7 +297,7 @@ export default function SedationPage() {
                   onClick={() => scrollToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentSlide === index 
-                      ? 'bg-purple-600 scale-125' 
+                      ? 'bg-teal-600 scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -285,14 +309,20 @@ export default function SedationPage() {
           {/* Desktop Grid */}
           <div className="hidden lg:grid lg:grid-cols-4 gap-6">
             {sedationReasons.map((reason, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className={`w-16 h-16 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-teal-50/30 border-teal-200 relative overflow-hidden">
+                {/* Internal animated blobs */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute -top-2 -right-2 w-12 h-12 bg-teal-100/40 rounded-full animate-pulse" style={{ animationDuration: `${5 + index}s` }}></div>
+                  <div className="absolute -bottom-1 -left-1 w-8 h-8 bg-emerald-200/30 rounded-full animate-bounce" style={{ animationDuration: `${4 + index * 0.5}s` }}></div>
+                  <div className="absolute top-4 right-8 w-2 h-2 bg-teal-400/60 rounded-full animate-ping" style={{ animationDuration: `${3 + index * 0.3}s` }}></div>
+                </div>
+                <CardHeader className="relative z-10">
+                  <div className={`w-16 h-16 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-4 shadow-md`}>
                     <reason.icon className={`w-8 h-8 ${reason.color}`} />
                   </div>
-                  <CardTitle className="text-lg">{reason.title}</CardTitle>
+                  <CardTitle className="text-lg text-gray-900">{reason.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="relative z-10">
                   <p className="text-gray-600 text-sm">
                     {reason.description}
                   </p>
@@ -320,11 +350,19 @@ export default function SedationPage() {
               
               {sedationOptions.map((option) => (
                 <TabsContent key={option.id} value={option.id} className="mt-8">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-2xl text-center">{option.title}</CardTitle>
+                  <Card className="bg-gradient-to-br from-white to-teal-50/20 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                    {/* Internal animated blobs */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <div className="absolute -top-3 -right-3 w-16 h-16 bg-teal-100/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+                      <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-emerald-200/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+                      <div className="absolute top-8 right-12 w-4 h-4 bg-teal-400/40 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+                      <div className="absolute bottom-12 left-8 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+                      <div className="absolute top-16 left-1/3 text-teal-300/20 text-lg animate-spin" style={{ animationDuration: '25s' }}>+</div>
+                    </div>
+                    <CardHeader className="relative z-10">
+                      <CardTitle className="text-2xl text-center text-teal-700">{option.title}</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-6">
+                    <CardContent className="space-y-6 relative z-10">
                       <div className="grid md:grid-cols-2 gap-8">
                         <div>
                           <h3 className="text-xl font-semibold text-gray-900 mb-4">How It Works</h3>
@@ -370,11 +408,17 @@ export default function SedationPage() {
             >
               {sedationOptions.map((option, index) => (
                 <div key={index} className="flex-shrink-0 w-full snap-center px-2">
-                  <Card className="h-full">
-                    <CardHeader>
-                      <CardTitle className="text-xl text-center">{option.subtitle}</CardTitle>
+                  <Card className="h-full bg-gradient-to-br from-white to-teal-50/20 border-teal-200 shadow-lg relative overflow-hidden">
+                    {/* Internal animated blobs */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <div className="absolute -top-2 -right-2 w-12 h-12 bg-teal-100/30 rounded-full animate-pulse" style={{ animationDuration: `${6 + index}s` }}></div>
+                      <div className="absolute -bottom-1 -left-1 w-8 h-8 bg-emerald-200/40 rounded-full animate-bounce" style={{ animationDuration: `${5 + index * 0.5}s` }}></div>
+                      <div className="absolute top-6 right-8 w-3 h-3 bg-teal-400/50 rounded-full animate-ping" style={{ animationDuration: `${4 + index * 0.3}s` }}></div>
+                    </div>
+                    <CardHeader className="relative z-10">
+                      <CardTitle className="text-xl text-center text-teal-700">{option.subtitle}</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-6">
+                    <CardContent className="space-y-6 relative z-10">
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-3">How It Works</h3>
                         <p className="text-gray-600 text-sm mb-4">
@@ -417,7 +461,7 @@ export default function SedationPage() {
                   onClick={() => scrollToSedationSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentSedationSlide === index 
-                      ? 'bg-purple-600 scale-125' 
+                      ? 'bg-teal-600 scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to sedation option ${index + 1}`}
@@ -429,14 +473,21 @@ export default function SedationPage() {
 
         {/* Safety and Preparation */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Shield className="w-6 h-6 text-blue-600" />
+          <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Internal animated blobs */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-2 -right-2 w-14 h-14 bg-teal-100/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+              <div className="absolute -bottom-1 -left-1 w-10 h-10 bg-emerald-200/40 rounded-full animate-bounce" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute top-8 right-8 w-3 h-3 bg-teal-400/50 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+              <div className="absolute bottom-16 right-4 text-teal-300/20 text-sm animate-spin" style={{ animationDuration: '25s' }}>+</div>
+            </div>
+            <CardHeader className="relative z-10">
+              <CardTitle className="flex items-center gap-2 text-teal-700">
+                <Shield className="w-6 h-6 text-teal-600" />
                 Safety First
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 relative z-10">
               <p className="text-gray-600">
                 Your child&apos;s safety is our top priority. We follow strict protocols and guidelines 
                 for all sedation procedures.
@@ -462,14 +513,21 @@ export default function SedationPage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="w-6 h-6 text-purple-600" />
+          <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Internal animated blobs */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-1 -left-2 w-12 h-12 bg-emerald-100/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+              <div className="absolute -bottom-2 -right-1 w-8 h-8 bg-teal-200/50 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute top-6 left-12 w-2 h-2 bg-emerald-400/70 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+              <div className="absolute bottom-8 left-6 text-emerald-300/25 text-lg animate-spin" style={{ animationDuration: '20s' }}>+</div>
+            </div>
+            <CardHeader className="relative z-10">
+              <CardTitle className="flex items-center gap-2 text-emerald-700">
+                <Clock className="w-6 h-6 text-emerald-600" />
                 Pre-Appointment Preparation
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 relative z-10">
               <p className="text-gray-600">
                 Proper preparation helps ensure a safe and successful sedation experience.
               </p>
@@ -496,24 +554,35 @@ export default function SedationPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-purple-600 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">
-            Discuss Sedation Options for Your Child
-          </h2>
-          <p className="text-xl mb-6 text-purple-100">
-            Schedule a consultation to determine the best sedation approach for your child&apos;s needs
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                Schedule Consultation
-              </Button>
-            </Link>
-            <Link href="tel:+1234567890">
-              <Button size="lg" variant="outline" className="text-purple-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                Call: (123) 456-7890
-              </Button>
-            </Link>
+        <div className="bg-teal-600 rounded-2xl p-8 text-center text-white relative overflow-hidden">
+          {/* Internal animated blobs */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-4 -left-4 w-20 h-20 bg-white/10 rounded-full animate-pulse" style={{ animationDuration: '8s' }}></div>
+            <div className="absolute -bottom-3 -right-3 w-16 h-16 bg-emerald-300/20 rounded-full animate-bounce" style={{ animationDuration: '6s' }}></div>
+            <div className="absolute top-8 right-12 w-6 h-6 bg-white/15 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+            <div className="absolute bottom-12 left-8 w-4 h-4 bg-emerald-200/30 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+            <div className="absolute top-12 left-1/4 text-white/10 text-2xl animate-spin" style={{ animationDuration: '30s' }}>+</div>
+            <div className="absolute bottom-16 right-1/3 text-emerald-200/20 text-lg animate-spin" style={{ animationDuration: '25s' }}>+</div>
+          </div>
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold mb-4">
+              Discuss Sedation Options for Your Child
+            </h2>
+            <p className="text-xl mb-6 text-teal-100">
+              Schedule a consultation to determine the best sedation approach for your child&apos;s needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact">
+                <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                  Schedule Consultation
+                </Button>
+              </Link>
+              <Link href="tel:36230000">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                  Call: 36230000
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

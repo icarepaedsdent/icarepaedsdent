@@ -372,7 +372,7 @@ export default function EmergencyCarePage() {
                 Expert Care
               </h3>
               <p className="text-gray-600">
-                Experienced team specialized in pediatric emergencies.
+                Experienced team specailised in paediatric emergencies.
               </p>
             </div>
 

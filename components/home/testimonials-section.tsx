@@ -36,7 +36,7 @@ export function TestimonialsSection() {
               <CardContent className="p-6">
                 <Award className="w-12 h-12 text-teal-600 mx-auto mb-4" />
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  American Academy of Pediatric Dentistry
+                  American Academy of Paediatric Dentistry
                 </h4>
                 <p className="text-sm text-gray-600">Active Member</p>
               </CardContent>
@@ -58,7 +58,7 @@ export function TestimonialsSection() {
                 <h4 className="font-semibold text-gray-900 mb-2">
                   Board Certified
                 </h4>
-                <p className="text-sm text-gray-600">Pediatric Dentistry</p>
+                <p className="text-sm text-gray-600">Paediatric Dentistry</p>
               </CardContent>
             </Card>
           </div>

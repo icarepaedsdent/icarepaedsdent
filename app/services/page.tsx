@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Our Services | i-Care Paediatric Dentistry',
-  description: 'Comprehensive dental care services for children including preventive care, restorative treatments, emergency care, and specialized services.',
+  description: 'Comprehensive dental care services for children including preventive care, restorative treatments, emergency care, and specailised services.',
 };
 
 const services = [
@@ -43,7 +43,7 @@ const services = [
   {
     icon: Star,
     title: 'Chalky Teeth',
-    description: 'Specialized treatment for hypomineralized or "chalky" teeth. We provide comprehensive care to strengthen and protect affected teeth.',
+    description: 'Specailised treatment for hypomineralized or "chalky" teeth. We provide comprehensive care to strengthen and protect affected teeth.',
     href: '/services/chalky-teeth'
   },
   {
@@ -61,7 +61,7 @@ const services = [
   {
     icon: Baby,
     title: 'Infant / Toddler Care',
-    description: 'Gentle and specialized dental care for our youngest patients. Early dental visits help establish good oral health habits from the start.',
+    description: 'Gentle and specailised dental care for our youngest patients. Early dental visits help establish good oral health habits from the start.',
     href: '/services/infant-toddler-care'
   }
 ];
@@ -76,7 +76,7 @@ export default function ServicesPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We provide comprehensive dental care specifically designed for children,
-            from preventive treatments to specialized procedures.
+            from preventive treatments to specailised procedures.
           </p>
         </div>
 

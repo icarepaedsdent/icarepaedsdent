@@ -133,7 +133,7 @@ export function AboutSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm">Complex Medical Conditions</h4>
-                    <p className="text-xs text-gray-600">Specialized care for children with diverse medical needs</p>
+                    <p className="text-xs text-gray-600">Specailised care for children with diverse medical needs</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

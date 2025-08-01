@@ -90,7 +90,7 @@ export default function ChalkyTeethPage() {
               Expert Care for Chalky Teeth
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              Early diagnosis and specialized treatment for hypomineralized teeth,
+              Early diagnosis and specailised treatment for hypomineralized teeth,
               ensuring the best outcomes for your child&apos;s dental health.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -299,7 +299,7 @@ export default function ChalkyTeethPage() {
               <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Specialized Care</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Specailised Care</h3>
               <p className="text-gray-600">
                 Expert treatment tailored specifically for hypomineralized teeth.
               </p>

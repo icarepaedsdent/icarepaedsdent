@@ -76,7 +76,7 @@ export function Footer() {
               <p className="text-teal-400 mt-4">Email Us:</p>
               <p className="text-gray-300">icarepaediatricdentistry@gmail.com</p>
               <p className="text-teal-400 mt-4">Availability:</p>
-              <p className="text-gray-300">Monday To Friday (9am - 5pm)</p>
+              <p className="text-gray-300">Monday To Saturday (9am - 5pm)</p>
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ const infantCareServices = [
   {
     icon: Baby,
     title: 'Behavior Management',
-    description: 'Specialized techniques to help very young children feel comfortable during treatment.',
+    description: 'Specailised techniques to help very young children feel comfortable during treatment.',
     color: 'text-purple-600',
     bgColor: 'bg-purple-100'
   }
@@ -80,7 +80,7 @@ export default function InfantToddlerCarePage() {
             Dental Home: Where Healthy Smiles Begin
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Specialized care for your little one&apos;s oral health, starting from their very first tooth.
+              Specailised care for your little one&apos;s oral health, starting from their very first tooth.
               Early prevention and gentle treatment in a child-friendly environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

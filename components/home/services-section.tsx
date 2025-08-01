@@ -19,6 +19,14 @@ import {
 
 const services = [
   {
+    icon: Baby,
+    title: 'Infant / Toddler Care',
+    description:
+      'Gentle and specailised dental care for the youngest patients.',
+    image: '/sample8.jpg',
+    href: '/services/infant-toddler-care',
+  },
+  {
     icon: Shield,
     title: 'Preventive Care',
     description:
@@ -35,11 +43,11 @@ const services = [
     href: '/services/fillings-and-crowns',
   },
   {
-    icon: AlertCircle,
-    title: 'Emergency Care',
-    description: 'Immediate dental care for accidents and emergencies.',
-    image: '/emergency-care-card.jpg',
-    href: '/services/emergency-care',
+    icon: Scissors,
+    title: 'Extractions',
+    description: 'Safe and gentle tooth removal procedures when necessary.',
+    image: '/extraction-card.JPG',
+    href: '/services/extractions',
   },
   {
     icon: Ruler,
@@ -53,16 +61,16 @@ const services = [
     icon: Star,
     title: 'Chalky Teeth',
     description:
-      'Specialized treatment for hypomineralized or chalky teeth conditions.',
+      'Specailised treatment for hypomineralized or chalky teeth conditions.',
     image: '/chalky-teeth-card.JPG',
     href: '/services/chalky-teeth',
   },
   {
-    icon: Scissors,
-    title: 'Extractions',
-    description: 'Safe and gentle tooth removal procedures when necessary.',
-    image: '/extraction-card.JPG',
-    href: '/services/extractions',
+    icon: AlertCircle,
+    title: 'Emergency Care',
+    description: 'Immediate dental care for accidents and emergencies.',
+    image: '/emergency-care-card.jpg',
+    href: '/services/emergency-care',
   },
   {
     icon: Heart,
@@ -71,14 +79,6 @@ const services = [
       'Compassionate dental care adapted for children with special needs.',
     image: '/sepcial-needs-card.JPG',
     href: '/services/special-needs',
-  },
-  {
-    icon: Baby,
-    title: 'Infant / Toddler Care',
-    description:
-      'Gentle and specialized dental care for the youngest patients.',
-    image: '/sample8.jpg',
-    href: '/services/infant-toddler-care',
   },
 ];
 
