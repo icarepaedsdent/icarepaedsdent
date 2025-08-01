@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Dr. Sobia Paediatric Dentist | Gentle Dental Care for Children',
+  title: 'Associate Professor (Dr) Sobia Zafar | Specialist Paediatric Dentist | Gentle Dental Care for Children',
   description: 'Professional pediatric dental care with a gentle approach. Comprehensive dental services for children in a comfortable, child-friendly environment.',
   keywords: 'pediatric dentist, children dental care, kids dentist, gentle dentistry, orthodontics for children',
 };

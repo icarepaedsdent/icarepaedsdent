@@ -274,7 +274,7 @@ export default function ParentalPortalPage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Orthodontic Consultation</h3>
-                      <p className="text-gray-600">Dr. Sobia</p>
+                      <p className="text-gray-600">A/Prof Sobia</p>
                       <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
                         <span className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
@@ -304,7 +304,7 @@ export default function ParentalPortalPage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900">Cleaning & Checkup</h3>
-                      <p className="text-gray-600">Dr. Sobia</p>
+                      <p className="text-gray-600">A/Prof Sobia</p>
                       <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
                         <span className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
@@ -492,7 +492,7 @@ export default function ParentalPortalPage() {
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h3 className="font-semibold text-gray-900">Pre-appointment Instructions</h3>
-                      <p className="text-sm text-gray-600">From: Dr. Sobia's Office</p>
+                      <p className="text-sm text-gray-600">From: A/Prof Sobia's Office</p>
                     </div>
                     <span className="text-xs text-gray-500">2 days ago</span>
                   </div>
@@ -511,7 +511,7 @@ export default function ParentalPortalPage() {
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h3 className="font-semibold text-gray-900">Treatment Summary</h3>
-                      <p className="text-sm text-gray-600">From: Dr. Sobia</p>
+                      <p className="text-sm text-gray-600">From: A/Prof Sobia</p>
                     </div>
                     <span className="text-xs text-gray-500">1 week ago</span>
                   </div>
@@ -583,7 +583,12 @@ export default function ParentalPortalPage() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span>Health tips and newsletters</span>
-                    <input type="checkbox" className="rounded" />
+                    <input 
+                      type="checkbox" 
+                      className="rounded"
+                      id="health-tips-checkbox"
+                      aria-label="Health tips and newsletters subscription toggle"
+                    />
                   </div>
                   <Button>Save Preferences</Button>
                 </CardContent>

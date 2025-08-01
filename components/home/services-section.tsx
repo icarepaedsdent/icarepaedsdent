@@ -115,21 +115,44 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-blue-50/50 to-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-teal-50/50 to-white relative overflow-hidden">
+      {/* Animated Background Blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large floating blobs */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-teal-200/30 to-emerald-200/20 rounded-full animate-pulse" style={{ animationDuration: '9s' }}></div>
+        <div className="absolute -bottom-32 -left-16 w-96 h-96 bg-teal-100/40 rounded-full animate-bounce" style={{ animationDuration: '12s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-emerald-200/60 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+        
+        {/* Medium blobs */}
+        <div className="absolute top-16 left-16 w-24 h-24 bg-teal-300/40 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+        <div className="absolute bottom-24 right-1/4 w-20 h-20 bg-emerald-300/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+        
+        {/* Small animated dots */}
+        <div className="absolute top-32 right-16 w-3 h-3 bg-teal-500 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+        <div className="absolute top-2/3 left-8 w-2 h-2 bg-emerald-600 rounded-full animate-bounce" style={{ animationDuration: '2.5s', animationDelay: '0.8s' }}></div>
+        <div className="absolute bottom-16 left-1/3 w-4 h-4 bg-teal-400 rounded-full animate-pulse" style={{ animationDuration: '4s' }}></div>
+        
+        {/* Floating plus signs */}
+        <div className="absolute top-24 left-1/2 text-teal-400/60 text-2xl font-light animate-spin" style={{ animationDuration: '25s' }}>+</div>
+        <div className="absolute bottom-32 right-8 text-emerald-400/50 text-lg font-light animate-spin" style={{ animationDuration: '18s' }}>+</div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="h-1 w-12 bg-blue-600 rounded-full" />
-            <h3 className="text-blue-600 font-semibold">Our Services</h3>
-            <div className="h-1 w-12 bg-blue-600 rounded-full" />
+            <div className="h-1 w-12 bg-teal-600 rounded-full" />
+            <h3 className="text-teal-600 font-semibold tracking-wider">WHAT WE DO</h3>
+            <div className="h-1 w-12 bg-teal-600 rounded-full" />
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            Comprehensive Pediatric Dental Services
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            A FULL RANGE OF DENTAL SERVICES FOR KIDS OF ALL AGES
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From routine checkups to specialized treatments, we provide complete
-            dental care tailored specifically for children of all ages.
+          <h3 className="text-2xl font-semibold text-teal-600 mb-6">
+            Nurturing Healthy Smiles, One Child at a Time
+          </h3>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            We are committed to ensuring your child&apos;s lifelong oral health, and we provide a full range of dental services to kids of all ages. Our comprehensive range of services includes general checkups, preventive care, treatment of tooth decay, composite fillings, crowns for both primary and permanent teeth, extractions, space maintainers, treatment for &apos;chalky teeth&apos; enamel hypomineralisation.
           </p>
         </div>
 
@@ -157,13 +180,13 @@ export function ServicesSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute top-4 left-4 transform -translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
-                        <service.icon className="w-6 h-6 text-blue-600" />
+                        <service.icon className="w-6 h-6 text-teal-600" />
                       </div>
                     </div>
                   </div>
 
                   <CardHeader className="pt-4">
-                    <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <CardTitle className="text-xl text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
@@ -179,7 +202,7 @@ export function ServicesSection() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="w-full bg-transparent hover:bg-blue-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-blue-600"
+                        className="w-full bg-transparent hover:bg-teal-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-teal-600"
                       >
                         Learn More
                         <ArrowRight className="w-4 h-4 ml-2 group-hover/button:translate-x-1 transition-transform duration-300" />
@@ -199,7 +222,7 @@ export function ServicesSection() {
                 onClick={() => scrollToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index
-                    ? 'bg-blue-600 scale-125'
+                    ? 'bg-teal-600 scale-125'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -226,13 +249,13 @@ export function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-4 left-4 transform -translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
-                    <service.icon className="w-7 h-7 text-blue-600" />
+                    <service.icon className="w-7 h-7 text-teal-600" />
                   </div>
                 </div>
               </div>
 
               <CardHeader className="pt-6">
-                <CardTitle className="text-2xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                <CardTitle className="text-2xl text-gray-900 group-hover:text-teal-600 transition-colors duration-300">
                   {service.title}
                 </CardTitle>
               </CardHeader>
@@ -247,7 +270,7 @@ export function ServicesSection() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full bg-transparent hover:bg-blue-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-blue-600"
+                    className="w-full bg-transparent hover:bg-teal-600 hover:text-white border-2 transition-all duration-300 ease-in-out transform group-hover/button:translate-y-0 hover:-translate-y-1 hover:border-teal-600"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2 group-hover/button:translate-x-1 transition-transform duration-300" />
@@ -263,7 +286,7 @@ export function ServicesSection() {
           <Link href="/services">
             <Button
               size="lg"
-              className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="text-lg px-8 py-6 bg-teal-600 hover:bg-teal-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               View All Services
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />

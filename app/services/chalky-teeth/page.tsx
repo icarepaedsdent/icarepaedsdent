@@ -11,22 +11,22 @@ const treatmentApproaches = [
     icon: Star,
     title: 'Early Diagnosis',
     description: 'Prompt identification of hypomineralization in first permanent molars and incisors.',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100'
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-100'
   },
   {
     icon: Shield,
     title: 'Enamel Hypomineralisation Care',
     description: 'Gentle care for weak enamel in kids molars and incisors.',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-100'
+    color: 'text-emerald-600',
+    bgColor: 'bg-emerald-100'
   },
   {
     icon: Sparkles,
     title: 'Defending Childrens Smiles',
     description: 'Early care for baby molars helps protect future permanent teeth.',
-    color: 'text-green-600',
-    bgColor: 'bg-green-100'
+    color: 'text-teal-700',
+    bgColor: 'bg-teal-50'
   }
 ];
 
@@ -63,48 +63,53 @@ export default function ChalkyTeethPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/chalky-teeth-card.JPG"
+            alt="Dental Care for Chalky Teeth"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <Star className="w-8 h-8 text-blue-600" />
-              <span className="text-blue-600 font-semibold">Chalky Teeth</span>
+              <Star className="w-8 h-8 text-teal-400" />
+              <span className="text-teal-400 font-semibold text-lg">Chalky Teeth</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Expert Care for Chalky Teeth
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               Early diagnosis and specialized treatment for hypomineralized teeth,
               ensuring the best outcomes for your child&apos;s dental health.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg">
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
                   Book Consultation
                 </Button>
               </Link>
-              <Link href="tel:+1234567890">
-                <Button size="lg" variant="outline">
+              <Link href="tel:36230000">
+                <Button size="lg" variant="outline" className="border-white bg-white text-teal-600">
                   Call Now
                 </Button>
               </Link>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=600&fit=crop"
-                alt="Dental Care for Chalky Teeth"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16">
 
         {/* Services Overview */}
         <div className="mb-16">
@@ -146,7 +151,7 @@ export default function ChalkyTeethPage() {
                   onClick={() => scrollToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentSlide === index 
-                      ? 'bg-blue-600 scale-125' 
+                      ? 'bg-teal-600 scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -183,8 +188,8 @@ export default function ChalkyTeethPage() {
             </h2>
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-blue-600 font-bold text-sm">1</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-teal-600 font-bold text-sm">1</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">What Are Chalky Teeth?</h3>
@@ -195,8 +200,8 @@ export default function ChalkyTeethPage() {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-blue-600 font-bold text-sm">2</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-teal-600 font-bold text-sm">2</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Common Signs</h3>
@@ -207,8 +212,8 @@ export default function ChalkyTeethPage() {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-blue-600 font-bold text-sm">3</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-teal-600 font-bold text-sm">3</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Treatment Options</h3>
@@ -219,8 +224,8 @@ export default function ChalkyTeethPage() {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-blue-600 font-bold text-sm">4</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-teal-600 font-bold text-sm">4</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Long-term Care</h3>
@@ -236,7 +241,7 @@ export default function ChalkyTeethPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-blue-600" />
+                  <CheckCircle className="w-5 h-5 text-teal-600" />
                   Treatment Recommendations
                 </CardTitle>
               </CardHeader>
@@ -259,7 +264,7 @@ export default function ChalkyTeethPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-green-600" />
+                  <Clock className="w-5 h-5 text-emerald-600" />
                   What Parents Say
                 </CardTitle>
               </CardHeader>
@@ -281,8 +286,8 @@ export default function ChalkyTeethPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-teal-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Early Detection</h3>
               <p className="text-gray-600">
@@ -291,8 +296,8 @@ export default function ChalkyTeethPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-emerald-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Specialized Care</h3>
               <p className="text-gray-600">
@@ -301,8 +306,8 @@ export default function ChalkyTeethPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Sparkles className="w-8 h-8 text-teal-700" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Long-term Success</h3>
               <p className="text-gray-600">
@@ -313,22 +318,22 @@ export default function ChalkyTeethPage() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-blue-600 rounded-2xl p-8 lg:p-12 text-center">
+        <div className="bg-teal-600 rounded-2xl p-8 lg:p-12 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Early Detection Makes All the Difference
           </h2>
-          <p className="text-blue-100 text-lg mb-8">
+          <p className="text-teal-100 text-lg mb-8">
             If you suspect your child may have chalky teeth, don&apos;t wait. 
             Early intervention can prevent serious complications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" variant="secondary" className="text-blue-600">
+              <Button size="lg" variant="secondary" className="text-teal-600">
                 Schedule Consultation
               </Button>
             </Link>
             <Link href="tel:36230000">
-              <Button size="lg" variant="secondary" className="text-blue-600">
+              <Button size="lg" variant="secondary" className="text-teal-600">
                 Call 36230000
               </Button>
             </Link>

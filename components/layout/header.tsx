@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { 
   NavigationMenu,
@@ -12,7 +13,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Phone, Calendar, Smile } from 'lucide-react';
+import { Menu, Phone, Calendar } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Header() {
@@ -66,9 +67,15 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Smile className="h-8 w-8 text-blue-600" />
-            <span className="font-bold text-xl text-gray-900">Dr. Sobia</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/main-logo.png"
+              alt="i-Care Paediatric Dentistry"
+              width={120}
+              height={40}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -77,7 +84,7 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
                     Home
                   </NavigationMenuLink>
@@ -87,7 +94,7 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
                     About
                   </NavigationMenuLink>
@@ -95,7 +102,7 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent hover:bg-transparent focus:bg-transparent group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent hover:bg-transparent focus:bg-transparent group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600">Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {services.map((service) => (
@@ -117,7 +124,7 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/sedation" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
                     Sedation
                   </NavigationMenuLink>
@@ -127,7 +134,7 @@ export function Header() {
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
                     Contact
                   </NavigationMenuLink>
@@ -137,7 +144,7 @@ export function Header() {
               {/* <NavigationMenuItem>
                 <Link href="/parental-portal" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-blue-600 focus:text-blue-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-blue-600 data-[state=open]:text-blue-600"
+                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
                     Portal
                   </NavigationMenuLink>
@@ -171,16 +178,21 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader>
-                <SheetTitle className="flex items-center space-x-2">
-                  <Smile className="h-6 w-6 text-blue-600" />
-                  <span>Dr. Sobia</span>
+                <SheetTitle className="flex items-center justify-center">
+                  <Image
+                    src="/main-logo.png"
+                    alt="i-Care Paediatric Dentistry"
+                    width={100}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col space-y-4 mt-8">
-                <Link href="/" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
+                <Link href="/" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   Home
                 </Link>
-                <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
+                <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   About
                 </Link>
                 <div className="space-y-2">
@@ -191,17 +203,17 @@ export function Header() {
                         key={service.href}
                         href={service.href}
                         onClick={() => setIsOpen(false)}
-                        className="block text-gray-600 hover:text-blue-600 transition-colors"
+                        className="block text-gray-600 hover:text-teal-600 transition-colors"
                       >
                         {service.title}
                       </Link>
                     ))}
                   </div>
                 </div>
-                <Link href="/sedation" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
+                <Link href="/sedation" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   Sedation
                 </Link>
-                <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">
+                <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   Contact
                 </Link>
                 {/* <Link href="/parental-portal" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-blue-600 transition-colors">

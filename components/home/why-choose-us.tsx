@@ -8,55 +8,53 @@ import {
   Clock, 
   Users, 
   Award, 
-  Smile,
-  Star,
-  CheckCircle
+  Smile
 } from 'lucide-react';
 
 const features = [
   {
-    icon: Heart,
-    title: 'Gentle & Caring Approach',
-    description: 'We use the latest techniques to ensure your child feels comfortable and safe during every visit.',
-    color: 'text-red-500 bg-red-50'
-  },
-  {
-    icon: Shield,
-    title: 'State-of-the-Art Technology',
-    description: 'Modern equipment and advanced techniques for the most effective and comfortable treatments.',
-    color: 'text-blue-500 bg-blue-50'
-  },
-  {
-    icon: Clock,
-    title: '24/7 Emergency Care',
-    description: 'Round-the-clock emergency dental care when your child needs urgent attention.',
-    color: 'text-green-500 bg-green-50'
+    icon: Award,
+    title: 'Registered Specialist Practice',
+    description: 'Registered specialist paediatric dental practice focusing solely on children from birth through to 18 years of age.',
+    color: 'text-teal-600 bg-teal-50'
   },
   {
     icon: Users,
-    title: 'Family-Centered Care',
-    description: 'We involve parents in the treatment process and provide education for the whole family.',
-    color: 'text-purple-500 bg-purple-50'
+    title: 'Caring & Dedicated Professionals',
+    description: 'Our staff ensures your child\'s treatment and administrative needs are met efficiently and smoothly.',
+    color: 'text-teal-600 bg-teal-50'
   },
   {
-    icon: Award,
-    title: '15+ Years Experience',
-    description: 'Extensive experience in pediatric dentistry with thousands of successful treatments.',
-    color: 'text-orange-500 bg-orange-50'
+    icon: Clock,
+    title: 'Efficient Scheduling',
+    description: 'We generally keep to schedule to avoid any excessive waiting times, respecting your family\'s time.',
+    color: 'text-teal-600 bg-teal-50'
+  },
+  {
+    icon: Heart,
+    title: 'Open Communication',
+    description: 'We believe in open disclosure and encourage patients and parents to ask questions about treatment.',
+    color: 'text-teal-600 bg-teal-50'
+  },
+  {
+    icon: Shield,
+    title: 'Patient Education Focus',
+    description: 'We provide education materials, website links and diagrams so you fully understand dental treatment needs.',
+    color: 'text-teal-600 bg-teal-50'
   },
   {
     icon: Smile,
-    title: 'Child-Friendly Environment',
-    description: 'Our office is designed to make children feel welcome, comfortable, and excited about dental care.',
-    color: 'text-pink-500 bg-pink-50'
+    title: 'Specially Designed for Children',
+    description: 'Every aspect of our practice has been designed for children and families to create a relaxed, comfortable atmosphere.',
+    color: 'text-teal-600 bg-teal-50'
   }
 ];
 
 const stats = [
-  { number: '5000+', label: 'Happy Patients' },
-  { number: '15+', label: 'Years Experience' },
-  { number: '98%', label: 'Patient Satisfaction' },
-  { number: '24/7', label: 'Emergency Care' }
+  { number: '5000+', label: 'Happy Families' },
+  { number: '20+', label: 'Years Experience' },
+  { number: '0-18', label: 'Years Age Range' },
+  { number: '100%', label: 'Specialist Care' }
 ];
 
 export function WhyChooseUs() {
@@ -92,16 +90,36 @@ export function WhyChooseUs() {
   }, []);
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+      {/* Animated Background Blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large floating blobs */}
+        <div className="absolute -top-16 right-1/4 w-80 h-80 bg-gradient-to-bl from-teal-100/30 to-emerald-100/20 rounded-full animate-pulse" style={{ animationDuration: '10s' }}></div>
+        <div className="absolute bottom-0 -left-20 w-64 h-64 bg-teal-200/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+        <div className="absolute top-1/3 right-0 w-48 h-48 bg-emerald-200/35 rounded-full animate-pulse" style={{ animationDuration: '8s' }}></div>
+        
+        {/* Medium floating elements */}
+        <div className="absolute top-20 left-1/3 w-28 h-28 bg-teal-300/30 rounded-full animate-bounce" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+        <div className="absolute bottom-32 right-16 w-36 h-36 bg-emerald-200/40 rounded-full animate-pulse" style={{ animationDuration: '9s' }}></div>
+        
+        {/* Small animated dots */}
+        <div className="absolute top-40 left-8 w-3 h-3 bg-teal-600 rounded-full animate-ping" style={{ animationDuration: '2s' }}></div>
+        <div className="absolute top-1/2 right-32 w-2 h-2 bg-emerald-700 rounded-full animate-bounce" style={{ animationDuration: '3s', animationDelay: '1.2s' }}></div>
+        
+        {/* Rotating decorative elements */}
+        <div className="absolute top-16 right-8 text-teal-400/50 text-xl font-light animate-spin" style={{ animationDuration: '30s' }}>+</div>
+        <div className="absolute bottom-16 left-16 text-emerald-400/60 text-lg font-light animate-spin" style={{ animationDuration: '22s' }}>+</div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            Why Choose Dr. Sobia?
+            Our Practice Philosophy
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We&apos;re committed to providing exceptional pediatric dental care that makes 
-            both children and parents feel confident and comfortable.
+            We strive to provide comprehensive, compassionate dental care to all children from infancy to adolescence. 
+            Our goal is to help each child develop a healthy smile that will last a lifetime.
           </p>
         </div>
 
@@ -114,15 +132,24 @@ export function WhyChooseUs() {
           >
             {features.map((feature, index) => (
               <div key={index} className="flex-shrink-0 w-full snap-center px-2">
-                <Card className="group hover:shadow-lg transition-all duration-300 h-full">
-                  <CardContent className="p-6 text-center">
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${feature.color}`}>
-                      <feature.icon className="w-8 h-8" />
+                <Card className="group hover:shadow-xl transition-all duration-300 h-full hover:bg-teal-600 transform hover:-translate-y-1 relative overflow-hidden">
+                  {/* Internal animated blobs */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-4 -right-2 w-16 h-16 bg-teal-100/30 group-hover:bg-white/10 rounded-full animate-pulse transition-colors duration-300" style={{ animationDuration: `${6 + index}s` }}></div>
+                    <div className="absolute -bottom-2 -left-4 w-12 h-12 bg-emerald-200/40 group-hover:bg-white/15 rounded-full animate-bounce transition-colors duration-300" style={{ animationDuration: `${4 + index * 0.5}s`, animationDelay: `${index * 0.3}s` }}></div>
+                    <div className="absolute top-1/2 right-4 w-8 h-8 bg-teal-200/50 group-hover:bg-emerald-300/20 rounded-full animate-pulse transition-colors duration-300" style={{ animationDuration: `${5 + index * 0.7}s` }}></div>
+                    <div className="absolute bottom-4 right-6 w-2 h-2 bg-teal-400 group-hover:bg-white/60 rounded-full animate-ping transition-colors duration-300" style={{ animationDuration: `${3 + index * 0.4}s` }}></div>
+                    <div className="absolute top-6 left-4 text-teal-300/40 group-hover:text-white/20 text-sm font-light animate-spin transition-colors duration-300" style={{ animationDuration: `${20 + index * 3}s` }}>+</div>
+                  </div>
+                  
+                  <CardContent className="p-6 text-center relative z-10">
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${feature.color} group-hover:bg-white transition-colors duration-300`}>
+                      <feature.icon className="w-8 h-8 group-hover:text-teal-600 transition-colors duration-300" />
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-white transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-gray-600 leading-relaxed text-sm group-hover:text-teal-50 transition-colors duration-300">
                       {feature.description}
                     </p>
                   </CardContent>
@@ -139,7 +166,7 @@ export function WhyChooseUs() {
                 onClick={() => scrollToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index 
-                    ? 'bg-blue-600 scale-125' 
+                    ? 'bg-teal-600 scale-125' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -151,15 +178,24 @@ export function WhyChooseUs() {
         {/* Desktop Grid */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${feature.color}`}>
-                  <feature.icon className="w-8 h-8" />
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:bg-teal-600 transform hover:-translate-y-1 relative overflow-hidden">
+              {/* Internal animated blobs */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-4 -right-2 w-16 h-16 bg-teal-100/30 group-hover:bg-white/10 rounded-full animate-pulse transition-colors duration-300" style={{ animationDuration: `${6 + index}s` }}></div>
+                <div className="absolute -bottom-2 -left-4 w-12 h-12 bg-emerald-200/40 group-hover:bg-white/15 rounded-full animate-bounce transition-colors duration-300" style={{ animationDuration: `${4 + index * 0.5}s`, animationDelay: `${index * 0.3}s` }}></div>
+                <div className="absolute top-1/2 right-4 w-8 h-8 bg-teal-200/50 group-hover:bg-emerald-300/20 rounded-full animate-pulse transition-colors duration-300" style={{ animationDuration: `${5 + index * 0.7}s` }}></div>
+                <div className="absolute bottom-4 right-6 w-2 h-2 bg-teal-400 group-hover:bg-white/60 rounded-full animate-ping transition-colors duration-300" style={{ animationDuration: `${3 + index * 0.4}s` }}></div>
+                <div className="absolute top-6 left-4 text-teal-300/40 group-hover:text-white/20 text-sm font-light animate-spin transition-colors duration-300" style={{ animationDuration: `${20 + index * 3}s` }}>+</div>
+              </div>
+              
+              <CardContent className="p-6 text-center relative z-10">
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${feature.color} group-hover:bg-white transition-colors duration-300`}>
+                  <feature.icon className="w-8 h-8 group-hover:text-teal-600 transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-white transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed group-hover:text-teal-50 transition-colors duration-300">
                   {feature.description}
                 </p>
               </CardContent>
@@ -168,23 +204,43 @@ export function WhyChooseUs() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-blue-600 rounded-2xl p-8 lg:p-12">
-          <div className="text-center mb-8">
+        <div className="bg-teal-600 rounded-2xl p-8 lg:p-12 relative overflow-hidden">
+          {/* Internal Animated Blobs */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Large internal blobs */}
+            <div className="absolute -top-16 -right-8 w-48 h-48 bg-white/10 rounded-full animate-pulse" style={{ animationDuration: '8s' }}></div>
+            <div className="absolute -bottom-12 -left-16 w-64 h-64 bg-emerald-400/20 rounded-full animate-bounce" style={{ animationDuration: '10s' }}></div>
+            <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-teal-300/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+            
+            {/* Medium glowing blobs */}
+            <div className="absolute top-8 left-8 w-24 h-24 bg-white/15 rounded-full animate-bounce" style={{ animationDuration: '7s', animationDelay: '1s' }}></div>
+            <div className="absolute bottom-8 right-8 w-20 h-20 bg-emerald-300/25 rounded-full animate-pulse" style={{ animationDuration: '9s' }}></div>
+            
+            {/* Small floating particles */}
+            <div className="absolute top-16 right-16 w-3 h-3 bg-white/60 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+            <div className="absolute bottom-20 left-20 w-2 h-2 bg-teal-200 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '1.5s' }}></div>
+            
+            {/* Glowing plus signs */}
+            <div className="absolute top-12 right-1/3 text-white/20 text-xl font-light animate-spin" style={{ animationDuration: '20s' }}>+</div>
+            <div className="absolute bottom-16 left-1/3 text-teal-200/40 text-lg font-light animate-spin" style={{ animationDuration: '25s' }}>+</div>
+          </div>
+          
+          <div className="text-center mb-8 relative z-10">
             <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-              Trusted by Families Across Melbourne
+              Trusted by Families Across Brisbane
             </h3>
-            <p className="text-blue-100 text-lg">
-              Our commitment to excellence shows in our results
+            <p className="text-teal-100 text-lg">
+              Leading the industry in Paediatric Dentistry
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
-                <div className="text-blue-100">
+                <div className="text-teal-100">
                   {stat.label}
                 </div>
               </div>
@@ -192,43 +248,7 @@ export function WhyChooseUs() {
           </div>
         </div>
 
-        {/* Certifications */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Professional Memberships & Certifications
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">
-                  American Academy of Pediatric Dentistry
-                </h4>
-                <p className="text-sm text-gray-600">Active Member</p>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">
-                  Australian Dental Association
-                </h4>
-                <p className="text-sm text-gray-600">Certified Member</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Star className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
-                <h4 className="font-semibold text-gray-900 mb-2">
-                  Board Certified
-                </h4>
-                <p className="text-sm text-gray-600">Pediatric Dentistry</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </div>
     </section>
   );

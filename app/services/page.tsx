@@ -85,15 +85,15 @@ export default function ServicesPage() {
             <a
               key={index}
               href={service.href}
-              className="group block p-6 bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-blue-600 border border-gray-200"
+              className="group block p-6 bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:bg-teal-600 border border-gray-200"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-white transition-colors duration-300">
-                <service.icon className="w-6 h-6 text-blue-600 group-hover:text-blue-600 transition-colors duration-300" />
+              <div className="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-white transition-colors duration-300">
+                <service.icon className="w-6 h-6 text-teal-600 group-hover:text-teal-600 transition-colors duration-300" />
               </div>
               <h2 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-white transition-colors duration-300">
                 {service.title}
               </h2>
-              <p className="text-gray-600 group-hover:text-blue-50 transition-colors duration-300">
+              <p className="text-gray-600 group-hover:text-teal-50 transition-colors duration-300">
                 {service.description}
               </p>
             </a>

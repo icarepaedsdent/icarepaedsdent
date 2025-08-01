@@ -12,8 +12,29 @@ import {
 
 export function ContactSection() {
   return (
-    <section className="py-16 lg:py-24 bg-blue-600">
-      <div className="container mx-auto px-4">
+    <section className="py-16 lg:py-24 bg-teal-600 relative overflow-hidden">
+      {/* Animated Background Blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large floating blobs - lighter colors against dark background */}
+        <div className="absolute -top-32 right-0 w-80 h-80 bg-teal-400/20 rounded-full animate-pulse" style={{ animationDuration: '14s' }}></div>
+        <div className="absolute bottom-0 -left-24 w-96 h-96 bg-emerald-400/15 rounded-full animate-bounce" style={{ animationDuration: '10s' }}></div>
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-teal-300/25 rounded-full animate-pulse" style={{ animationDuration: '9s' }}></div>
+        
+        {/* Medium glowing elements */}
+        <div className="absolute top-16 left-16 w-40 h-40 bg-white/10 rounded-full animate-bounce" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-emerald-300/30 rounded-full animate-pulse" style={{ animationDuration: '11s' }}></div>
+        
+        {/* Small glowing dots */}
+        <div className="absolute top-32 right-1/3 w-3 h-3 bg-white/60 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+        <div className="absolute top-2/3 left-8 w-2 h-2 bg-teal-200 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 right-8 w-4 h-4 bg-emerald-200 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+        
+        {/* Glowing rotating elements */}
+        <div className="absolute top-20 right-16 text-white/30 text-2xl font-light animate-spin" style={{ animationDuration: '40s' }}>+</div>
+        <div className="absolute bottom-16 left-1/3 text-teal-200/50 text-lg font-light animate-spin" style={{ animationDuration: '32s' }}>+</div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Content */}
           <div className="text-white space-y-8">
@@ -21,7 +42,7 @@ export function ContactSection() {
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 Ready to Give Your Child the Best Dental Care?
               </h2>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-teal-100 leading-relaxed">
                 Schedule an appointment today and let us help your child develop healthy 
                 dental habits that will last a lifetime. We&apos;re here to make every visit 
                 a positive experience.
@@ -30,13 +51,13 @@ export function ContactSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <Button size="lg" variant="secondary" className="text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="secondary" className="text-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <Button size="lg" variant="secondary" className="text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>
@@ -46,16 +67,16 @@ export function ContactSection() {
             {/* Quick Contact Info */}
             <div className="space-y-4 pt-8">
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-100">36230000</span>
+                <Phone className="w-5 h-5 text-teal-200" />
+                <span className="text-teal-100">36230000</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-100">icarepaediatricdentistry@gmail.com</span>
+                <Mail className="w-5 h-5 text-teal-200" />
+                <span className="text-teal-100">icarepaediatricdentistry@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-blue-200" />
-                <span className="text-blue-100">Shop 4, 2 Centre Place, Rochedale South QLD 4123</span>
+                <MapPin className="w-5 h-5 text-teal-200" />
+                <span className="text-teal-100">Shop 4, 2 Centre Place, Rochedale South QLD 4123</span>
               </div>
             </div>
           </div>
