@@ -80,8 +80,7 @@ export default function SpecialNeedsPage() {
               Inclusive Dental Care for Every Child
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Specailised care tailored to meet the unique needs of children with physical,
-              developmental, or sensory challenges.
+            Special Kids, Special Smiles: Special Care for Every Child’s Unique Needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
@@ -213,52 +212,22 @@ export default function SpecialNeedsPage() {
               Our Special Needs Services
             </h2>
             <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-pink-600 font-bold text-sm">1</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Initial Assessment</h3>
-                  <p className="text-gray-600">
-                    Comprehensive evaluation to understand your child&apos;s specific needs and concerns.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-pink-600 font-bold text-sm">2</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Adaptive Techniques</h3>
-                  <p className="text-gray-600">
-                    Modified treatment approaches to ensure comfort and successful outcomes.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-pink-600 font-bold text-sm">3</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Preventive Care</h3>
-                  <p className="text-gray-600">
-                    Regular cleanings and check-ups adapted to your child&apos;s comfort level.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-pink-600 font-bold text-sm">4</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Family Support</h3>
-                  <p className="text-gray-600">
-                    Guidance and resources for parents to maintain oral health at home.
-                  </p>
-                </div>
+              <p className="text-gray-600 leading-relaxed">
+                We welcome all patients with special needs including children with autism, Down's syndrome, visual or hearing impairment and many other conditions that make standard dental procedures difficult.
+              </p>
+              
+              <p className="text-gray-600 leading-relaxed">
+                Children with special needs are almost twice as likely to have unmet dental problems compared to children without special needs.
+              </p>
+              
+              <p className="text-gray-600 leading-relaxed">
+                We understand that maintaining the oral Health of children with special needs can be challenging. We also recognise that chalky teeth problems are more common in children who have experienced medical issues during childhood.
+              </p>
+              
+              <div className="bg-pink-50 border-l-4 border-pink-400 p-4 rounded-r-lg">
+                <p className="text-pink-800 leading-relaxed font-medium">
+                  A/Prof Sobia has had extensive experience in the management and treatment of patients with special needs.
+                </p>
               </div>
             </div>
           </div>
@@ -284,22 +253,6 @@ export default function SpecialNeedsPage() {
                   <h4 className="font-semibold text-gray-900">Communication Tools</h4>
                   <p className="text-gray-600 text-sm">Visual aids and alternative communication methods</p>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-green-600" />
-                  Parent Testimonial
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <blockquote className="text-gray-600 italic">
-                  &quot;Finding a dental team that truly understands and accommodates my child&apos;s 
-                  autism has been life-changing. They make every visit comfortable and stress-free.&quot;
-                </blockquote>
-                <p className="text-sm text-gray-500 mt-2">- Sarah M., Parent</p>
               </CardContent>
             </Card>
           </div>

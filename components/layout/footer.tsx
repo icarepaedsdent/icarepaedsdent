@@ -87,9 +87,6 @@ export function Footer() {
               © {currentYear} Icarepaedsdent. All Rights Reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/parent-portal" className="text-teal-400 hover:text-teal-300 text-sm transition-colors">
-                Parent Portal
-              </Link>
               <Link href="/appointment" className="text-teal-400 hover:text-teal-300 text-sm transition-colors">
                 Appointment
               </Link>

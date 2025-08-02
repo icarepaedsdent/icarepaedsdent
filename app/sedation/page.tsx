@@ -578,7 +578,7 @@ export default function SedationPage() {
                 </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <Button size="lg" variant="outline" className="border-whit hover:bg-white text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   Call: 36230000
                 </Button>
               </Link>

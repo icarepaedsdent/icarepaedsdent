@@ -227,65 +227,21 @@ export default function EmergencyCarePage() {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              What to Do in a Dental Emergency
+              Tooth Ache
             </h2>
             <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">1</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Stay Calm
-                  </h3>
-                  <p className="text-gray-600">
-                    Keep your child calm and assess the situation carefully.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">2</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Contact Us
-                  </h3>
-                  <p className="text-gray-600">
-                    Call our emergency number immediately for guidance and
-                    support.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">3</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    First Aid
-                  </h3>
-                  <p className="text-gray-600">
-                    Follow our instructions for immediate care until you reach
-                    our office.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">4</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Treatment
-                  </h3>
-                  <p className="text-gray-600">
-                    Receive prompt, professional care from our experienced team.
-                  </p>
-                </div>
+              <p className="text-gray-600 leading-relaxed">
+                The most common cause of tooth ache is tooth decay. Other causes of toothache include chalky teeth, tooth fractures and dental trauma.
+              </p>
+              
+              <p className="text-gray-600 leading-relaxed">
+                Impacted food can cause pain in young children and can be removed using a soft tooth brush or dental floss. If pain persists please contact us to arrange an appointment.
+              </p>
+              
+              <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                <p className="text-red-800 leading-relaxed font-medium">
+                  If your child's symptoms include throbbing, pain, fever, malaise it is imperative to seek emergency care immediately. After hours emergencies can be managed by seeking care at your local hospital emergency department or through the Queensland Children's hospital.
+                </p>
               </div>
             </div>
           </div>
@@ -295,52 +251,38 @@ export default function EmergencyCarePage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <AlertCircle className="w-5 h-5 text-red-600" />
-                  Common Emergencies
+                  Dental Trauma
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-gray-900">
-                    Knocked-Out Tooth
+                <p className="text-gray-600 leading-relaxed">
+                  It is important that all dental trauma be assessed immediately by a dentist.
+                </p>
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                  <h4 className="font-semibold text-blue-900 mb-2">
+                    General advice following dental trauma:
                   </h4>
-                  <p className="text-gray-600 text-sm">
-                    Keep the tooth moist and seek immediate care
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">
-                    Severe Toothache
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Could indicate infection or damage requiring urgent
-                    attention
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">
-                    Broken/Chipped Tooth
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Save any pieces and contact us right away
-                  </p>
+                  <ul className="space-y-2 text-blue-800 text-sm">
+                    <li>• Complete the course of antibiotics if prescribed</li>
+                    <li>• Maintain a soft diet for 1-2 weeks</li>
+                    <li>• Brush with a soft tooth brush after every meal</li>
+                    <li>• If chlorhexidine has been recommended use this instead of tooth paste for the next week</li>
+                  </ul>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-gradient-to-br from-red-50 to-red-100 border-red-200 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-green-600" />
-                  What Parents Say
+                  <Heart className="w-5 h-5 text-red-600" />
+                  Emergency Care Priority
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <blockquote className="text-gray-600 italic">
-                  &quot;When my daughter knocked out her tooth during sports,
-                  the team was incredibly responsive. They saw us immediately
-                  and saved her tooth!&quot;
-                </blockquote>
-                <p className="text-sm text-gray-500 mt-2">- David P., Parent</p>
+                <p className="text-red-800 leading-relaxed font-medium">
+                  At i-Care Paediatric Dentistry we understand that no parent ever wants to see their child in distress. If your child has dental pain, dental injuries or a facial swelling from a dental infection please contact our rooms and we will address this as a priority and offer you an appointment ASAP.
+                </p>
               </CardContent>
             </Card>
           </div>

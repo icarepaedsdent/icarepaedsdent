@@ -45,7 +45,7 @@ export function Hero() {
                 Associate Professor (Dr) Sobia Zafar
               </h1>
             </div>
-
+              
             {/* Description */}
             <div className="space-y-4 max-w-lg">
               <h2 className="text-2xl font-semibold text-teal-700 leading-relaxed">
