@@ -100,7 +100,7 @@ export default function SpaceMaintainersPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/new-space-maintainer-service.jpg"
+            src="/new-space-maintainer-service.jpeg"
             alt="Space Maintainers for Children"
             fill
             className="object-cover"

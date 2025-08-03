@@ -142,7 +142,7 @@ export default function ExtractionsPage() {
             <div className="grid lg:grid-cols-2 gap-6 relative z-10">
               <div className="relative h-[300px] rounded-lg overflow-hidden">
                 <Image
-                  src="/sample3.JPG"
+                  src="/extraction-2.JPG"
                   alt="Paediatric Dental Care"
                   fill
                   className="object-cover"

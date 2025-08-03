@@ -54,7 +54,7 @@ const services = [
     title: 'Space Maintainers',
     description:
       'Custom devices to maintain proper spacing for developing teeth.',
-    image: '/new-space-maintainer-service.jpg',
+    image: '/new-space-maintainer-service.jpeg',
     href: '/services/space-maintainers',
   },
   {
