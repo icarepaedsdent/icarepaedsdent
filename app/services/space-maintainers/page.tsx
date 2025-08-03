@@ -95,48 +95,53 @@ export default function SpaceMaintainersPage() {
         <div className="absolute top-80 right-8 text-emerald-300/30 text-sm animate-spin" style={{ animationDuration: '15s' }}>+</div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/new-space-maintainer-service.jpg"
+            alt="Space Maintainers for Children"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <CircleDot className="w-8 h-8 text-teal-600" />
-              <span className="text-teal-600 font-semibold">
-                Space Maintainers
-              </span>
+              <CircleDot className="w-8 h-8 text-teal-400" />
+              <span className="text-teal-400 font-semibold text-lg">Space Maintainers</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Preserving Space for Healthy Smiles
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               Custom-fitted space maintainers to ensure proper tooth development
               after early loss of baby teeth, preventing future orthodontic
               complications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">Book Consultation</Button>
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
+                  Book Consultation
+                </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300">
+                <Button size="lg" variant="outline" className="border-white bg-white text-teal-600">
                   Call Us
                 </Button>
               </Link>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/space-maintainer.JPG"
-                alt="Space Maintainers for Children"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
 
         {/* Services Overview */}
         <div className="mb-16">
@@ -264,117 +269,126 @@ export default function SpaceMaintainersPage() {
           </div>
         </div>
 
-        {/* Detailed Information */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Understanding Space Maintainers
-            </h2>
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-teal-600 font-bold text-sm">1</span>
+        {/* Understanding Space Maintainers Section */}
+        <div className="mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Understanding Space Maintainers
+              </h2>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-teal-600 font-bold text-sm">1</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      What They Are
+                    </h3>
+                    <p className="text-gray-600">
+                      Custom orthodontic appliances that hold space for unerupted
+                      adult teeth.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    What They Are
-                  </h3>
-                  <p className="text-gray-600">
-                    Custom orthodontic appliances that hold space for unerupted
-                    adult teeth.
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-teal-600 font-bold text-sm">2</span>
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-teal-600 font-bold text-sm">2</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      When They&apos;re Needed
+                    </h3>
+                    <p className="text-gray-600">
+                      After early loss of baby teeth due to decay, infection, or
+                      trauma.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    When They&apos;re Needed
-                  </h3>
-                  <p className="text-gray-600">
-                    After early loss of baby teeth due to decay, infection, or
-                    trauma.
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-teal-600 font-bold text-sm">3</span>
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-teal-600 font-bold text-sm">3</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      How They Work
+                    </h3>
+                    <p className="text-gray-600">
+                      Prevent adjacent teeth from tilting or drifting into the
+                      empty space.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    How They Work
-                  </h3>
-                  <p className="text-gray-600">
-                    Prevent adjacent teeth from tilting or drifting into the
-                    empty space.
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-teal-600 font-bold text-sm">4</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Duration</h3>
-                  <p className="text-gray-600">
-                    Worn until permanent teeth are ready to emerge naturally.
-                  </p>
+                <div className="flex gap-4">
+                  <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-teal-600 font-bold text-sm">4</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Duration</h3>
+                    <p className="text-gray-600">
+                      Worn until permanent teeth are ready to emerge naturally.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div>
+              <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                {/* Internal animated blobs */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute -top-2 -right-2 w-16 h-16 bg-teal-100/40 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+                  <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-emerald-200/30 rounded-full animate-bounce" style={{ animationDuration: '5s' }}></div>
+                  <div className="absolute top-4 right-8 w-4 h-4 bg-teal-400/60 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+                  <div className="absolute bottom-8 left-6 w-2 h-2 bg-emerald-400/70 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+                  <div className="absolute top-12 right-16 text-teal-300/20 text-lg animate-spin" style={{ animationDuration: '25s' }}>+</div>
+                </div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-teal-600" />
+                    Preserving Precious Smiles
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className="text-gray-600">
+                    Space maintainers hold the space for an unerupted adult tooth necessitated by the early loss of a baby tooth. Space maintainers are orthodontic appliances made of non-allergic stainless steel that are custom fitted and cemented to the adjacent tooth. If a baby tooth is lost early (due to infection, decay or trauma) the teeth on either side can tilt or drift thereby closing the space for the unerupted adult tooth. Failure to hold the space open may result in crowding or crooked teeth that may then warrant extensive orthodontic treatment. Some children require orthodontic treatment anyway but maintaining the space will decrease the severity of the problems. Once the permanent tooth begins to grow in the space where the baby tooth is missing the space maintainer is removed.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
+        </div>
 
-          <div className="space-y-6">
-            <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-              {/* Internal animated blobs */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-2 -right-2 w-16 h-16 bg-teal-100/40 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
-                <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-emerald-200/30 rounded-full animate-bounce" style={{ animationDuration: '5s' }}></div>
-                <div className="absolute top-4 right-8 w-4 h-4 bg-teal-400/60 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
-                <div className="absolute bottom-8 left-6 w-2 h-2 bg-emerald-400/70 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
-                <div className="absolute top-12 right-16 text-teal-300/20 text-lg animate-spin" style={{ animationDuration: '25s' }}>+</div>
-              </div>
-              <CardHeader className="relative z-10">
-                <CardTitle className="flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-teal-600" />
-                  Preserving Precious Smiles
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="relative z-10">
-                <p className="text-gray-600">
-                  Space maintainers hold the space for an unerupted adult tooth necessitated by the early loss of a baby tooth. Space maintainers are orthodontic appliances made of non-allergic stainless steel that are custom fitted and cemented to the adjacent tooth. If a baby tooth is lost early (due to infection, decay or trauma) the teeth on either side can tilt or drift thereby closing the space for the unerupted adult tooth. Failure to hold the space open may result in crowding or crooked teeth that may then warrant extensive orthodontic treatment. Some children require orthodontic treatment anyway but maintaining the space will decrease the severity of the problems. Once the permanent tooth begins to grow in the space where the baby tooth is missing the space maintainer is removed.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-              {/* Internal animated blobs */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-1 -left-2 w-14 h-14 bg-emerald-100/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
-                <div className="absolute -bottom-1 -right-2 w-10 h-10 bg-teal-200/50 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
-                <div className="absolute top-6 left-8 w-3 h-3 bg-emerald-400/60 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
-                <div className="absolute bottom-10 right-6 w-1 h-1 bg-teal-400/80 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
-                <div className="absolute top-16 left-20 text-emerald-300/20 text-sm animate-spin" style={{ animationDuration: '22s' }}>+</div>
-              </div>
-              <CardHeader className="relative z-10">
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-emerald-600" />
-                  Care & Maintenance
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="relative z-10">
-                <p className="text-gray-600">
+        {/* Full Width Care & Maintenance Card */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Internal animated blobs */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-1 -left-2 w-20 h-20 bg-emerald-100/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+              <div className="absolute -bottom-1 -right-2 w-16 h-16 bg-teal-200/50 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute top-6 left-8 w-6 h-6 bg-emerald-400/60 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+              <div className="absolute bottom-10 right-6 w-3 h-3 bg-teal-400/80 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+              <div className="absolute top-16 left-20 text-emerald-300/20 text-xl animate-spin" style={{ animationDuration: '22s' }}>+</div>
+              <div className="absolute top-8 right-1/4 w-12 h-12 bg-emerald-200/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+              <div className="absolute bottom-8 right-8 w-4 h-4 bg-teal-400/50 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+            </div>
+            <CardHeader className="relative z-10">
+              <CardTitle className="flex items-center gap-2 text-2xl">
+                <Shield className="w-6 h-6 text-emerald-600" />
+                Care & Maintenance
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="relative z-10">
+              <div className="text-gray-600 text-lg leading-relaxed">
+                <p>
                   Children readily adapt to space maintainers. Whilst a space maintainer is in place care should be taken to avoid sticky chewy food as this can loosen/distort the spacers and disintegrate the glue used to hold the spacer. Patients are also asked not to push on their spacer with their tongue of fingers. The spacer has to be kept clean with good brushing. Regular dental visits are recommended to monitor the eruption of the adult tooth also to ensure that the glue/cement holding the spacer has not disintegrated as this can then cause cavities to develop. If the spacer becomes loose it is important that you arrange an appointment for your child to the dentist immediately so that the spacer can be reglued.
                 </p>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Benefits Section */}

@@ -76,49 +76,54 @@ export default function EmergencyCarePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/emergency-care-card.jpg"
+            alt="Emergency Dental Care"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <AlertCircle className="w-8 h-8 text-red-600" />
-              <span className="text-red-600 font-semibold">Emergency Care</span>
+              <AlertCircle className="w-8 h-8 text-red-400" />
+              <span className="text-red-400 font-semibold text-lg">Emergency Care</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Immediate Care When You Need It Most
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               Quick response and expert care for dental emergencies. We&apos;re
               here to help your child get relief from pain and prevent further
               complications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="tel:36230000">
-                <Button size="lg" variant="destructive">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Emergency Call
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="border-white bg-white text-red-600">
                   Book Appointment
                 </Button>
               </Link>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/emergency-service.jpg"
-                alt="Emergency Dental Care"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16">
 
         {/* Services Overview */}
         <div className="mb-16">

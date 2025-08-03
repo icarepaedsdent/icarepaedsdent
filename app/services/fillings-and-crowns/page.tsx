@@ -93,48 +93,53 @@ export default function FillingsAndCrownsPage() {
         <div className="absolute top-80 right-8 text-emerald-300/30 text-sm animate-spin" style={{ animationDuration: '15s' }}>+</div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/filling-crown-card.JPG"
+            alt="Dental Fillings and Crowns"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <CircleDot className="w-8 h-8 text-teal-600" />
-              <span className="text-teal-600 font-semibold">
-                Fillings & Crowns
-              </span>
+              <CircleDot className="w-8 h-8 text-teal-400" />
+              <span className="text-teal-400 font-semibold text-lg">Fillings & Crowns</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Restore Your Child&apos;s Smile
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               Professional dental restoration services designed specifically for
               children, using the latest techniques and child-friendly
               materials.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">Book Appointment</Button>
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
+                  Book Appointment
+                </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300">
+                <Button size="lg" variant="outline" className="border-white bg-white text-teal-600">
                   Call Now
                 </Button>
               </Link>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/f-c-service.JPG"
-                alt="Dental Fillings and Crowns"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
 
         {/* Services Overview */}
         <div className="mb-16">

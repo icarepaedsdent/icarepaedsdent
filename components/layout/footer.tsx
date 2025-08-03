@@ -49,7 +49,6 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href="/services" className="text-gray-300 hover:text-teal-400 transition-colors">Our Services</Link></li>
               <li><Link href="/sedation" className="text-gray-300 hover:text-teal-400 transition-colors">Sedation</Link></li>
-              <li><Link href="/appointment" className="text-gray-300 hover:text-teal-400 transition-colors">Appointment</Link></li>
               <li><Link href="/referrals" className="text-gray-300 hover:text-teal-400 transition-colors">Referrals</Link></li>
               <li><Link href="/contact" className="text-gray-300 hover:text-teal-400 transition-colors">Contact</Link></li>
             </ul>
@@ -90,8 +89,8 @@ export function Footer() {
               © {currentYear} Icarepaedsdent. All Rights Reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/appointment" className="text-teal-400 hover:text-teal-300 text-sm transition-colors">
-                Appointment
+              <Link href="/contact" className="text-teal-400 hover:text-teal-300 text-sm transition-colors">
+                Contact Us
               </Link>
               <Link href="/referrals" className="text-teal-400 hover:text-teal-300 text-sm transition-colors">
                 Referrals

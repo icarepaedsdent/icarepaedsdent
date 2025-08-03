@@ -213,47 +213,52 @@ export default function SedationPage() {
         <div className="absolute top-80 right-8 text-emerald-300/30 text-sm animate-spin" style={{ animationDuration: '15s' }}>+</div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/sedation-page.JPG"
+            alt="Comfortable sedation dentistry for children"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <Moon className="w-8 h-8 text-teal-600" />
-              <span className="text-teal-600 font-semibold">Sedation Dentistry</span>
+              <Moon className="w-8 h-8 text-teal-400" />
+              <span className="text-teal-400 font-semibold text-lg">Sedation Dentistry</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Comfortable, Anxiety-Free Dental Care
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               Our safe and effective sedation options help anxious children feel relaxed and comfortable 
               during dental procedures, ensuring a positive experience for both child and parent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
                   Discuss Sedation Options
                 </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300">
+                <Button size="lg" variant="outline" className="border-white bg-white text-teal-600">
                   Call for Consultation
                 </Button>
               </Link>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/sedation-page.JPG"
-                alt="Comfortable sedation dentistry for children"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
 
         {/* Understanding Sedation Dentistry */}
         <div className="mb-16">

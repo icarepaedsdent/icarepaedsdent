@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -18,6 +18,18 @@ import { cn } from '@/lib/utils';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 30);
+    };
+
+    // Add passive listener for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const services = [
     {
@@ -63,23 +75,48 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+    <header className={cn(
+      "sticky z-50 w-full transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+      isScrolled ? "top-6" : "top-0"
+    )}>
+      <div className={cn(
+        "transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+        isScrolled 
+          ? "mx-6 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-32" 
+          : "mx-0"
+      )}>
+        <div className={cn(
+          "transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+          isScrolled 
+            ? "bg-gradient-to-r from-white/15 via-white/10 to-white/15 backdrop-blur-2xl border border-white/30 shadow-2xl shadow-black/5 rounded-2xl" 
+            : "border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+        )}>
+          <div className={cn(
+            "container mx-auto transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+            isScrolled ? "px-6" : "px-4"
+          )}>
+            <div className={cn(
+              "flex items-center justify-between relative transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+              isScrolled ? "h-14" : "h-16"
+            )}>
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center relative z-10">
             <Image
               src="/main-logo.png"
               alt="i-Care Paediatric Dentistry"
               width={120}
               height={40}
-              className="h-10 w-auto object-contain"
+              className={cn(
+                "w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                isScrolled ? "h-8" : "h-10"
+              )}
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden lg:flex">
+          <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
@@ -96,7 +133,7 @@ export function Header() {
                   <NavigationMenuLink className={cn(
                     "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
                   )}>
-                    About
+                    About 
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -162,9 +199,10 @@ export function Header() {
               </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
+          </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 relative z-10">
             <Link href="tel:36230000">
               <Button variant="outline" size="sm">
                 <Phone className="h-4 w-4 mr-2" />
@@ -172,7 +210,7 @@ export function Header() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="sm">
+              <Button size="sm" className="bg-teal-600 hover:bg-teal-700 text-white">
                 <Calendar className="h-4 w-4 mr-2" />
                 Book Appointment
               </Button>
@@ -194,7 +232,10 @@ export function Header() {
                     alt="i-Care Paediatric Dentistry"
                     width={100}
                     height={32}
-                    className="h-8 w-auto object-contain"
+                    className={cn(
+                      "w-auto object-contain transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                      isScrolled ? "h-7" : "h-8"
+                    )}
                   />
                 </SheetTitle>
               </SheetHeader>
@@ -240,7 +281,7 @@ export function Header() {
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button className="w-full sm:text-xs">
+                    <Button className="w-full sm:text-xs bg-teal-600 hover:bg-teal-700 text-white">
                       <Calendar className="h-4 w-4 mr-2" />
                       Book Appointment
                     </Button>
@@ -249,6 +290,8 @@ export function Header() {
               </nav>
             </SheetContent>
           </Sheet>
+            </div>
+          </div>
         </div>
       </div>
     </header>

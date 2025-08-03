@@ -7,9 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Baby, CheckCircle, Calendar, Clock, Shield, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
-
-
-
 const infantCareServices = [
   {
     icon: Baby,
@@ -86,46 +83,51 @@ export default function InfantToddlerCarePage() {
         <div className="absolute top-80 right-8 text-emerald-300/30 text-sm animate-spin" style={{ animationDuration: '15s' }}>+</div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div>
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/sample8.jpg"
+            alt="Infant Dental Care"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <Baby className="w-8 h-8 text-teal-600" />
-              <span className="text-teal-600 font-semibold">Infant & Toddler Care</span>
+              <Baby className="w-8 h-8 text-teal-400" />
+              <span className="text-teal-400 font-semibold text-lg">Infant & Toddler Care</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Dental Home: Where Healthy Smiles Begin
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Dental Home: Where Healthy Smiles Begin
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-            Establishing a “DENTAL HOME” from the start ensures continuity of care and provides a trusted point of contact in case of dental emergencies as your child begins to grow, walk, and explore.
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+              Establishing a "DENTAL HOME" from the start ensures continuity of care and provides a trusted point of contact in case of dental emergencies as your child begins to grow, walk, and explore.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
                   Book First Visit
                 </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white transition-all duration-300">
+                <Button size="lg" variant="outline" className="border-white bg-white text-teal-600">
                   Call Us
                 </Button>
               </Link>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/sample4.jpg"
-                alt="Infant Dental Care"
-                width={600}
-                height={600}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
 
         {/* Services Overview */}
         <div className="mb-16">
@@ -303,7 +305,7 @@ export default function InfantToddlerCarePage() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div>
             <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
               {/* Internal animated blobs */}
               <div className="absolute inset-0 pointer-events-none">
@@ -333,36 +335,47 @@ export default function InfantToddlerCarePage() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
 
-            <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-              {/* Internal animated blobs */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-1 -left-2 w-10 h-10 bg-emerald-100/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
-                <div className="absolute -bottom-2 -right-1 w-6 h-6 bg-teal-200/50 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
-                <div className="absolute top-6 left-12 w-1 h-1 bg-emerald-400/70 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
-                <div className="absolute bottom-12 left-4 text-emerald-300/20 text-lg animate-spin" style={{ animationDuration: '30s' }}>+</div>
-              </div>
-              <CardHeader className="relative z-10">
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-emerald-600" />
-                  Your Child's First Dental Visit Matters!
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="relative z-10">
-                <div className="space-y-4 text-gray-600">
+        {/* Full Width Important Information Card */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Internal animated blobs */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-1 -left-2 w-16 h-16 bg-emerald-100/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+              <div className="absolute -bottom-2 -right-1 w-12 h-12 bg-teal-200/50 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute top-6 left-12 w-3 h-3 bg-emerald-400/70 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+              <div className="absolute bottom-12 left-4 text-emerald-300/20 text-2xl animate-spin" style={{ animationDuration: '30s' }}>+</div>
+              <div className="absolute top-8 right-1/4 w-8 h-8 bg-emerald-200/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+              <div className="absolute bottom-8 right-8 w-4 h-4 bg-teal-400/50 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+            </div>
+            <CardHeader className="relative z-10 text-center">
+              <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+                <Clock className="w-6 h-6 text-emerald-600" />
+                Your Child's First Dental Visit Matters!
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="relative z-10">
+              <div className="grid md:grid-cols-3 gap-6 text-gray-600">
+                <div>
                   <p>
                     We focus on early prevention by welcoming infants for their first oral exam around their first birthday or within six months after their first tooth erupts. This aligned with the recommendations of the Australasian Academy of Paediatric Dentists (AAPD) and International Paediatric Bodies.
                   </p>
+                </div>
+                <div>
                   <p>
                     Early visits ensures that your infant's oral health is assessed early and that any necessary precautions or treatments can be initiated promptly. This also allows us to build a positive and reassuring relationship with your child while monitoring dental development.
                   </p>
+                </div>
+                <div>
                   <p>
                     It's also important to check 2-year olds for chalky back teeth (2-year molars). No child is "too young" to visit the dentist. Don't wait until your child has a problem before you make a dental appointment.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Benefits Section */}

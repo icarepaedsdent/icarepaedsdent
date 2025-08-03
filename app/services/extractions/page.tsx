@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Calendar, Phone } from 'lucide-react';
+import { Calendar, Phone, Scissors } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Extractions | i-Care Paediatric Dentistry',
@@ -31,17 +31,52 @@ export default function ExtractionsPage() {
         <div className="absolute top-80 right-8 text-emerald-300/30 text-sm animate-spin" style={{ animationDuration: '15s' }}>+</div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Extractions
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            While we always aim to save teeth whenever possible, sometimes extractions
-            are necessary for your child&apos;s dental health.
-          </p>
+      {/* Hero Section with Full-Width Background Image */}
+      <div className="relative min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/sample3.JPG"
+            alt="Dental Extractions"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <Scissors className="w-8 h-8 text-teal-400" />
+              <span className="text-teal-400 font-semibold text-lg">Extractions</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Safe and Gentle Tooth Extractions
+            </h1>
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+              While we always aim to save teeth whenever possible, sometimes extractions
+              are necessary for your child&apos;s dental health.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact">
+                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white">
+                  Book Consultation
+                </Button>
+              </Link>
+              <Link href="tel:36230000">
+                <Button size="lg" variant="outline" className="border-white bg-white text-teal-600">
+                  Call Now
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
