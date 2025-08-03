@@ -59,11 +59,14 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><Link href="/services/space-maintainers" className="text-gray-300 hover:text-teal-400 transition-colors">Space Maintainers</Link></li>
-              <li><Link href="/services/fillings-and-crowns" className="text-gray-300 hover:text-teal-400 transition-colors">Fillings Crowns</Link></li>
+              <li><Link href="/services/infant-toddler-care" className="text-gray-300 hover:text-teal-400 transition-colors">Infant / Toddler Care</Link></li>
               <li><Link href="/services/preventive-care" className="text-gray-300 hover:text-teal-400 transition-colors">Preventive Care</Link></li>
-              <li><Link href="/services/chalky-teeth" className="text-gray-300 hover:text-teal-400 transition-colors">Chalky Teeth</Link></li>
+              <li><Link href="/services/fillings-and-crowns" className="text-gray-300 hover:text-teal-400 transition-colors">Fillings & Crowns</Link></li>
               <li><Link href="/services/extractions" className="text-gray-300 hover:text-teal-400 transition-colors">Extractions</Link></li>
+              <li><Link href="/services/space-maintainers" className="text-gray-300 hover:text-teal-400 transition-colors">Space Maintainers</Link></li>
+              <li><Link href="/services/chalky-teeth" className="text-gray-300 hover:text-teal-400 transition-colors">Chalky Teeth</Link></li>
+              <li><Link href="/services/emergency-care" className="text-gray-300 hover:text-teal-400 transition-colors">Emergency Care</Link></li>
+              <li><Link href="/services/special-needs" className="text-gray-300 hover:text-teal-400 transition-colors">Children with Special Needs</Link></li>
             </ul>
           </div>
 

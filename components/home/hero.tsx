@@ -37,12 +37,13 @@ export function Hero() {
             {/* Subtitle */}
             <div className="space-y-4">
               <p className="text-teal-600 font-medium text-lg tracking-wide">
-                Brisbane Specialist Paediatric Dentist
+              Welcome to I-care Paedriatric Dentistry
               </p>
               
               {/* Main Heading */}
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-800 leading-tight">
-                Associate Professor (Dr) Sobia Zafar
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+                Associate Professor<br/>
+                (Dr) Sobia Zafar
               </h1>
             </div>
               
@@ -58,7 +59,7 @@ export function Hero() {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <Link href="/contact">
+              <Link href="/referrals">
                 <Button 
                   size="lg" 
                   className="bg-teal-100 text-teal-700 hover:bg-teal-200 text-lg px-8 py-6 rounded-full border border-teal-200 transition-all duration-300"
@@ -69,21 +70,7 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-8 pt-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-teal-600">20+</div>
-                <div className="text-sm text-gray-600 font-medium">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-600">5000+</div>
-                <div className="text-sm text-gray-600 font-medium">Happy Families</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-teal-700">PhD</div>
-                <div className="text-sm text-gray-600 font-medium">Qualified</div>
-              </div>
-            </div>
+
           </div>
 
           {/* Professional Photo Section */}
@@ -116,7 +103,7 @@ export function Hero() {
                   <Phone className="w-4 h-4 text-teal-600" />
                   <span>36230000</span>
                 </div>
-                <div className="text-xs text-gray-500">Mon - Fri | 9AM - 5PM</div>
+                <div className="text-xs text-gray-500">Mon - Sat | 9AM - 5PM</div>
               </div>
             </div>
           </div>

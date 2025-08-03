@@ -197,7 +197,7 @@ export default function ReferralsPage() {
             Referrals
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            We welcome referrals from dental colleagues for specialized paediatric dental care. 
+            We welcome referrals from dental colleagues for specailised paediatric dental care. 
             Please complete the form below or download our referral form.
           </p>
           

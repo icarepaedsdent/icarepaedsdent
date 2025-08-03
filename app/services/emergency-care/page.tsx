@@ -93,7 +93,7 @@ export default function EmergencyCarePage() {
               complications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="tel:+1234567890">
+              <Link href="tel:36230000">
                 <Button size="lg" variant="destructive">
                   <Phone className="w-5 h-5 mr-2" />
                   Emergency Call
@@ -326,7 +326,7 @@ export default function EmergencyCarePage() {
                 Quick Response
               </h3>
               <p className="text-gray-600">
-                Immediate attention to minimize pain and complications.
+                Immediate attention to minimise pain and complications.
               </p>
             </div>
           </div>
@@ -341,7 +341,7 @@ export default function EmergencyCarePage() {
             Contact us immediately for expert emergency dental care
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="tel:+1234567890">
+            <Link href="tel:36230000">
               <Button
                 size="lg"
                 variant="secondary"

@@ -55,10 +55,10 @@ export function AboutSection() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 clear-left lg:clear-none">
-                Meet Associate Professor (Dr) Sobia Zafar
+                About Us
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                We are a registered specialist paediatric dental practice. Our specialist A/Prof Sobia Zafar specialise in providing dental care for children from birth through to 18 years of age. Focusing solely on children&apos;s teeth enables us to provide high-quality, effective dental care, leading the industry in Paediatric Dentistry. Our goal is to help each child develop a healthy smile that will last a life time.
+                We are a registered specialist paediatric dental practice. Our specialist Associate Professor (Dr) Sobia Zafar specialise in providing dental care for children from birth through to 18 years of age. Focusing solely on children&apos;s teeth enables us to provide high-quality, effective dental care, leading the industry in Paediatric Dentistry. Our goal is to help each child develop a healthy smile that will last a life time.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 When you visit our clinic, we try to make your child feel as comfortable as possible to reduce the anxieties associated with seeing a dentist. Every aspect of our practice has been specially designed for children and their families so as to create a modern, relaxed and comfortable atmosphere.
@@ -70,7 +70,7 @@ export function AboutSection() {
                 We believe in open disclosure and encourage our patients and parents to ask questions. Where appropriate we will also provide you with additional education materials, website links and diagrams so that you fully understand your child&apos;s dental treatment needs. Treatment options will be discussed with you as well as a detailed explanation of the most appropriate plan provided. We aim to provide you with as much information as possible so that you are equipped to make well informed decisions about your child&apos;s dental health.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                A/Prof Sobia Zafar also specialises in providing dental care to children with complex medical conditions and disabilities. Her practice is equipped to accommodate the diverse needs of these patients, offering a supportive and inclusive environment. The clinic is fully wheelchair-accessible, ensuring ease of access for children with mobility challenges and their families.
+                A/Prof Sobia also specialises in providing dental care to children with complex medical conditions and disabilities. Her practice is equipped to accommodate the diverse needs of these patients, offering a supportive and inclusive environment. The clinic is fully wheelchair-accessible, ensuring ease of access for children with mobility challenges and their families.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 We strive to provide comprehensive, compassionate dental care to all children from infancy to adolescence, including those with special health care needs.

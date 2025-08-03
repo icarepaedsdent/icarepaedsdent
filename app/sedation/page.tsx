@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Moon, Shield, Heart, CheckCircle, AlertTriangle, Clock } from 'lucide-react';
+import { Moon, Shield, Heart, CheckCircle, AlertTriangle, Clock, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 const sedationReasons = [
@@ -44,21 +44,22 @@ const sedationOptions = [
     id: 'nitrous',
     title: 'Nitrous Oxide (Laughing Gas)',
     subtitle: 'Nitrous Oxide',
-    howItWorks: 'Nitrous oxide is a safe, colorless gas that helps children relax during dental procedures. It\'s inhaled through a small mask placed over the nose.',
+    howItWorks: 'Nitrous oxide also known as Laughing gas is a form of sedation that is particularly useful to alleviate anxiety in older children for simple procedures of short duration. A certain degree of patient co-operation is required for this technique to be successful. Using a special mask that fits over the nose, your child will inhale nitrous oxide. The gas will begin to work within a few minutes and often gives a relaxed feeling.',
     benefits: [
       'Quick onset and recovery',
       'Child remains conscious and responsive',
-      'No needles or injections required'
+      'No needles or injections required',
+      'Effects are reversed quickly at completion'
     ],
     bestFor: [
-      'Mild to moderate anxiety',
-      'Routine dental procedures',
-      'Children who can follow instructions',
-      'First-time dental patients'
+      'Older children who can cooperate',
+      'Simple procedures of short duration',
+      'Alleviating anxiety in dental procedures',
+      'Children who can follow instructions'
     ],
     additionalInfo: {
-      title: 'Safety',
-      content: 'Nitrous oxide has been used safely in dentistry for over 150 years. Your child will be monitored throughout the procedure.'
+      title: 'Safety & Effectiveness',
+      content: 'Nitrous oxide is effective, safe, and the effects are reversed quickly at the completion of treatment. Your child will be monitored throughout the procedure.'
     }
   },
   {
@@ -107,21 +108,24 @@ const sedationOptions = [
     id: 'general',
     title: 'General Anesthesia',
     subtitle: 'General Anesthesia',
-    howItWorks: 'General anesthesia puts your child in a controlled state of unconsciousness, allowing for extensive dental work without any awareness or discomfort.',
+    howItWorks: 'If your child is young, anxious, requires extensive or complex dental treatment, has special needs and has a strong gag reflex, treatment under general anaesthetic should be considered. General anaesthesia means that your child is fully asleep. This approach allows all treatment and x-rays to be completed in one appointment, where 4-5 appointments with local anaesthetic/nitrous oxide may be required in the dental surgery.',
     benefits: [
+      'All treatment completed in one appointment',
+      'Average treatment time: 1.5 hours',
+      'Minimises negative experiences and dental phobias',
       'Complete unawareness of procedure',
-      'Allows for extensive treatment',
-      'Performed in hospital setting'
+      'Prevents lifetime dental anxiety'
     ],
     bestFor: [
-      'Extensive dental treatment needed',
-      'Severe behavioral issues',
-      'Children with significant special needs',
-      'Very young children requiring multiple procedures'
+      'Young children',
+      'Anxious children',
+      'Extensive or complex dental treatment',
+      'Children with special needs',
+      'Strong gag reflex'
     ],
     additionalInfo: {
-      title: 'Safety',
-      content: 'Performed by a board-certified anesthesiologist in a hospital setting with full monitoring and emergency capabilities.'
+      title: 'Expert Care at St Andrews War Memorial Hospital',
+      content: 'Dental treatment under general anaesthetic is performed by A/Prof Sobia Zafar at the St Andrews War Memorial Hospital, where A/Prof Sobia Zafar is fully registered and accredited as a specialist paediatric dentist. The general anaesthetic is administered by a member of our team of highly qualified specialist anaesthetists with years of experience in paediatric care. You can be rest assured your child will be well looked after. Following the initial consultation A/Prof Zafar will give you a comprehensive report along with a detailed dental treatment plan (with health fund item numbers), anaesthetic fees and hospital fees.'
     }
   }
 ];
@@ -248,6 +252,81 @@ export default function SedationPage() {
                 className="object-cover w-full h-full"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Understanding Sedation Dentistry */}
+        <div className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              {/* Internal animated blobs */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-3 -right-3 w-16 h-16 bg-teal-100/30 rounded-full animate-pulse" style={{ animationDuration: '7s' }}></div>
+                <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-emerald-200/40 rounded-full animate-bounce" style={{ animationDuration: '6s' }}></div>
+                <div className="absolute top-12 right-16 w-4 h-4 bg-teal-400/40 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+                <div className="absolute bottom-16 left-12 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+                <div className="absolute top-20 left-1/4 text-teal-300/20 text-xl animate-spin" style={{ animationDuration: '25s' }}>+</div>
+                <div className="absolute bottom-24 right-1/3 text-emerald-300/25 text-lg animate-spin" style={{ animationDuration: '30s' }}>+</div>
+              </div>
+              
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-3xl font-bold text-center text-teal-700 mb-2">
+                  Understanding Sedation Dentistry
+                </CardTitle>
+              </CardHeader>
+              
+              <CardContent className="space-y-6 relative z-10">
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed">
+                    Sedation Dentistry refers to the use of sedation during dental treatment. At i-Care Paediatric Dentistry, we understand that young children and some older children might find dental treatment quite difficult to cope with. We offer treatment using Nitrous Oxide sedation and treatment under General Aesthetic (at the St Andrews War Memorial Day Hospital).
+                  </p>
+                  
+                  <div className="bg-teal-50 border-l-4 border-teal-400 p-6 rounded-r-lg">
+                    <h3 className="text-xl font-semibold text-teal-800 mb-4">
+                      Questions to Consider Before Deciding on Sedation:
+                    </h3>
+                    <ul className="space-y-2 text-teal-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>Is your child old enough to cope with treatment in the chair?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>What was their previous dental history?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>Does your child require complex dental treatment?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>How long can your child sit still in the chair?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>How long can your child keep their mouth open?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>Is your child able to tolerate local anaesthetic?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>Does your child have a strong gag reflex?</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>How many teeth need treatment</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-teal-600 font-bold mt-1">•</span>
+                        <span>Which option allows for the highest standard of treatment?</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -471,6 +550,146 @@ export default function SedationPage() {
           </div>
         </div>
 
+        {/* General Anaesthetic Fees */}
+        <div className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              {/* Internal animated blobs */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-3 -right-3 w-16 h-16 bg-emerald-100/30 rounded-full animate-pulse" style={{ animationDuration: '7s' }}></div>
+                <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-teal-200/40 rounded-full animate-bounce" style={{ animationDuration: '6s' }}></div>
+                <div className="absolute top-12 right-16 w-4 h-4 bg-emerald-400/40 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+                <div className="absolute bottom-16 left-12 w-2 h-2 bg-teal-400/60 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
+                <div className="absolute top-20 left-1/4 text-emerald-300/20 text-xl animate-spin" style={{ animationDuration: '25s' }}>+</div>
+                <div className="absolute bottom-24 right-1/3 text-teal-300/25 text-lg animate-spin" style={{ animationDuration: '30s' }}>+</div>
+              </div>
+              
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-3xl font-bold text-center text-emerald-700 mb-2">
+                  General Anaesthetic Fees
+                </CardTitle>
+              </CardHeader>
+              
+              <CardContent className="space-y-6 relative z-10">
+                <div className="space-y-4">
+                  <p className="text-gray-600 leading-relaxed">
+                    Treatment under general anaesthetic will incur three main costs:
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-emerald-50 border-l-4 border-emerald-400 p-4 rounded-r-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                        <h3 className="font-semibold text-emerald-800">Dental Treatment Fee</h3>
+                      </div>
+                      <p className="text-emerald-700 text-sm">
+                        Payable directly to i-Care Paediatric Dentistry
+                      </p>
+                    </div>
+                    
+                    <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-teal-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                        <h3 className="font-semibold text-teal-800">Hospital Fee</h3>
+                      </div>
+                      <p className="text-teal-700 text-sm">
+                        Payable directly to the hospital
+                      </p>
+                    </div>
+                    
+                    <div className="bg-emerald-50 border-l-4 border-emerald-400 p-4 rounded-r-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                        <h3 className="font-semibold text-emerald-800">Anaesthetist Fee</h3>
+                      </div>
+                      <p className="text-emerald-700 text-sm">
+                        Payable directly to the anaesthetic group
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg mt-6">
+                    <h3 className="font-semibold text-gray-800 mb-2">Important Payment Information</h3>
+                    <div className="space-y-2 text-gray-700 text-sm">
+                      <p>• You will be provided with the contact details for the hospital as well as the anaesthetic group.</p>
+                      <p>• Please get in touch with the hospital and the anaesthetic groups directly to confirm fees payable.</p>
+                      <p>• The hospital and anaesthetic fees are payable prior to surgery.</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Treatment Planning Process */}
+        <div className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              {/* Internal animated blobs */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -top-3 -right-3 w-16 h-16 bg-teal-100/30 rounded-full animate-pulse" style={{ animationDuration: '8s' }}></div>
+                <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-emerald-200/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
+                <div className="absolute top-12 right-16 w-4 h-4 bg-teal-400/40 rounded-full animate-ping" style={{ animationDuration: '5s' }}></div>
+                <div className="absolute bottom-16 left-12 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+                <div className="absolute top-20 left-1/4 text-teal-300/20 text-xl animate-spin" style={{ animationDuration: '28s' }}>+</div>
+                <div className="absolute bottom-24 right-1/3 text-emerald-300/25 text-lg animate-spin" style={{ animationDuration: '32s' }}>+</div>
+              </div>
+              
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-3xl font-bold text-center text-teal-700 mb-2">
+                  Treatment Plan
+                </CardTitle>
+              </CardHeader>
+              
+              <CardContent className="space-y-6 relative z-10">
+                <div className="space-y-6">
+                  <div className="bg-teal-50 border-l-4 border-teal-400 p-6 rounded-r-lg">
+                    <h3 className="text-xl font-semibold text-teal-800 mb-4">
+                      Initial Consultation & Estimate
+                    </h3>
+                    <p className="text-teal-700 leading-relaxed mb-4">
+                      At the initial comprehensive consultation, you will be provided with a treatment plan estimate (with health fund item numbers). Please be aware that the treatment is an estimate only and can vary depending on what is found at the time of the general anaesthetic.
+                    </p>
+                    <div className="bg-teal-100 p-4 rounded-lg">
+                      <p className="text-teal-800 text-sm font-medium">
+                        📋 <strong>Important:</strong> If radiographs are to be taken at the time of the surgery, a change in the treatment plan is more likely.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-emerald-50 border-l-4 border-emerald-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-emerald-800 mb-2">Payment Adjustments</h3>
+                      <div className="space-y-2 text-emerald-700 text-sm">
+                        <p>• <strong>Extra treatment needed:</strong> Additional payment due on the following business day after surgery</p>
+                        <p>• <strong>Less treatment required:</strong> You will be reimbursed the difference in cost</p>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-teal-800 mb-2">Required Paperwork</h3>
+                      <div className="space-y-2 text-teal-700 text-sm">
+                        <p>• Information sheets</p>
+                        <p>• Consent forms</p>
+                        <p>• Surgery location and timing details</p>
+                        <p>• Pre-operative instructions</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg">
+                    <h3 className="font-semibold text-gray-800 mb-2">Our Support Process</h3>
+                    <p className="text-gray-700 text-sm">
+                      If your child requires treatment under general anaesthetic, our staff will go through the required paperwork, including information sheet, consents, and information about where and when the surgery will be undertaken.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Safety and Preparation */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <Card className="bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -483,31 +702,41 @@ export default function SedationPage() {
             </div>
             <CardHeader className="relative z-10">
               <CardTitle className="flex items-center gap-2 text-teal-700">
-                <Shield className="w-6 h-6 text-teal-600" />
-                Safety First
+                <Calendar className="w-6 h-6 text-teal-600" />
+                Booking your child's theatre date
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 relative z-10">
-              <p className="text-gray-600">
-                Your child&apos;s safety is our top priority. We follow strict protocols and guidelines 
-                for all sedation procedures.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm text-gray-600">Comprehensive pre-operative evaluation</span>
+              <div className="bg-teal-50 border-l-4 border-teal-400 p-4 rounded-r-lg">
+                <h3 className="font-semibold text-teal-800 mb-2">Required Deposit</h3>
+                <p className="text-teal-700 text-sm mb-2">
+                  To book your child's spot at hospital, a <strong>non-refundable $300 deposit</strong> is taken.
+                </p>
+                <p className="text-teal-700 text-sm">
+                  Payment options: Credit card (in person or over the phone) or Direct Debit
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="bg-orange-50 border-l-4 border-orange-400 p-3 rounded-r-lg">
+                  <h4 className="font-semibold text-orange-800 text-sm">Payment Timeline</h4>
+                  <p className="text-orange-700 text-sm">
+                    The remaining Dental Treatment Fee is payable <strong>07 days prior to surgery</strong>
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm text-gray-600">Continuous monitoring during procedure</span>
+                
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-r-lg">
+                  <h4 className="font-semibold text-blue-800 text-sm">If Your Child Becomes Unwell</h4>
+                  <p className="text-blue-700 text-sm">
+                    Please let us know immediately, and we can organise to reschedule your child's theatre date
+                  </p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm text-gray-600">Emergency equipment and trained staff</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm text-gray-600">Post-operative care instructions</span>
+                
+                <div className="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-lg">
+                  <h4 className="font-semibold text-red-800 text-sm">Important Payment Policy</h4>
+                  <p className="text-red-700 text-sm">
+                    If the full payment is not received 07 days prior to surgery, your child's theatre date will be rescheduled even if the $300 deposit has been paid
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -516,38 +745,123 @@ export default function SedationPage() {
           <Card className="bg-gradient-to-br from-white to-emerald-50/30 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
             {/* Internal animated blobs */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute -top-1 -left-2 w-12 h-12 bg-emerald-100/40 rounded-full animate-bounce" style={{ animationDuration: '7s' }}></div>
-              <div className="absolute -bottom-2 -right-1 w-8 h-8 bg-teal-200/50 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
-              <div className="absolute top-6 left-12 w-2 h-2 bg-emerald-400/70 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
-              <div className="absolute bottom-8 left-6 text-emerald-300/25 text-lg animate-spin" style={{ animationDuration: '20s' }}>+</div>
+              <div className="absolute -top-2 -right-2 w-14 h-14 bg-emerald-100/30 rounded-full animate-pulse" style={{ animationDuration: '7s' }}></div>
+              <div className="absolute -bottom-1 -left-1 w-10 h-10 bg-teal-200/40 rounded-full animate-bounce" style={{ animationDuration: '6s' }}></div>
+              <div className="absolute top-8 right-8 w-3 h-3 bg-emerald-400/50 rounded-full animate-ping" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute bottom-16 right-4 text-emerald-300/20 text-sm animate-spin" style={{ animationDuration: '28s' }}>+</div>
             </div>
             <CardHeader className="relative z-10">
               <CardTitle className="flex items-center gap-2 text-emerald-700">
-                <Clock className="w-6 h-6 text-emerald-600" />
-                Pre-Appointment Preparation
+                <Shield className="w-6 h-6 text-emerald-600" />
+                Private Health Insurance
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 relative z-10">
-              <p className="text-gray-600">
-                Proper preparation helps ensure a safe and successful sedation experience.
+              <p className="text-gray-600 leading-relaxed">
+                If your child holds private health insurance, please get in touch with your health fund if you would like to know how much they will reimburse.
               </p>
-              <div className="space-y-3">
-                <div>
-                  <h4 className="font-semibold text-gray-900">Medical History</h4>
-                  <p className="text-sm text-gray-600">Complete medical history and current medications</p>
+              
+              <div className="bg-emerald-50 border-l-4 border-emerald-400 p-4 rounded-r-lg">
+                <h3 className="font-semibold text-emerald-800 mb-2">Treatment Plan Codes</h3>
+                <p className="text-emerald-700 text-sm">
+                  Your child's treatment plan has the codes you need to provide to your health fund <br/>
+                  <strong>e.g. 022, 111, 121</strong>
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-teal-50 border-l-4 border-teal-400 p-3 rounded-r-lg">
+                  <h4 className="font-semibold text-teal-800 text-sm">'Extras' Cover</h4>
+                  <p className="text-teal-700 text-sm">
+                    Will pay towards the dental treatment
+                  </p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Fasting Guidelines</h4>
-                  <p className="text-sm text-gray-600">Specific instructions about eating and drinking before the appointment</p>
+                
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-r-lg">
+                  <h4 className="font-semibold text-blue-800 text-sm">'Hospital' Cover</h4>
+                  <p className="text-blue-700 text-sm">
+                    Will contribute towards the hospital fee
+                  </p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Transportation</h4>
-                  <p className="text-sm text-gray-600">Arrange for someone to drive you and your child home</p>
+              </div>
+              
+              <div className="bg-green-50 border-l-4 border-green-400 p-3 rounded-r-lg">
+                <h4 className="font-semibold text-green-800 text-sm">💡 Money-Saving Tip</h4>
+                <p className="text-green-700 text-sm">
+                  Some health funds do not charge an excess when children are admitted to hospital, so it is worth checking with your health fund.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 border-l-4 border-gray-400 p-3 rounded-r-lg">
+                <h4 className="font-semibold text-gray-800 text-sm">Claims Process</h4>
+                <p className="text-gray-700 text-sm">
+                  Once your child has had the dental treatment completed, an invoice will be emailed to you. You can then use this invoice to claim your rebate through your health fund.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* CDBS and Questions */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <Card className="bg-gradient-to-br from-white to-red-50/30 border-red-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Internal animated blobs */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-2 -right-2 w-14 h-14 bg-red-100/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
+              <div className="absolute -bottom-1 -left-1 w-10 h-10 bg-orange-200/40 rounded-full animate-bounce" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute top-8 right-8 w-3 h-3 bg-red-400/50 rounded-full animate-ping" style={{ animationDuration: '4s' }}></div>
+              <div className="absolute bottom-16 right-4 text-red-300/20 text-sm animate-spin" style={{ animationDuration: '25s' }}>+</div>
+            </div>
+            <CardHeader className="relative z-10">
+              <CardTitle className="flex items-center gap-2 text-red-700">
+                <AlertTriangle className="w-6 h-6 text-red-600" />
+                Child Dental Benefit Schedule (CDBS)
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 relative z-10">
+              <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                <h3 className="font-semibold text-red-800 mb-2">⚠️ Important Limitation</h3>
+                <p className="text-red-700 text-sm">
+                  Unfortunately the CDBS scheme does not contribute towards any dental treatment undertaken at the hospital.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-white to-blue-50/30 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Internal animated blobs */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-2 -right-2 w-14 h-14 bg-blue-100/30 rounded-full animate-pulse" style={{ animationDuration: '7s' }}></div>
+              <div className="absolute -bottom-1 -left-1 w-10 h-10 bg-teal-200/40 rounded-full animate-bounce" style={{ animationDuration: '6s' }}></div>
+              <div className="absolute top-8 right-8 w-3 h-3 bg-blue-400/50 rounded-full animate-ping" style={{ animationDuration: '5s' }}></div>
+              <div className="absolute bottom-16 right-4 text-blue-300/20 text-sm animate-spin" style={{ animationDuration: '28s' }}>+</div>
+            </div>
+            <CardHeader className="relative z-10">
+              <CardTitle className="flex items-center gap-2 text-blue-700">
+                <Heart className="w-6 h-6 text-blue-600" />
+                Questions?
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4 relative z-10">
+              <p className="text-gray-600 leading-relaxed">
+                Going to hospital with your child can be a stressful and overwhelming process. We hope to make it as easy and straightforward as possible.
+              </p>
+              
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                <h3 className="font-semibold text-blue-800 mb-3">Get in Touch</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-blue-600 font-semibold text-sm">📞 Phone:</span>
+                    <a href="tel:0733433322" className="text-blue-700 hover:text-blue-900 text-sm font-medium">(07) 3343 3322</a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-blue-600 font-semibold text-sm">✉️ Email:</span>
+                    <a href="mailto:paedsdentga@gmail.com" className="text-blue-700 hover:text-blue-900 text-sm font-medium">paedsdentga@gmail.com</a>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Comfort Items</h4>
-                  <p className="text-sm text-gray-600">Bring a favorite toy or blanket for comfort</p>
-                </div>
+                <p className="text-blue-600 text-xs mt-3 font-medium">
+                  If you have any questions at all, please do not hesitate to get in touch with us.
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -578,7 +892,7 @@ export default function SedationPage() {
                 </Button>
               </Link>
               <Link href="tel:36230000">
-                <Button size="lg" variant="outline" className="border-whit hover:bg-white text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                <Button size="lg" variant="outline" className="border-white hover:bg-white text-teal-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                   Call: 36230000
                 </Button>
               </Link>

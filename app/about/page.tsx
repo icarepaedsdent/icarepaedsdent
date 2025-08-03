@@ -115,7 +115,7 @@ export default function AboutPage() {
                 Excellence in Paediatric Dental Care
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                A/Prof Sobia Zafar is a specialist paediatric dentist with a gentle, child-centred approach that puts children and families at the heart of every dental experience. With over 20 years of clinical and academic experience, she is renowned not only for her advanced clinical skills, but also for her genuine warmth, empathy, and unwavering commitment to children&apos;s wellbeing.
+                Associate Professor (Dr) Sobia Zafar is a specialist paediatric dentist with a gentle, child-centred approach that puts children and families at the heart of every dental experience. With over 20 years of clinical and academic experience, she is renowned not only for her advanced clinical skills, but also for her genuine warmth, empathy, and unwavering commitment to children&apos;s wellbeing.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 She completed her specialist training in paediatric dentistry and Doctor of Philosophy (PhD) from the University of Otago, New Zealand. After that she worked as a specialist paeditric dentist and senior lecturer at the Oral Health Centre of Western Australia for two years. She then moved to Brisbane and is currently working as a discipline lead at the school of dentistry, The University of Queensland.
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 A/Prof Sobia is also deeply committed to caring for children with special needs and those from culturally and linguistically diverse (CALD) backgrounds. She is known for her inclusive, respectful, and adaptable care, and she works closely with families, support workers, and medical teams to ensure holistic, compassionate management. She regularly runs educational workshops for parents and caregivers, empowering families with the knowledge and skills to maintain their child&apos;s oral health at home.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                With A/Prof Sobia Zafar, your child is not just receiving expert dental treatment—they are being cared for with compassion, respect, and a deep commitment to their lifelong health and happiness.
+                With A/Prof Sobia, your child is not just receiving expert dental treatment—they are being cared for with compassion, respect, and a deep commitment to their lifelong health and happiness.
               </p>
             </div>
             
@@ -159,6 +159,22 @@ export default function AboutPage() {
                 height={600}
                 className="object-cover w-full h-full"
               />
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap gap-8 pt-8 justify-center">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-teal-600">20+</div>
+                <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-600">5000+</div>
+                <div className="text-sm text-gray-600 font-medium">Happy Families</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-teal-700">PhD</div>
+                <div className="text-sm text-gray-600 font-medium">Qualified</div>
+              </div>
             </div>
           </div>
         </div>
@@ -227,7 +243,7 @@ export default function AboutPage() {
         {/* Approach & Specialties */}
         <div className="bg-white rounded-2xl p-8 shadow-lg mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-            Comprehensive Care Approach
+          Paediatric dental services
           </h2>
           <div className="space-y-6 mb-8">
             <p className="text-gray-600 leading-relaxed">
@@ -303,7 +319,7 @@ export default function AboutPage() {
             Expert Care with Compassion
           </h2>
           <p className="text-lg text-teal-100 max-w-3xl mx-auto relative z-10">
-            With A/Prof Sobia Zafar, your child is not just receiving expert dental treatment—they are 
+            With A/Prof Sobia, your child is not just receiving expert dental treatment. They are 
             being cared for with compassion, respect, and a deep commitment to their lifelong health and happiness.
           </p>
         </div>

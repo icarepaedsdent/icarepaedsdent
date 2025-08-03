@@ -21,6 +21,11 @@ export function Header() {
 
   const services = [
     {
+      title: 'Infant / Toddler Care',
+      href: '/services/infant-toddler-care',
+      description: 'Gentle dental care for the littlest patients'
+    },
+    {
       title: 'Preventive Care',
       href: '/services/preventive-care',
       description: 'Regular checkups, cleanings, and preventive treatments'
@@ -54,11 +59,6 @@ export function Header() {
       title: 'Children with Special Needs',
       href: '/services/special-needs',
       description: 'Specailised care for children with special needs'
-    },
-    {
-      title: 'Infant / Toddler Care',
-      href: '/services/infant-toddler-care',
-      description: 'Gentle dental care for the littlest patients'
     }
   ];
 

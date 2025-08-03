@@ -95,11 +95,11 @@ export function ContactSection() {
                     </h3>
                     <div className="space-y-1 lg:space-y-2 text-gray-600 text-sm lg:text-base">
                       <div className="flex justify-between">
-                        <span>Monday - Friday</span>
+                        <span>Monday - Saturday</span>
                         <span className="font-medium">9:00 AM - 5:00 PM</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Saturday - Sunday</span>
+                        <span>Sunday</span>
                         <span className="font-medium text-red-600">Closed</span>
                       </div>
                     </div>
