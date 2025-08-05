@@ -76,7 +76,7 @@ export function Header() {
 
   const aboutItems = [
     {
-      title: 'About Dr. Sobia',
+      title: 'About A/Prof Sobia',
       href: '/about',
       description: 'Learn about A/Prof Sobia Zafar\'s background and expertise'
     },

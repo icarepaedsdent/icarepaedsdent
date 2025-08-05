@@ -21,217 +21,223 @@ interface AwardImage {
 
 // Award images data
 const awardImages: AwardImage[] = [
-  {
-    id: "award1",
-    src: "/awards/award (1).JPG",
-    alt: "Professional Achievement Award",
-    title: "Professional Excellence Award",
-    category: "Professional Recognition",
-    description: "Recognition for outstanding contribution to paediatric dentistry",
-    year: "2023",
-    organization: "Dental Association",
-    orientation: "portrait",
-    size: "medium"
-  },
-  {
-    id: "award2",
-    src: "/awards/award (2).JPG",
-    alt: "Clinical Excellence Certificate",
-    title: "Clinical Excellence Certificate",
-    category: "Clinical Achievement",
-    description: "Awarded for exceptional clinical skills and patient care",
-    year: "2023",
-    organization: "Medical Board",
-    orientation: "landscape",
-    size: "medium"
-  },
-  {
-    id: "award3",
-    src: "/awards/award (3).JPG",
-    alt: "Research Innovation Award",
-    title: "Research Innovation Award",
-    category: "Research & Innovation",
-    description: "Recognition for groundbreaking research in pediatric dental care",
-    year: "2022",
-    organization: "Research Institute",
-    orientation: "portrait",
-    size: "large"
-  },
-  {
-    id: "award4",
-    src: "/awards/award (4).JPG",
-    alt: "Community Service Recognition",
-    title: "Community Service Recognition",
-    category: "Community Service",
-    description: "Honored for dedicated service to the community",
-    year: "2022",
-    organization: "Community Health Board",
-    orientation: "square",
-    size: "medium"
-  },
-  {
-    id: "award5",
-    src: "/awards/award (5).JPG",
-    alt: "Teaching Excellence Award",
-    title: "Teaching Excellence Award",
-    category: "Academic Achievement",
-    description: "Recognition for outstanding contribution to dental education",
-    year: "2021",
-    organization: "University",
-    orientation: "portrait",
-    size: "medium"
-  },
-  {
-    id: "award6",
-    src: "/awards/award (6).JPG",
-    alt: "Professional Milestone Certificate",
-    title: "Professional Milestone Certificate",
-    category: "Professional Recognition",
-    description: "Celebrating significant professional achievements",
-    year: "2021",
-    organization: "Professional Body",
-    orientation: "landscape",
-    size: "small"
-  },
-  {
-    id: "award7",
-    src: "/awards/award (7).JPG",
-    alt: "Clinical Innovation Award",
-    title: "Clinical Innovation Award",
-    category: "Clinical Achievement",
-    description: "Recognition for innovative treatment approaches",
-    year: "2020",
-    organization: "Clinical Board",
-    orientation: "portrait",
-    size: "medium"
-  },
-  {
-    id: "award8",
-    src: "/awards/award (8).JPG",
-    alt: "Patient Care Excellence",
-    title: "Patient Care Excellence",
-    category: "Patient Care",
-    description: "Awarded for exceptional patient care and satisfaction",
-    year: "2020",
-    organization: "Patient Care Association",
-    orientation: "square",
-    size: "medium"
-  },
-  {
-    id: "award9",
-    src: "/awards/award (9).JPG",
-    alt: "Research Publication Award",
-    title: "Research Publication Award",
-    category: "Research & Innovation",
-    description: "Recognition for significant research contributions",
-    year: "2019",
-    organization: "Medical Journal",
-    orientation: "portrait",
-    size: "large"
-  },
-  {
-    id: "award10",
-    src: "/awards/award (10).JPG",
-    alt: "Professional Development Certificate",
-    title: "Professional Development Certificate",
-    category: "Professional Recognition",
-    description: "Completion of advanced professional development programs",
-    year: "2019",
-    organization: "Professional Institute",
-    orientation: "landscape",
-    size: "medium"
-  },
-  {
-    id: "award11",
-    src: "/awards/award (11).JPG",
-    alt: "Academic Excellence Award",
-    title: "Academic Excellence Award",
-    category: "Academic Achievement",
-    description: "Recognition for outstanding academic contributions",
-    year: "2018",
-    organization: "Academic Board",
-    orientation: "portrait",
-    size: "medium"
-  },
-  {
-    id: "award12",
-    src: "/awards/award (12).JPG",
-    alt: "Community Health Champion",
-    title: "Community Health Champion",
-    category: "Community Service",
-    description: "Honored for promoting community health and wellness",
-    year: "2018",
-    organization: "Health Department",
-    orientation: "square",
-    size: "small"
-  },
-  {
-    id: "award13",
-    src: "/awards/award (13).JPG",
-    alt: "Clinical Training Certificate",
-    title: "Clinical Training Certificate",
-    category: "Clinical Achievement",
-    description: "Successful completion of advanced clinical training",
-    year: "2017",
-    organization: "Training Institute",
-    orientation: "landscape",
-    size: "medium"
-  },
-  {
-    id: "award14",
-    src: "/awards/award (14).JPG",
-    alt: "Professional Leadership Award",
-    title: "Professional Leadership Award",
-    category: "Professional Recognition",
-    description: "Recognition for leadership in the dental profession",
-    year: "2017",
-    organization: "Leadership Council",
-    orientation: "portrait",
-    size: "medium"
-  },
-  {
-    id: "award15",
-    src: "/awards/award (15).JPG",
-    alt: "Patient Safety Excellence",
-    title: "Patient Safety Excellence",
-    category: "Patient Care",
-    description: "Awarded for maintaining highest patient safety standards",
-    year: "2016",
-    organization: "Safety Board",
-    orientation: "square",
-    size: "medium"
-  },
-  {
-    id: "award16",
-    src: "/awards/award (16).JPG",
-    alt: "International Recognition Award",
-    title: "International Recognition Award",
-    category: "International Achievement",
-    description: "Global recognition for contributions to paediatric dentistry",
-    year: "2016",
-    organization: "International Dental Association",
-    orientation: "portrait",
-    size: "large"
-  },
-  {
-    id: "award17",
-    src: "/awards/award (17).JPG",
-    alt: "Lifetime Achievement Award",
-    title: "Lifetime Achievement Award",
-    category: "Lifetime Achievement",
-    description: "Recognition for lifetime dedication to dental excellence",
-    year: "2015",
-    organization: "Dental Academy",
-    orientation: "landscape",
-    size: "large"
-  }
+    {
+        id: "award15",
+        src: "/awards/award (15).JPG",
+        alt: "The 9th RK Hall Lecture Series",
+        title: "The 9th RK Hall Lecture Series",
+        category: "Appreciation Award",
+        description: "Awarded for maintaining highest patient safety standards",
+        year: "2025",
+        organization: "ANZSPD",
+        orientation: "square",
+        size: "medium"
+      },
+     {
+        id: "award12",
+        src: "/awards/award (12).JPG",
+        alt: "Industry Achievement",
+        title: "Industry Achievement",
+        category: "Achievement",
+        description: "Excellence in Teaching, Research, Supervision, Service and Philanthropy Award ",
+        year: "2024",
+        orientation: "landscape",
+        size: "small"
+      },
+      {
+        id: "award13",
+        src: "/awards/award (13).JPG",
+        alt: "ANZSPD (Qld) Clinic Day 2024",
+        title: "ANZSPD (Qld) Clinic Day 2024",
+        category: "Participation Certificate",
+        description: "A/Prof Sobia has presented 1 hour Scientific Continuing Professional Development on the topic of Gentle Care for Young Smiles:Exploring Minimally Invasive Dentistry",
+        year: "2024",
+        organization: "Oral Health Centre, The University of Queensland",
+        orientation: "portrait",
+        size: "medium"
+      },
+       {
+        id: "award10",
+        src: "/awards/award (10).JPG",
+        alt: "Distinguished Service Award",
+        title: "Distinguished Service Award",
+        category: "Achievement",
+        description: "Distinguished Service Award for her exceptionally distinguished service to the Association and to the dental profession.",
+        year: "2024",
+        organization: "ADA",
+        orientation: "landscape",
+        size: "medium"
+      },
+     {
+        id: "award5",
+        src: "/awards/award (5).JPG",
+        alt: "Excellence in Health Professional Education ",
+        title: "Excellence in Health Professional Education",
+        category: "Achievement",
+        description: "2023 Flinders University-ANZAHPE Award for Excellence in Health Professional Education for her work to develop and evaluate sustainable technology-enhanced learning(TEL) tools for teaching preclinical skills in dentistry",
+        year: "2023",
+        organization: "Flinders University",
+        orientation: "landscape",
+        size: "medium"
+      },
+    
+    {
+        id: "award6",
+        src: "/awards/award (6).JPG",
+        alt: "High Achiever Pakistani Australians",
+        title: "Queensland Young Tall Poppy Award 2023",
+        category: "Professional Recognition",
+        description: "Achieving Queensland Young Tall Poppy Award 2023 and making the community proud",
+        year: "2023",
+        organization: "Pakistan Australian Cultural Association",
+        orientation: "landscape",
+        size: "small"
+      },
+      {
+        id: "award7",
+        src: "/awards/award (7).JPG",
+        alt: "Best Supervisor Award Winner",
+        title: "Best Supervisor Award Winner",
+        category: "Achievement",
+        description: "Best Supervisor Award Winner at School of Dentistry Research Day 2023",
+        year: "2023",
+        organization: "The University Of Queensland Australia",
+        orientation: "portrait",
+        size: "medium"
+      },
+      {
+        id: "award8",
+        src: "/awards/award (8).JPG",
+        alt: "Best Supervision Award - HDR",
+        title: "Best Supervision Award - HDR",
+        category: "Patient Care",
+        description: "Best Supervisor Award Winner at School of Dentistry Research Day 2022",
+        year: "2022",
+        organization: "The University Of Queensland Australia",
+        orientation: "portrait",
+        size: "medium"
+      },
+      {
+        id: "award9",
+        src: "/awards/award (9).JPG",
+        alt: "2022 Awards for Excellence in Teaching and Learning",
+        title: "Excellence in Teaching and Learning",
+        category: "Achievement",
+        description: "2022 Awards for Excellence in Teaching and Learning",
+        year: "2022",
+        organization: "The University Of Queensland Australia",
+        orientation: "portrait",
+        size: "large"
+      },
+    
+     {
+        id: "award2",
+        src: "/awards/award (2).JPG",
+        alt: "Finalist Certificate",
+        title: "Australian Muslim Achievement Award 2022",
+        category: "Achievement",
+        description: "Finalist for outstanding clinical skills and patient care",
+        year: "2022",
+        organization: "Amaa 2022 Australian Muslim Achievement Award 2022",
+        orientation: "portrait",
+        size: "medium"
+      },
+    {
+        id: "award1",
+        src: "/awards/award (1).JPG",
+        alt: "Programs That Enhance Learning Award",
+        title: "Programs That Enhance Learning Award",
+        category: "Achievement",
+        description: "Awarded for exceptional contribution to paediatric dental education and student learning enhancement.",
+        year: "2021",
+        organization: "The University Of Queensland Australia-HaBS 2021 Staff Awards",
+        orientation: "portrait",
+        size: "medium"
+      },
+     
+      {
+        id: "award3",
+        src: "/awards/award (3).JPG",
+        alt: "Commendations for Substantive Contributions to Student Learning Award",
+        title: "Commendations for Substantive Contributions to Student Learning Award",
+        category: "Achievement",
+        description: "Recognized for significant contributions to student learning and educational excellence.",
+        year: "2020",
+        organization: "The University Of Queensland Australia-HaBS 2020 Staff Awards",
+        orientation: "portrait",
+        size: "large"
+      },
+      {
+        id: "award4",
+        src: "/awards/award (4).JPG",
+        alt: "People’s Choice Award",
+        title: "People’s Choice Award",
+        category: "Achievement",
+        description: "General Poster Session 2 during the 63rd Annual Scientific Meeting of the IADR ANZ Division - Cairns",
+        year: "2020",
+        organization: "IADR ANZ Division",
+        orientation: "square",
+        size: "medium"
+      },
+     
+     
+      {
+        id: "award11",
+        src: "/awards/award (11).JPG",
+        alt: "Higher Education Academy Fellowship",
+        title: "Higher Education Academy Fellowship",
+        category: "Achievement",
+        description: "Recognition of fellowship status",
+        year: "2021",
+        organization: "The University Of Queensland Australia",
+        orientation: "portrait",
+        size: "medium"
+      },
+     
+      {
+        id: "award14",
+        src: "/awards/award (14).JPG",
+        alt: "Distinguished Service Award ADAQ 2024 ",
+        title: "Distinguished Service Award ADAQ 2024",
+        category: "Achievement",
+        description: "Arshad Hussain Excellence Award",
+        year: "2024",
+        organization: "APDOQ",
+        orientation: "landscape",
+        size: "medium"
+      },
+    
+      {
+        id: "award16",
+        src: "/awards/award (16).JPG",
+        alt: "Fellowship of the Faculty of Dental Trainers",
+        title: "Fellowship of the Faculty of Dental Trainers",
+        category: "Achievement",
+        description: "The Royal College of Surgeons of Edinburgh admits to the fellowship of A/Prof Sobia",
+        year: "2024",
+        organization: "The Royal College of Surgeons of Edinburgh",
+        orientation: "portrait",
+        size: "large"
+      },
+      {
+        id: "award17",
+        src: "/awards/award (17).JPG",
+        alt: "Appreciation Award",
+        title: "Appreciation Award",
+        category: "Appreciation Award",
+        description: "Appreciation Award for A/Prof Sobia's ongoing commitment and support",
+        year: "2024",
+        organization: "Turbans Australia",
+        orientation: "square",
+        size: "large"
+      }
 ];
 
 function AwardsGallery() {
   const [selectedImage, setSelectedImage] = useState<AwardImage | null>(null)
   const [filteredImages, setFilteredImages] = useState<AwardImage[]>(awardImages)
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
-  const [viewMode, setViewMode] = useState<"masonry" | "list">("masonry")
+  const [viewMode, setViewMode] = useState<"masonry" | "list">("list")
 
   // Get unique categories
   const categories = ["all", ...Array.from(new Set(awardImages.map((img) => img.category)))]
@@ -360,21 +366,7 @@ function AwardsGallery() {
               </Badge>
             ))}
           </div>
-
           <div className="flex items-center gap-2">
-            <Button
-              variant={viewMode === "masonry" ? "default" : "outline"}
-              size="sm"
-              onClick={() => setViewMode("masonry")}
-              className={`transition-all hover:scale-105 ${
-                viewMode === "masonry" 
-                  ? "bg-teal-600 hover:bg-teal-700 text-white" 
-                  : "border-teal-200 text-teal-600 hover:bg-teal-50"
-              }`}
-            >
-              <Grid className="h-4 w-4 mr-2" />
-              Gallery
-            </Button>
             <Button
               variant={viewMode === "list" ? "default" : "outline"}
               size="sm"
@@ -387,6 +379,19 @@ function AwardsGallery() {
             >
               <List className="h-4 w-4 mr-2" />
               List
+                      </Button>
+                      <Button
+              variant={viewMode === "masonry" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setViewMode("masonry")}
+              className={`transition-all hover:scale-105 ${
+                viewMode === "masonry" 
+                  ? "bg-teal-600 hover:bg-teal-700 text-white" 
+                  : "border-teal-200 text-teal-600 hover:bg-teal-50"
+              }`}
+            >
+              <Grid className="h-4 w-4 mr-2" />
+              Gallery
             </Button>
           </div>
         </div>
@@ -687,7 +692,7 @@ export default function AwardsPage(): JSX.Element {
               </div>
               <div className="flex items-center gap-2">
                 <Trophy className="h-5 w-5 text-teal-600" />
-                <span>2015-2023</span>
+                <span>2020-2025</span>
               </div>
             </div>
           </div>
