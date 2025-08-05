@@ -119,30 +119,66 @@ export function ServicesSection() {
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large floating blobs */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-teal-200/30 to-emerald-200/20 rounded-full animate-pulse" style={{ animationDuration: '9s' }}></div>
-        <div className="absolute -bottom-32 -left-16 w-96 h-96 bg-teal-100/40 rounded-full animate-bounce" style={{ animationDuration: '12s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-emerald-200/60 rounded-full animate-pulse" style={{ animationDuration: '5s' }}></div>
-        
+        <div
+          className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-teal-200/30 to-emerald-200/20 rounded-full animate-pulse"
+          style={{ animationDuration: '9s' }}
+        ></div>
+        <div
+          className="absolute -bottom-32 -left-16 w-96 h-96 bg-teal-100/40 rounded-full animate-bounce"
+          style={{ animationDuration: '12s' }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/3 w-32 h-32 bg-emerald-200/60 rounded-full animate-pulse"
+          style={{ animationDuration: '5s' }}
+        ></div>
+
         {/* Medium blobs */}
-        <div className="absolute top-16 left-16 w-24 h-24 bg-teal-300/40 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-24 right-1/4 w-20 h-20 bg-emerald-300/30 rounded-full animate-pulse" style={{ animationDuration: '6s' }}></div>
-        
+        <div
+          className="absolute top-16 left-16 w-24 h-24 bg-teal-300/40 rounded-full animate-bounce"
+          style={{ animationDuration: '4s', animationDelay: '1s' }}
+        ></div>
+        <div
+          className="absolute bottom-24 right-1/4 w-20 h-20 bg-emerald-300/30 rounded-full animate-pulse"
+          style={{ animationDuration: '6s' }}
+        ></div>
+
         {/* Small animated dots */}
-        <div className="absolute top-32 right-16 w-3 h-3 bg-teal-500 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
-        <div className="absolute top-2/3 left-8 w-2 h-2 bg-emerald-600 rounded-full animate-bounce" style={{ animationDuration: '2.5s', animationDelay: '0.8s' }}></div>
-        <div className="absolute bottom-16 left-1/3 w-4 h-4 bg-teal-400 rounded-full animate-pulse" style={{ animationDuration: '4s' }}></div>
-        
+        <div
+          className="absolute top-32 right-16 w-3 h-3 bg-teal-500 rounded-full animate-ping"
+          style={{ animationDuration: '3s' }}
+        ></div>
+        <div
+          className="absolute top-2/3 left-8 w-2 h-2 bg-emerald-600 rounded-full animate-bounce"
+          style={{ animationDuration: '2.5s', animationDelay: '0.8s' }}
+        ></div>
+        <div
+          className="absolute bottom-16 left-1/3 w-4 h-4 bg-teal-400 rounded-full animate-pulse"
+          style={{ animationDuration: '4s' }}
+        ></div>
+
         {/* Floating plus signs */}
-        <div className="absolute top-24 left-1/2 text-teal-400/60 text-2xl font-light animate-spin" style={{ animationDuration: '25s' }}>+</div>
-        <div className="absolute bottom-32 right-8 text-emerald-400/50 text-lg font-light animate-spin" style={{ animationDuration: '18s' }}>+</div>
+        <div
+          className="absolute top-24 left-1/2 text-teal-400/60 text-2xl font-light animate-spin"
+          style={{ animationDuration: '25s' }}
+        >
+          +
+        </div>
+        <div
+          className="absolute bottom-32 right-8 text-emerald-400/50 text-lg font-light animate-spin"
+          style={{ animationDuration: '18s' }}
+        >
+          +
+        </div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="h-1 w-12 bg-teal-600 rounded-full" />
-            <h3 className="text-teal-600 font-semibold tracking-wider">WHAT WE DO</h3>
+            <h3 className="text-teal-600 font-semibold tracking-wider">
+              WHAT WE DO
+            </h3>
             <div className="h-1 w-12 bg-teal-600 rounded-full" />
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -152,7 +188,17 @@ export function ServicesSection() {
             Nurturing Healthy Smiles, One Child at a Time
           </h3>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We are committed to ensuring your child&apos;s lifelong oral health, and we provide a full range of dental services to kids of all ages. Our comprehensive range of services includes general checkups, preventive care, treatment of tooth decay, composite fillings, crowns for both primary and permanent teeth, extractions, space maintainers, treatment for &apos;chalky teeth&apos; enamel hypomineralisation.
+            We are committed to ensuring your child&apos;s lifelong oral health,
+            and we provide a full range of dental services to kids of all ages.
+            Our comprehensive range of services includes general checkups,
+            preventive care, treatment of tooth decay, composite fillings,
+            crowns for both primary and permanent teeth, extractions, space
+            maintainers, treatment for &apos;chalky teeth&apos; enamel
+            hypomineralisation. Our goal is to provide high-quality dental care
+            that supports healthy smiles and overall well-being from the start,
+            ensuring children receive preventive care rather than waiting for
+            problems to arise. Whatever your child&apos;s dental requirements,
+            we&apos;re here for them, and you.
           </p>
         </div>
 

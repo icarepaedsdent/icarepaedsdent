@@ -69,8 +69,6 @@ export function Hero() {
                 </Button>
               </Link>
             </div>
-
-
           </div>
 
           {/* Professional Photo Section */}
@@ -79,24 +77,18 @@ export function Hero() {
               {/* Main Professional Photo */}
               <div className="relative z-10">
                 <Image
-                  src="/sample7.jpg"
+                  src="/hero-image.png"
                   alt="A/Prof Sobia Zafar - Paediatric Dentist"
                   width={500}
-                  height={600}
-                  className="w-full h-auto object-cover rounded-2xl shadow-2xl"
+                  height={700}
+                  className="w-full h-auto object-cover object-bottom"
                   priority
                 />
-                
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent rounded-2xl"></div>
               </div>
-              
-              {/* Background decorative circle */}
-              <div className="absolute -top-8 -left-8 w-full h-full bg-gradient-to-br from-teal-200/40 to-emerald-200/40 rounded-2xl -z-10"></div>
             </div>
             
-            {/* Floating contact info card */}
-            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+            {/* Quick Contact Card - Positioned to overlap the image naturally */}
+            <div className="absolute top-0 right-24 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-xl border border-white/20 z-20">
               <div className="text-sm font-medium text-gray-800 mb-2">Quick Contact</div>
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -111,7 +103,7 @@ export function Hero() {
       </div>
       
       {/* Dual Curved Bottom Border - Inverted */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-50">
         <svg className="relative block w-full h-20 md:h-24 lg:h-28" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           {/* Darker background wave - offset to be visible */}
           <path d="M0,0L40,12C80,24,160,48,240,60C320,72,400,72,480,66C560,60,640,48,720,54C800,60,880,84,960,90C1040,96,1120,84,1160,78L1200,72V120H1160C1120,120,1040,120,960,120C880,120,800,120,720,120C640,120,560,120,480,120C400,120,320,120,240,120C160,120,80,120,40,120H0V0Z" className="fill-teal-600"></path>

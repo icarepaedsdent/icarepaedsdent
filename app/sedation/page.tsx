@@ -125,7 +125,7 @@ const sedationOptions = [
     ],
     additionalInfo: {
       title: 'Expert Care at St Andrews War Memorial Hospital',
-      content: 'Dental treatment under general anaesthetic is performed by A/Prof Sobia at the St Andrews War Memorial Hospital, where A/Prof Sobia is fully registered and accredited as a specialist paediatric dentist. The general anaesthetic is administered by a member of our team of highly qualified specialist anaesthetists with years of experience in paediatric care. You can be rest assured your child will be well looked after. Following the initial consultation A/Prof will give you a comprehensive report along with a detailed dental treatment plan (with health fund item numbers), anaesthetic fees and hospital fees.'
+      content: 'Dental treatment under general anaesthetic is performed by A/Prof Sobia at the St Andrews War Memorial Hospital, where A/Prof Sobia is fully registered and accredited as a specialist paediatric dentist. The general anaesthetic is administered by a member of our team of highly qualified specialist anaesthetists with years of experience in paediatric care. You can be rest assured your child will be well looked after. Following the initial consultation A/Prof Sobia will give you a comprehensive report along with a detailed dental treatment plan (with health fund item numbers), anaesthetic fees and hospital fees.'
     }
   }
 ];
