@@ -74,6 +74,19 @@ export function Header() {
     }
   ];
 
+  const aboutItems = [
+    {
+      title: 'About Dr. Sobia',
+      href: '/about',
+      description: 'Learn about A/Prof Sobia Zafar\'s background and expertise'
+    },
+    {
+      title: 'Awards & Recognition',
+      href: '/awards',
+      description: 'View our achievements and professional recognition'
+    }
+  ];
+
   return (
     <header className={cn(
       "sticky z-50 w-full transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
@@ -129,13 +142,23 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600"
-                  )}>
-                    About 
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuTrigger className="bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent hover:bg-transparent focus:bg-transparent group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-teal-600 focus:text-teal-600 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-teal-600 data-[state=open]:text-teal-600">About</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid w-[400px] gap-3 p-4">
+                    {aboutItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">{item.title}</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          {item.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -243,9 +266,21 @@ export function Header() {
                 <Link href="/" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
                   Home
                 </Link>
-                <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-teal-600 transition-colors">
-                  About
-                </Link>
+                <div className="space-y-2">
+                  <p className="text-lg font-medium text-gray-900">About</p>
+                  <div className="pl-4 space-y-2">
+                    {aboutItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block text-gray-600 hover:text-teal-600 transition-colors"
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
                 <div className="space-y-2">
                   <p className="text-lg font-medium text-gray-900">Services</p>
                   <div className="pl-4 space-y-2">
