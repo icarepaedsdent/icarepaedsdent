@@ -21,216 +21,227 @@ interface AwardImage {
 
 // Award images data
 const awardImages: AwardImage[] = [
-    {
-        id: "award15",
-        src: "/awards/award (15).JPG",
-        alt: "The 9th RK Hall Lecture Series",
-        title: "The 9th RK Hall Lecture Series",
-        category: "Appreciation Award",
-        description: "Awarded for maintaining highest patient safety standards",
-        year: "2025",
-        organization: "ANZSPD",
-        orientation: "square",
-        size: "medium"
-      },
-     {
-        id: "award12",
-        src: "/awards/award (12).JPG",
-        alt: "Industry Achievement",
-        title: "Industry Achievement",
-        category: "Achievement",
-        description: "Excellence in Teaching, Research, Supervision, Service and Philanthropy Award ",
-        year: "2024",
-        orientation: "landscape",
-        size: "small"
-      },
-      {
-        id: "award13",
-        src: "/awards/award (13).JPG",
-        alt: "ANZSPD (Qld) Clinic Day 2024",
-        title: "ANZSPD (Qld) Clinic Day 2024",
-        category: "Participation Certificate",
-        description: "A/Prof Sobia has presented 1 hour Scientific Continuing Professional Development on the topic of Gentle Care for Young Smiles:Exploring Minimally Invasive Dentistry",
-        year: "2024",
-        organization: "Oral Health Centre, The University of Queensland",
-        orientation: "portrait",
-        size: "medium"
-      },
-       {
-        id: "award10",
-        src: "/awards/award (10).JPG",
-        alt: "Distinguished Service Award",
-        title: "Distinguished Service Award",
-        category: "Achievement",
-        description: "Distinguished Service Award for her exceptionally distinguished service to the Association and to the dental profession.",
-        year: "2024",
-        organization: "ADA",
-        orientation: "landscape",
-        size: "medium"
-      },
-     {
-        id: "award5",
-        src: "/awards/award (5).JPG",
-        alt: "Excellence in Health Professional Education ",
-        title: "Excellence in Health Professional Education",
-        category: "Achievement",
-        description: "2023 Flinders University-ANZAHPE Award for Excellence in Health Professional Education for her work to develop and evaluate sustainable technology-enhanced learning(TEL) tools for teaching preclinical skills in dentistry",
-        year: "2023",
-        organization: "Flinders University",
-        orientation: "landscape",
-        size: "medium"
-      },
-    
-    {
-        id: "award6",
-        src: "/awards/award (6).JPG",
-        alt: "High Achiever Pakistani Australians",
-        title: "Queensland Young Tall Poppy Award 2023",
-        category: "Professional Recognition",
-        description: "Achieving Queensland Young Tall Poppy Award 2023 and making the community proud",
-        year: "2023",
-        organization: "Pakistan Australian Cultural Association",
-        orientation: "landscape",
-        size: "small"
-      },
-      {
-        id: "award7",
-        src: "/awards/award (7).JPG",
-        alt: "Best Supervisor Award Winner",
-        title: "Best Supervisor Award Winner",
-        category: "Achievement",
-        description: "Best Supervisor Award Winner at School of Dentistry Research Day 2023",
-        year: "2023",
-        organization: "The University Of Queensland Australia",
-        orientation: "portrait",
-        size: "medium"
-      },
-      {
-        id: "award8",
-        src: "/awards/award (8).JPG",
-        alt: "Best Supervision Award - HDR",
-        title: "Best Supervision Award - HDR",
-        category: "Patient Care",
-        description: "Best Supervisor Award Winner at School of Dentistry Research Day 2022",
-        year: "2022",
-        organization: "The University Of Queensland Australia",
-        orientation: "portrait",
-        size: "medium"
-      },
-      {
-        id: "award9",
-        src: "/awards/award (9).JPG",
-        alt: "2022 Awards for Excellence in Teaching and Learning",
-        title: "Excellence in Teaching and Learning",
-        category: "Achievement",
-        description: "2022 Awards for Excellence in Teaching and Learning",
-        year: "2022",
-        organization: "The University Of Queensland Australia",
-        orientation: "portrait",
-        size: "large"
-      },
-    
-     {
-        id: "award2",
-        src: "/awards/award (2).JPG",
-        alt: "Finalist Certificate",
-        title: "Australian Muslim Achievement Award 2022",
-        category: "Achievement",
-        description: "Finalist for outstanding clinical skills and patient care",
-        year: "2022",
-        organization: "Amaa 2022 Australian Muslim Achievement Award 2022",
-        orientation: "portrait",
-        size: "medium"
-      },
-    {
-        id: "award1",
-        src: "/awards/award (1).JPG",
-        alt: "Programs That Enhance Learning Award",
-        title: "Programs That Enhance Learning Award",
-        category: "Achievement",
-        description: "Awarded for exceptional contribution to paediatric dental education and student learning enhancement.",
-        year: "2021",
-        organization: "The University Of Queensland Australia-HaBS 2021 Staff Awards",
-        orientation: "portrait",
-        size: "medium"
-      },
-     
-      {
-        id: "award3",
-        src: "/awards/award (3).JPG",
-        alt: "Commendations for Substantive Contributions to Student Learning Award",
-        title: "Commendations for Substantive Contributions to Student Learning Award",
-        category: "Achievement",
-        description: "Recognized for significant contributions to student learning and educational excellence.",
-        year: "2020",
-        organization: "The University Of Queensland Australia-HaBS 2020 Staff Awards",
-        orientation: "portrait",
-        size: "large"
-      },
-      {
-        id: "award4",
-        src: "/awards/award (4).JPG",
-        alt: "People’s Choice Award",
-        title: "People’s Choice Award",
-        category: "Achievement",
-        description: "General Poster Session 2 during the 63rd Annual Scientific Meeting of the IADR ANZ Division - Cairns",
-        year: "2020",
-        organization: "IADR ANZ Division",
-        orientation: "square",
-        size: "medium"
-      },
-     
-     
-      {
-        id: "award11",
-        src: "/awards/award (11).JPG",
-        alt: "Higher Education Academy Fellowship",
-        title: "Higher Education Academy Fellowship",
-        category: "Achievement",
-        description: "Recognition of fellowship status",
-        year: "2021",
-        organization: "The University Of Queensland Australia",
-        orientation: "portrait",
-        size: "medium"
-      },
-     
-      {
-        id: "award14",
-        src: "/awards/award (14).JPG",
-        alt: "Distinguished Service Award ADAQ 2024 ",
-        title: "Distinguished Service Award ADAQ 2024",
-        category: "Achievement",
-        description: "Arshad Hussain Excellence Award",
-        year: "2024",
-        organization: "APDOQ",
-        orientation: "landscape",
-        size: "medium"
-      },
-    
-      {
-        id: "award16",
-        src: "/awards/award (16).JPG",
-        alt: "Fellowship of the Faculty of Dental Trainers",
-        title: "Fellowship of the Faculty of Dental Trainers",
-        category: "Achievement",
-        description: "The Royal College of Surgeons of Edinburgh admits to the fellowship of A/Prof Sobia",
-        year: "2024",
-        organization: "The Royal College of Surgeons of Edinburgh",
-        orientation: "portrait",
-        size: "large"
-      },
-      {
-        id: "award17",
-        src: "/awards/award (17).JPG",
-        alt: "Appreciation Award",
-        title: "Appreciation Award",
-        category: "Appreciation Award",
-        description: "Appreciation Award for A/Prof Sobia's ongoing commitment and support",
-        year: "2024",
-        organization: "Turbans Australia",
-        orientation: "square",
-        size: "large"
-      }
+  {
+    id: "award3",
+    src: "/awards/award (3).JPG",
+    alt: "Commendations for Substantive Contributions to Student Learning Award",
+    title: "Commendations for Substantive Contributions to Student Learning Award",
+    category: "Achievement",
+    description: "Recognized for significant contributions to student learning and educational excellence.",
+    year: "2020",
+    organization: "The University Of Queensland Australia-HaBS 2020 Staff Awards",
+    orientation: "portrait",
+    size: "large"
+  },
+  {
+    id: "award4",
+    src: "/awards/award (4).JPG",
+    alt: "People’s Choice Award",
+    title: "People’s Choice Award",
+    category: "Achievement",
+    description: "General Poster Session 2 during the 63rd Annual Scientific Meeting of the IADR ANZ Division - Cairns",
+    year: "2020",
+    organization: "IADR ANZ Division",
+    orientation: "square",
+    size: "medium"
+  },
+ 
+ 
+  {
+    id: "award11",
+    src: "/awards/award (11).JPG",
+    alt: "Higher Education Academy Fellowship",
+    title: "Higher Education Academy Fellowship",
+    category: "Achievement",
+    description: "Recognition of fellowship status",
+    year: "2021",
+    organization: "The University Of Queensland Australia",
+    orientation: "portrait",
+    size: "medium"
+  },
+ {
+    id: "award1",
+    src: "/awards/award (1).JPG",
+    alt: "Programs That Enhance Learning Award",
+    title: "Programs That Enhance Learning Award",
+    category: "Achievement",
+    description: "Awarded for exceptional contribution to paediatric dental education and student learning enhancement.",
+    year: "2021",
+    organization: "The University Of Queensland Australia-HaBS 2021 Staff Awards",
+    orientation: "portrait",
+    size: "medium"
+  },
+ {
+    id: "award8",
+    src: "/awards/award (8).JPG",
+    alt: "Best Supervision Award - HDR",
+    title: "Best Supervision Award - HDR",
+    category: "Patient Care",
+    description: "Best Supervisor Award Winner at School of Dentistry Research Day 2022",
+    year: "2022",
+    organization: "The University Of Queensland Australia",
+    orientation: "portrait",
+    size: "medium"
+  },
+  {
+    id: "award9",
+    src: "/awards/award (9).JPG",
+    alt: "Excellence in Teaching and Learning Award - Commendation for Program that Enhance Learning",
+    title: "Excellence in Teaching and Learning Award - Commendation for Program that Enhance Learning",
+    category: "Achievement",
+    description: "2022 Awards for Excellence in Teaching and Learning",
+    year: "2022",
+    organization: "The University of Queensland",
+    orientation: "portrait",
+    size: "large"
+  },
+
+ {
+    id: "award2",
+    src: "/awards/award (2).JPG",
+    alt: "Finalist Certificate",
+    title: "Australian Muslim Achievement Award 2022",
+    category: "Achievement",
+    description: "Finalist for outstanding clinical skills and patient care",
+    year: "2022",
+    organization: "Amaa 2022 Australian Muslim Achievement Award 2022",
+    orientation: "portrait",
+    size: "medium"
+  },
+  {
+    id: "award18",
+    src: "/awards/award (18).jpg",
+    alt: "Recognised by Australian Dental Association Queensland on International Women’s Day",
+    title: "Recognised by Australian Dental Association Queensland on International Women’s Day",
+    category: "Achievement",
+    description: "Dr. Sobia Zafar was honoured by the Australian Dental Association Queensland for her exceptional contributions to dental education, as part of the International Women’s Day.",
+    year: "8 March 2022",
+    organization: "ADA Queensland",
+    orientation: "square",
+    size: "large"
+  },
+{
+    id: "award5",
+    src: "/awards/award (5).JPG",
+    alt: "Excellence in Health Professional Education ",
+    title: "Excellence in Health Professional Education",
+    category: "Achievement",
+    description: "Australia & New Zealand Association for Health Professional Educators",
+    year: "27 June, 2023",
+    organization: "Flinders University",
+    orientation: "landscape",
+    size: "medium"
+  },
+
+{
+    id: "award6",
+    src: "/awards/award.JPG",
+    alt: "Queensland Young Tall Poppy Award",
+    title: "Queensland Young Tall Poppy Award",
+    category: "Professional Recognition",
+    description: "Australian Institute of Policy and Science (AIPS) . In recognition of excellence in dental research, particularly in the area of paediatric dentistry, and her introduction of innovative teaching tools in digital dentistry that helps dental students move from laboratory simulations to patient care.",
+    year: "13 October, 2023",
+    organization: "Pakistan Australian Cultural Association",
+    orientation: "landscape",
+    size: "small"
+  },
+  {
+    id: "award7",
+    src: "/awards/award (7).JPG",
+    alt: "Best Supervisor Award Winner",
+    title: "Best Supervisor Award Winner",
+    category: "Achievement",
+    description: "Best Supervisor Award Winner at School of Dentistry Research Day 2023",
+    year: "2023",
+    organization: "The University Of Queensland Australia",
+    orientation: "portrait",
+    size: "medium"
+  },
+{
+    id: "award13",
+    src: "/awards/award (13).JPG",
+    alt: "Invited Speaker at the ANZSPDQ Clinic Day",
+    title: "Invited Speaker at the ANZSPDQ Clinic Day",
+    category: "Participation Certificate",
+    description: "Awarded by the Australia and New Zealand Society of Paediatric Dentistry Queensland",
+    year: "5 October, 2024",
+    organization: "Oral Health Centre, The University of Queensland",
+    orientation: "portrait",
+    size: "medium"
+  },
+   {
+    id: "award10",
+    src: "/awards/award (10).JPG",
+    alt: "Distinguished Service Award for exceptionally distinguished service to the Association and to the dental profession",
+    title: "Distinguished Service Award for exceptionally distinguished service to the Association and to the dental profession",
+    category: "Achievement",
+    description: "Awarded by the Australian Dental Association Queensland ",
+    year: "23 November 2024",
+    organization: "ADA",
+    orientation: "landscape",
+    size: "medium"
+  },
+
+  {
+    id: "award14",
+    src: "/awards/award (14).JPG",
+    alt: "Distinguished Service Award APDAQ 2024 ",
+    title: "Distinguished Service Award APDAQ 2024",
+    category: "Achievement",
+    description: "Arshad Hussain Excellence Award",
+    year: "2024",
+    organization: "APDOQ",
+    orientation: "landscape",
+    size: "medium"
+  },
+  {
+    id: "award16",
+    src: "/awards/award (16).JPG",
+    alt: "Fellowship of the Faculty of Dental Trainers",
+    title: "Fellowship of the Faculty of Dental Trainers",
+    category: "Achievement",
+    description: "The Royal College of Surgeons of Edinburgh admits to the fellowship of A/Prof Sobia",
+    year: "2024",
+    organization: "The Royal College of Surgeons of Edinburgh",
+    orientation: "portrait",
+    size: "large"
+  },
+  {
+    id: "award17",
+    src: "/awards/award (17).JPG",
+    alt: "Appreciation Award",
+    title: "Appreciation Award",
+    category: "Appreciation Award",
+    description: "Appreciation Award for A/Prof Sobia's ongoing commitment and support",
+    year: "2024",
+    organization: "Turbans Australia",
+    orientation: "square",
+    size: "large"
+  },
+
+{
+    id: "award15",
+    src: "/awards/award (15).JPG",
+    alt: "Invited Speaker at the 9Th RK Hall Lecture Series",
+    title: "Invited Speaker at the 9Th RK Hall Lecture Series",
+    category: "Appreciation Award",
+    description: "Awarded by Australia and New Zealand Society of Paediatric Dentistry ",
+    year: "28th March 2025",
+    organization: "ANZSPD",
+    orientation: "square",
+    size: "medium"
+  },
+ {
+    id: "award12",
+    src: "/awards/award (12).JPG",
+    alt: "Excellence in Teaching, Research, Supervision, Service and Philanthropy Award",
+    title: "Excellence in Teaching, Research, Supervision, Service and Philanthropy Award",
+    category: "Achievement",
+    description: "Awarded by Australia and New Zealand Society of Paediatric Dentistry Queensland",
+    year: "28th March 2025",
+    orientation: "landscape",
+    size: "small"
+  },
 ];
 
 function AwardsGallery() {

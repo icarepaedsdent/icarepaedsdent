@@ -37,7 +37,7 @@ export function Hero() {
             {/* Subtitle */}
             <div className="space-y-4">
               <p className="text-teal-600 font-medium text-lg tracking-wide">
-              Welcome to I-care Paedriatric Dentistry
+              Welcome to I-Care Paedriatric Dentistry
               </p>
               
               {/* Main Heading */}

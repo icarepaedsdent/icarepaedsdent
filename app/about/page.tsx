@@ -153,7 +153,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://i.ibb.co/xqKJRx7B/Sobia-Zafar.jpg"
+                src="/Sobia-Zafar.png"
                 alt="Associate Professor (Dr) Sobia Zafar - Specialist Paediatric Dentist"
                 width={600}
                 height={600}

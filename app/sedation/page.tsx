@@ -857,11 +857,11 @@ export default function SedationPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <span className="text-blue-600 font-semibold text-sm">📞 Phone:</span>
-                    <a href="tel:0733433322" className="text-blue-700 hover:text-blue-900 text-sm font-medium">(07) 3343 3322</a>
+                    <a href="tel:0733433322" className="text-blue-700 hover:text-blue-900 text-sm font-medium">36230000</a>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-blue-600 font-semibold text-sm">✉️ Email:</span>
-                    <a href="mailto:paedsdentga@gmail.com" className="text-blue-700 hover:text-blue-900 text-sm font-medium">paedsdentga@gmail.com</a>
+                    <a href="mailto:paedsdentga@gmail.com" className="text-blue-700 hover:text-blue-900 text-sm font-medium">icarepaediatricdentistry@gmail.com</a>
                   </div>
                 </div>
                 <p className="text-blue-600 text-xs mt-3 font-medium">
