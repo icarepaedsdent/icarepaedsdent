@@ -221,45 +221,6 @@ export default function ExtractionsPage() {
               are also available.
             </p>
           </Card>
-
-          {/* Image Section */}
-          <Card className="p-6 bg-gradient-to-br from-white to-teal-50/30 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden lg:col-span-2">
-            {/* Internal animated blobs */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div
-                className="absolute -top-3 -right-1 w-18 h-18 bg-teal-100/30 rounded-full animate-pulse"
-                style={{ animationDuration: '8s' }}
-              ></div>
-              <div
-                className="absolute top-1/3 -left-3 w-14 h-14 bg-emerald-200/40 rounded-full animate-bounce"
-                style={{ animationDuration: '6s' }}
-              ></div>
-              <div
-                className="absolute -bottom-2 -right-3 w-12 h-12 bg-teal-200/40 rounded-full animate-pulse"
-                style={{ animationDuration: '5s' }}
-              ></div>
-              <div
-                className="absolute top-20 right-16 w-6 h-6 bg-teal-400/40 rounded-full animate-ping"
-                style={{ animationDuration: '4s' }}
-              ></div>
-              <div
-                className="absolute bottom-16 left-12 w-3 h-3 bg-emerald-400/60 rounded-full animate-ping"
-                style={{ animationDuration: '3s' }}
-              ></div>
-              <div
-                className="absolute top-40 right-1/4 text-teal-300/15 text-xl animate-spin"
-                style={{ animationDuration: '30s' }}
-              >
-                +
-              </div>
-              <div
-                className="absolute bottom-32 left-1/3 text-emerald-400/20 text-lg animate-spin"
-                style={{ animationDuration: '20s' }}
-              >
-                +
-              </div>
-            </div>
-          </Card>
         </div>
 
         {/* Call to Action */}
