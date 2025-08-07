@@ -185,8 +185,8 @@ const awardImages: AwardImage[] = [
   {
     id: "award14",
     src: "/awards/award (14).JPG",
-    alt: "Distinguished Service Award APDAQ 2024 ",
-    title: "Distinguished Service Award APDAQ 2024",
+    alt: "Distinguished Service Award APDOQ 2024 ",
+    title: "APDOQ Award",
     category: "Achievement",
     description: "Arshad Hussain Excellence Award",
     year: "2024",
