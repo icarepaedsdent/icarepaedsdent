@@ -7,6 +7,9 @@ const nextConfig = {
     unoptimized: true,
     domains: ['i.ibb.co'],
   },
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'out',
 };
 
 module.exports = nextConfig;
