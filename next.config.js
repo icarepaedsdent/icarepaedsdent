@@ -7,9 +7,9 @@ const nextConfig = {
     unoptimized: true,
     domains: ['i.ibb.co'],
   },
-  output: 'export',
+  // Removed 'output: export' to enable API routes
   trailingSlash: true,
-  distDir: 'out',
+  // Removed 'distDir: out' as it's not needed for Vercel deployment
 };
 
 module.exports = nextConfig;
